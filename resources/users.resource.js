@@ -1,7 +1,6 @@
 import mongoose from "mongoose";
-import { usersSchema } from "../models/users.model.js";
+import { Users, usersSchema } from "../models/users.model.js";
 
-const Users = mongoose.model("Users", usersSchema);
 const usersNavigation = {
   name: "Foydalanuvchilar",
   icon: "User",
