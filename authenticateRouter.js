@@ -1,6 +1,6 @@
 import MongoStore from "connect-mongo";
 import AdminJSExpress from "@adminjs/express";
-import { Users } from "./models/users.model";
+import { Users } from "./models/users.model.js";
 
 export const expressAuthenticatedRouter = (adminJs) => {
   const sessionStore = MongoStore.create({
