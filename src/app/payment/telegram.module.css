@@ -1,0 +1,11 @@
+.telegram_card {
+  @apply flex flex-col items-center gap-4 self-stretch px-4 py-5 rounded-xl;
+  background: #343434;
+}
+.telegram_card span {
+  @apply text-white text-center text-base not-italic font-normal leading-[130%];
+}
+.telegram_card a {
+  @apply border flex justify-center items-center gap-2 self-stretch p-[18px] rounded-[43px] border-solid border-[#85AFFF] w-full;
+  @apply text-[#85AFFF] text-sm not-italic font-medium leading-[normal];
+}

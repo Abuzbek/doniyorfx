@@ -1,0 +1,17 @@
+.field {
+  @apply flex flex-col gap-1.5;
+}
+.field label {
+  @apply text-white text-base not-italic font-normal leading-[normal];
+}
+.field input:not(.PhoneInputInput) {
+  @apply border border-neutral-700 rounded-lg border-solid h-[52px] focus:outline-none px-5 py-3 text-white;
+  background: #2b2b2b;
+}
+.field .phoneInput {
+  @apply border border-neutral-700 rounded-lg border-solid h-[52px] focus:outline-none px-5 py-3 text-white;
+  background: #2b2b2b;
+}
+.field small {
+  @apply text-red-500 text-left text-sm mt-1 ;
+}

@@ -1,0 +1,93 @@
+.main {
+  min-height: 100vh;
+  background: linear-gradient(
+    74deg,
+    #2f0855 -0.6%,
+    #530976 50.81%,
+    #640666 101.36%
+  );
+  @apply flex items-center justify-center py-5;
+}
+.payment {
+  @apply max-w-[600px] w-full bg-[#1F1F1F] flex flex-col rounded-3xl;
+}
+.logo {
+  @apply text-[#A388FF] text-2xl not-italic font-bold leading-[normal];
+}
+.middle_text {
+  @apply text-white text-center text-lg not-italic font-medium leading-[normal];
+}
+.payment_top {
+  @apply p-6 pb-8;
+}
+.payment_bottom {
+  border-top: 1px solid #505050;
+  @apply py-6 px-14 text-center text-white flex flex-col gap-4;
+}
+.payment_bottom a {
+  @apply underline font-medium;
+}
+.payment_bottom p {
+  @apply text-sm font-medium;
+}
+.payment_card {
+  border-radius: 16px;
+  background: linear-gradient(84deg, #6950ff 0%, #c631fb 100%), #d9d9d9;
+  box-shadow: 0px 12px 30px 0px rgba(122, 74, 254, 0.3);
+}
+
+.course_card {
+  @apply flex flex-col text-center gap-2 py-5;
+}
+.course_card h3 {
+  @apply text-white text-[32px] not-italic font-bold leading-[normal] uppercase;
+}
+.course_card p {
+  @apply text-white text-xl not-italic font-medium leading-[normal] tracking-[0.6px];
+}
+
+.plan_card {
+  @apply py-4 px-5 flex flex-col gap-2;
+}
+.plan_card .plan_title {
+  @apply flex flex-col gap-1;
+}
+
+.plan_card h3 {
+  @apply text-white text-2xl not-italic font-bold leading-[normal];
+}
+.plan_card h4 {
+  @apply text-white text-[28px] not-italic font-bold leading-[normal];
+}
+.plan_card p {
+  @apply text-white text-sm not-italic font-medium leading-[normal];
+}
+.submit_button {
+  @apply text-center text-white text-lg not-italic font-medium leading-[normal] px-[97px] py-5 rounded-[43px] mt-1 disabled:opacity-50 w-full cursor-pointer;
+  background: linear-gradient(84deg, #6950ff 0%, #c631fb 100%);
+}
+.upload_button {
+  @apply text-center text-white text-lg not-italic font-medium leading-[normal] px-[97px] py-5 rounded-[43px] mt-1 disabled:opacity-50 w-full cursor-pointer;
+  background: #A488FF;
+}
+
+
+.plan_section {
+  @apply flex flex-col gap-5;
+}
+.plan_section p {
+  @apply text-white text-base not-italic font-medium leading-[normal];
+}
+.plan_section .payme_link {
+  @apply flex flex-col justify-center items-center gap-1 flex-[1_0_0] text-white text-xs not-italic font-medium leading-[normal] p-5 rounded-xl;
+  background: #6950ff;
+}
+.plan_section .offerta {
+  @apply flex flex-col gap-1;
+}
+.plan_section .offerta label {
+  @apply text-white text-base not-italic leading-[normal];
+}
+.plan_section .offerta a {
+  @apply text-[#A388FF] text-base not-italic font-medium leading-[normal] underline;
+}
