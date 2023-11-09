@@ -1,62 +1,84 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import Select, { StylesConfig } from "react-select";
-import { forwardRef, useId } from "react";
+import { forwardRef, useContext, useId } from "react";
+import ErrorIcon from "@/app/payment/PaymentSection/ErrorIcon";
+import { useAppContext } from "@/app/context/AppContext";
 
 export interface ISelect {
-    label: string;
-    value: any;
-  }
+  label: string;
+  value: any;
+}
 
 const SelectBox = forwardRef((props: any, ref) => {
+  const { theme } = useAppContext();
+  const isDark = theme === "dark";
+
   const customStyles: StylesConfig = {
     option: (provided: any, { isSelected }) => ({
       ...provided,
-      backgroundColor: isSelected ? "#343434" : "#2b2b2b",
+      backgroundColor:
+        isDark && isSelected
+          ? "#343434"
+          : isDark
+          ? "#2b2b2b"
+          : isSelected
+          ? "#6950FF"
+          : "#f4f4f4",
       margin: 0,
       zIndex: 10,
       position: "relative",
       cursor: "pointer",
-      color: "#fff",
+      color:
+        isDark && isSelected
+          ? "#fff"
+          : isDark
+          ? "#fff"
+          : isSelected
+          ? "#fff"
+          : "#000",
       "&:hover": {
         backgroundColor: "#6950FF",
+        color: "#fff",
       },
       "&:active": {
         backgroundColor: "#6950FF",
+        color: "#fff",
       },
     }),
     control: (provided: any, { isDisabled }) => ({
       ...provided,
       borderColor: "#dedede",
-      backgroundColor: isDisabled ? "#343434" : "#2B2B2B",
+      backgroundColor:
+        isDark && isDisabled
+          ? "#343434"
+          : isDark
+          ? "#2B2B2B"
+          : isDisabled
+          ? "#eee"
+          : "#fff",
       borderRadius: 8,
       padding: "calc(0.75rem - 5px) 1.25rem",
-      color: "#fff",
-      border: "1px solid rgb(64, 64, 64)",
-      "&:hover": {
-        color: "#fff",
-      },
-      "&:disabled": {
-        backgroundColor: "#343434",
-      },
+      color: isDark ? "#fff" : "#000",
+      border: isDark ? "1px solid rgb(64, 64, 64)" : "1px solid #ccc",
     }),
     input: (provided: any) => ({
       ...provided,
       borderRadius: 5,
-      color: "#fff",
+      color: isDark ? "#fff" : "#000",
       padding: 0,
       margin: 0,
     }),
     singleValue: (provided: any) => ({
       ...provided,
       padding: 0,
-      color: "#fff",
+      color: isDark ? "#fff" : "#000",
       margin: 0,
     }),
     placeholder: (provided: any) => ({
       ...provided,
       margin: 0,
-      color: "#f4f4f4",
+      color: isDark ? "#f4f4f4" : "#111",
     }),
     valueContainer: (provided: any) => ({
       ...provided,
@@ -116,7 +138,8 @@ const SelectBox = forwardRef((props: any, ref) => {
         placeholder=""
       />
       {props.error && (
-        <div className="text-left text-sm mt-1 text-red-500">
+        <div className="text-[#EE404C] flex items-center gap-1 sm:text-sm text-xs font-medium mt-1">
+          <ErrorIcon />
           {props.error.message}
         </div>
       )}

@@ -3,6 +3,7 @@ import classes from "./field.module.css";
 import classNames from "classnames";
 import PhoneInput from "react-phone-number-input";
 import "./phoneInput.css";
+import ErrorIcon from "@/app/payment/PaymentSection/ErrorIcon";
 type Props = {
   placeholder?: string;
   error?: any;
@@ -42,7 +43,7 @@ const Field = forwardRef<HTMLInputElement, InputPropsField>(
           />
         )}
 
-        {error && <small>{error.message}</small>}
+        {error && <small><ErrorIcon /> {error.message}</small>}
       </div>
     );
   }

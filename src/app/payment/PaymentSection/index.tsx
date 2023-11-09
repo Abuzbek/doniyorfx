@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useMemo } from "react";
+import React, { ChangeEvent, useCallback, useMemo } from "react";
 import PaymentCard from "../PaymentCard";
 import PlanCard, { PlanCardProps } from "../PlanCard";
 import styles from "../payment.module.css";
@@ -8,16 +8,29 @@ import { Controller, SubmitHandler, useForm } from "react-hook-form";
 import TelegramQuestionCard from "../TelegramQuestionCard";
 import { PaymentService } from "@/app/service/payment.service";
 import { useSearchParams } from "next/navigation";
+import CheckIcon from "./CheckIcon";
+import ErrorIcon from "./ErrorIcon";
+import FileIcon from "./FileIcon";
+import { IFormTypes } from "../page";
 type Props = {
-  plan: number;
+  userData: IFormTypes;
 };
 const montserrat = Montserrat({ subsets: ["latin"] });
 export interface IFormtypes {
   agree: boolean;
   file: any;
 }
-const PaymentSection = ({ plan }: Props) => {
+const PaymentSection = ({ userData }: Props) => {
   const searchParams = useSearchParams();
+  const createQueryString = useCallback(
+    (name: string, value: string) => {
+      const params = new URLSearchParams(searchParams);
+      params.set(name, value);
+
+      return params.toString();
+    },
+    [searchParams]
+  );
   const plans = [
     {
       title: "Standart tarif",
@@ -36,8 +49,8 @@ const PaymentSection = ({ plan }: Props) => {
     },
   ];
   const currentPlan = useMemo(
-    () => plans.find((n) => n.value === plan),
-    [plan]
+    () => plans.find((n) => n.value === userData?.plan),
+    [userData?.plan]
   );
 
   const {
@@ -48,16 +61,38 @@ const PaymentSection = ({ plan }: Props) => {
   } = useForm<IFormtypes>();
   const onSubmit: SubmitHandler<IFormtypes> = async (data) => {
     const formData = new FormData();
-    const userData = JSON.parse(searchParams.get("user") || "");
-    console.log(userData);
+    // const userData = JSON.parse(searchParams.get("user") || "");
+    // console.log(userData);
     formData.append("file", data.file);
     formData.append("name", userData.name);
-    formData.append("plan", userData.plan);
+    formData.append("plan", String(userData.plan));
     formData.append("phone", userData.phone);
     formData.append("course", "1");
     const response = await PaymentService.createPayment(formData);
     console.log(response);
   };
+  
+  const paymeLink = useMemo(() => {
+    const splittedName =
+      userData?.name.split(" ").length > 1
+        ? userData?.name.split(" ")[0]
+        : userData?.name;
+    const splittedSurename =
+      userData?.name.split(" ").length > 1 ? userData?.name.split(" ")[1] : "";
+    const href =
+      "https://payme.uz/fallback/merchant/?id=654b87cfcbc3052122211939" +
+      "&" +
+      createQueryString("name", splittedName) +
+      "&" +
+      createQueryString("familiya", splittedSurename) +
+      "&" +
+      createQueryString("tarif", String(userData?.plan)) +
+      "&" +
+      createQueryString("phone", userData?.phone) +
+      "&" +
+      createQueryString("cource", "1");
+    return href;
+  }, [searchParams, userData]);
   return (
     <div className="flex flex-col gap-6">
       <PaymentCard>
@@ -68,15 +103,19 @@ const PaymentSection = ({ plan }: Props) => {
         className={classNames(montserrat.className, styles.plan_section)}
       >
         <p>1. Payme yoki Uzum orqali to’lovni amalga oshiring</p>
-        <div className="grid grid-cols-2 gap-2">
-          <a href="#!" target="_blank" className={styles.payme_link}>
+        <div className="grid grid-cols-1 gap-2">
+          <a
+            href={paymeLink}
+            target="_blank"
+            className={styles.payme_link}
+          >
             <img src="/img/payme.png" alt="" />
             <span>To‘lovga o‘tish</span>
           </a>
-          <a href="#!" target="_blank" className={styles.payme_link}>
+          {/* <a href="#!" target="_blank" className={styles.payme_link}>
             <img src="/img/payme.png" alt="" />
             <span>To‘lovga o‘tish</span>
-          </a>
+          </a> */}
         </div>
         <Controller
           name={"agree"}
@@ -124,7 +163,12 @@ const PaymentSection = ({ plan }: Props) => {
                     shartlariga roziman
                   </label>
                 </div>
-                {errors.agree && <small>{errors.agree.message}</small>}
+
+                {errors.agree && (
+                  <small className="text-[#EE404C] flex items-center gap-1 sm:text-sm text-xs font-medium">
+                    <ErrorIcon /> {errors.agree.message}
+                  </small>
+                )}
               </div>
             );
           }}
@@ -138,7 +182,7 @@ const PaymentSection = ({ plan }: Props) => {
           name={"file"}
           control={control}
           rules={{
-            required: "Ommaviy offertaga rozi bo'lishingiz kerak!",
+            required: true,
           }}
           render={({ field: { onChange, value, ...field } }) => {
             return (
@@ -161,13 +205,24 @@ const PaymentSection = ({ plan }: Props) => {
                         }
                       }}
                     />
-                    <span>Chek rasmini yuklash uchun bosing</span>
+                    {!!getValues("file") ? (
+                      <span className="flex items-center gap-1 justify-center">
+                        <FileIcon /> {getValues("file").name}
+                      </span>
+                    ) : (
+                      <span>Chek rasmini yuklash uchun bosing</span>
+                    )}
                   </label>
                 </div>
-                {errors.agree && <small>{errors.agree.message}</small>}
+                {errors.file && (
+                  <small className="text-[#EE404C] flex items-center gap-1 sm:text-sm text-xs font-medium">
+                    <ErrorIcon />
+                    To'lovni yakunlash uchun avval chek rasmini yuklang
+                  </small>
+                )}
                 {!!getValues("file") && (
-                  <span className="text-white font-medium">
-                    {getValues("file").name}
+                  <span className="text-green-500 sm:text-sm text-xs font-medium flex items-center gap-1">
+                    <CheckIcon /> Rasm muvaffaqiyatli yuklandi
                   </span>
                 )}
               </div>
@@ -176,7 +231,7 @@ const PaymentSection = ({ plan }: Props) => {
         />
         <button
           className={styles.submit_button}
-          disabled={!isDirty || !isValid}
+          // disabled={!isDirty || !isValid}
         >
           To‘lovni yakunlash
         </button>

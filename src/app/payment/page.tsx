@@ -10,6 +10,7 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import UserInfo from "./UserInfo";
 import PaymentSection from "./PaymentSection";
 import { usePathname, useSearchParams, useRouter } from "next/navigation";
+import AppContextProvider from "../context/AppContext";
 
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
 // const montserrat = Montserrat({ subsets: ["latin"] });
@@ -55,32 +56,34 @@ const Payment = () => {
     }
   }, [pathname, searchParams]);
   return (
-    <div className={classNames(spaceGrotesk.className, styles.main)}>
-      <MainCard>
-        <div className="flex flex-col gap-6">
-          <div className="flex items-center justify-between gap-6">
-            <a href="#" className={styles.logo}>
-              DoniyorFx
-            </a>
-            {userData ? (
-              <UserInfo name={userData.name} phone={userData.phone} />
+    <AppContextProvider>
+      <div className={classNames(spaceGrotesk.className, styles.main)}>
+        <MainCard>
+          <div className="flex flex-col gap-6">
+            <div className="flex items-center justify-between gap-6">
+              <a href="#" className={styles.logo}>
+                DoniyorFx
+              </a>
+              {userData ? (
+                <UserInfo name={userData.name} phone={userData.phone} />
+              ) : null}
+            </div>
+            {step === 1 ? (
+              <FormSection
+                handleSubmit={handleSubmit}
+                onSubmit={onSubmit}
+                errors={errors}
+                control={control}
+                isValid={isValid}
+                isDirty={isDirty}
+              />
+            ) : userData ? (
+              <PaymentSection userData={userData} />
             ) : null}
           </div>
-          {step === 1 ? (
-            <FormSection
-              handleSubmit={handleSubmit}
-              onSubmit={onSubmit}
-              errors={errors}
-              control={control}
-              isValid={isValid}
-              isDirty={isDirty}
-            />
-          ) : userData ? (
-            <PaymentSection plan={userData?.plan} />
-          ) : null}
-        </div>
-      </MainCard>
-    </div>
+        </MainCard>
+      </div>
+    </AppContextProvider>
   );
 };
 

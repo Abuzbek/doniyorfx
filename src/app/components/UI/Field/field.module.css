@@ -2,16 +2,28 @@
   @apply flex flex-col gap-1.5;
 }
 .field label {
-  @apply text-white text-base not-italic font-normal leading-[normal];
+  @apply text-black text-base not-italic font-normal leading-[normal];
 }
 .field input:not(.PhoneInputInput) {
-  @apply border border-neutral-700 rounded-lg border-solid h-[52px] focus:outline-none px-5 py-3 text-white;
-  background: #2b2b2b;
+  @apply border border-[#ccc] rounded-lg border-solid h-[52px] focus:outline-none px-5 py-3 text-black bg-transparent;
 }
 .field .phoneInput {
-  @apply border border-neutral-700 rounded-lg border-solid h-[52px] focus:outline-none px-5 py-3 text-white;
-  background: #2b2b2b;
+  @apply border border-[#ccc] rounded-lg border-solid h-[52px] focus:outline-none px-5 py-3 text-black bg-transparent;
 }
 .field small {
-  @apply text-red-500 text-left text-sm mt-1 ;
+  @apply text-[#EE404C] flex items-center gap-1 sm:text-sm text-xs font-medium mt-1;
+}
+
+@media (prefers-color-scheme: dark) {
+  .field label {
+    @apply text-white;
+  }
+  .field input:not(.PhoneInputInput) {
+    @apply border-neutral-700 text-white;
+    background: #2b2b2b;
+  }
+  .field .phoneInput {
+    @apply border border-neutral-700 text-white;
+    background: #2b2b2b;
+  }
 }
