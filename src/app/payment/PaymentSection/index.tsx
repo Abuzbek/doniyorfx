@@ -6,6 +6,8 @@ import classNames from "classnames";
 import { Montserrat } from "next/font/google";
 import { Controller, SubmitHandler, useForm } from "react-hook-form";
 import TelegramQuestionCard from "../TelegramQuestionCard";
+import { PaymentService } from "@/app/service/payment.service";
+import { useSearchParams } from "next/navigation";
 type Props = {
   plan: number;
 };
@@ -15,6 +17,7 @@ export interface IFormtypes {
   file: any;
 }
 const PaymentSection = ({ plan }: Props) => {
+  const searchParams = useSearchParams();
   const plans = [
     {
       title: "Standart tarif",
@@ -43,15 +46,27 @@ const PaymentSection = ({ plan }: Props) => {
     formState: { errors, isDirty, isValid },
     getValues,
   } = useForm<IFormtypes>();
-  const onSubmit: SubmitHandler<IFormtypes> = (data) => {
-    console.log(data);
+  const onSubmit: SubmitHandler<IFormtypes> = async (data) => {
+    const formData = new FormData();
+    const userData = JSON.parse(searchParams.get("user") || "");
+    console.log(userData);
+    formData.append("file", data.file);
+    formData.append("name", userData.name);
+    formData.append("plan", userData.plan);
+    formData.append("phone", userData.phone);
+    formData.append("course", "1");
+    const response = await PaymentService.createPayment(formData);
+    console.log(response);
   };
   return (
     <div className="flex flex-col gap-6">
       <PaymentCard>
         {!!currentPlan && <PlanCard {...currentPlan} />}
       </PaymentCard>
-      <form onSubmit={handleSubmit(onSubmit)} className={classNames(montserrat.className, styles.plan_section)}>
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className={classNames(montserrat.className, styles.plan_section)}
+      >
         <p>1. Payme yoki Uzum orqali to’lovni amalga oshiring</p>
         <div className="grid grid-cols-2 gap-2">
           <a href="#!" target="_blank" className={styles.payme_link}>
@@ -150,7 +165,11 @@ const PaymentSection = ({ plan }: Props) => {
                   </label>
                 </div>
                 {errors.agree && <small>{errors.agree.message}</small>}
-                {!!getValues("file") && <span className="text-white font-medium">{getValues("file").name}</span>}
+                {!!getValues("file") && (
+                  <span className="text-white font-medium">
+                    {getValues("file").name}
+                  </span>
+                )}
               </div>
             );
           }}
@@ -161,7 +180,7 @@ const PaymentSection = ({ plan }: Props) => {
         >
           To‘lovni yakunlash
         </button>
-        <TelegramQuestionCard/>
+        <TelegramQuestionCard />
       </form>
     </div>
   );

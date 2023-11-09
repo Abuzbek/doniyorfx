@@ -6,10 +6,10 @@
     #530976 50.81%,
     #640666 101.36%
   );
-  @apply flex items-center justify-center py-5;
+  @apply flex items-center justify-center sm:py-5 py-0;
 }
 .payment {
-  @apply max-w-[600px] w-full bg-[#1F1F1F] flex flex-col rounded-3xl;
+  @apply max-w-[600px] w-full bg-[#1F1F1F] flex flex-col sm:rounded-3xl rounded-none;
 }
 .logo {
   @apply text-[#A388FF] text-2xl not-italic font-bold leading-[normal];
@@ -40,10 +40,10 @@
   @apply flex flex-col text-center gap-2 py-5;
 }
 .course_card h3 {
-  @apply text-white text-[32px] not-italic font-bold leading-[normal] uppercase;
+  @apply text-white sm:text-[32px] text-2xl not-italic font-bold leading-[normal] uppercase;
 }
 .course_card p {
-  @apply text-white text-xl not-italic font-medium leading-[normal] tracking-[0.6px];
+  @apply text-white sm:text-xl text-base not-italic font-medium leading-[normal] tracking-[0.6px];
 }
 
 .plan_card {
@@ -63,14 +63,13 @@
   @apply text-white text-sm not-italic font-medium leading-[normal];
 }
 .submit_button {
-  @apply text-center text-white text-lg not-italic font-medium leading-[normal] px-[97px] py-5 rounded-[43px] mt-1 disabled:opacity-50 w-full cursor-pointer;
+  @apply text-center text-white text-lg not-italic font-medium leading-[normal] p-5 rounded-[43px] mt-1 disabled:opacity-50 w-full cursor-pointer;
   background: linear-gradient(84deg, #6950ff 0%, #c631fb 100%);
 }
 .upload_button {
-  @apply text-center text-white text-lg not-italic font-medium leading-[normal] px-[97px] py-5 rounded-[43px] mt-1 disabled:opacity-50 w-full cursor-pointer;
-  background: #A488FF;
+  @apply text-center text-white sm:text-lg text-sm not-italic font-medium leading-[normal] p-5 rounded-[43px] mt-1 disabled:opacity-50 w-full cursor-pointer;
+  background: #a488ff;
 }
-
 
 .plan_section {
   @apply flex flex-col gap-5;
