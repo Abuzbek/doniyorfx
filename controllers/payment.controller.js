@@ -7,7 +7,7 @@ export const PaymentCreateController = async (req, res) => {
   const file = req.file;
   const payment = new Payments({
     ...req.body,
-    file: file ? "/img/" + file.filename : "",
+    file: file ? "/images/" + file.filename : "",
   });
   const currentPayment = await payment.save();
   res.json(currentPayment);

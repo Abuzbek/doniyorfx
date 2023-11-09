@@ -4,7 +4,7 @@ import dayjs from "dayjs";
 
 const storage = multer.diskStorage({
   destination(req, file, cb) {
-    cb(null, "./public/img");
+    cb(null, "./public/images");
   },
   filename(req, file, cb) {
     const date = dayjs().format("DDMMYYYY-HHmmss_SSS");
