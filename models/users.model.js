@@ -1,4 +1,4 @@
-import { Schema } from "mongoose";
+import mongoose, { Schema } from "mongoose";
 export const usersSchema = new Schema({
   email: {
     type: String,
