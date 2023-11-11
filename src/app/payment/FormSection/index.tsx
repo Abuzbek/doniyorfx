@@ -54,9 +54,9 @@ const FormSection = ({
       <PaymentCard>
         <CourseCard />
       </PaymentCard>
-      <p className={classNames(montserrat.className, styles.middle_text)}>
+      {/* <p className={classNames(montserrat.className, styles.middle_text)}>
         Trenddagi kasbni katta tajribaga ega mutaxassislardan o’rganing
-      </p>
+      </p> */}
       <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4">
         <Controller
           name={"name"}

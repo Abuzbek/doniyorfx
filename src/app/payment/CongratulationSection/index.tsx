@@ -13,11 +13,13 @@ const CongratulationSection = (props: Props) => {
         montserrat.className
       )}
     >
-      <div className={styles.icon}>🥳</div>
+      <div className={styles.icon}>
+        <img src="/img/con.png" alt="" />
+      </div>
       <div className={styles.text_content}>
         <h3>Tabriklaymiz!</h3>
         <h2>So’rovingiz muvaffaqiyatli qabul qilindi</h2>
-        <p>Siz bilan 24 soat ichida bog‘lanamiz va batafsil ma’lumot beramiz</p>
+        <p>Siz bilan 48 soat ichida bog‘lanamiz va batafsil ma’lumot beramiz</p>
       </div>
       <div className={styles.button_group}>
         <a href="/" className={styles.home_link}>
@@ -26,6 +28,7 @@ const CongratulationSection = (props: Props) => {
         <a
           href="https://instagram.com/DoniyorFx"
           className={styles.instagram_link}
+          target="_blank"
         >
           <img src="/img/instagram.svg" alt="" />
           @DoniyorFx

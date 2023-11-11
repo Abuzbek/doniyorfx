@@ -2,7 +2,9 @@
   @apply flex flex-col gap-10 items-center;
 }
 .icon {
-  @apply text-[140px] not-italic font-medium leading-[normal];
+  img {
+    width: 120px;
+  }
 }
 .text_content {
   @apply text-center flex flex-col gap-4 md:px-6;

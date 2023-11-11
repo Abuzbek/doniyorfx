@@ -12,6 +12,7 @@ import CheckIcon from "./CheckIcon";
 import ErrorIcon from "./ErrorIcon";
 import FileIcon from "./FileIcon";
 import { IFormTypes } from "../page";
+import CreditCard from "../CreditCard";
 type Props = {
   userData: IFormTypes;
 };
@@ -38,16 +39,19 @@ const PaymentSection = ({ userData }: Props) => {
     {
       title: "Standart tarif",
       price: "2 797 000 so‘m",
+      price_dollar: '227$',
       value: 1,
     },
     {
       title: "Premium tarif",
       price: "2 997 000 so‘m",
+      price_dollar: '243$',
       value: 2,
     },
     {
       title: "VIP tarif",
       price: "5 997 000 so‘m",
+      price_dollar: '487$',
       value: 3,
     },
   ];
@@ -68,6 +72,7 @@ const PaymentSection = ({ userData }: Props) => {
     // const userData = JSON.parse(searchParams.get("user") || "");
     formData.append("file", data.file);
     formData.append("name", userData.name);
+    formData.append("surname", userData.surname);
     formData.append("plan", String(userData.plan));
     formData.append("phone", userData.phone);
     formData.append("course", "1");
@@ -84,18 +89,12 @@ const PaymentSection = ({ userData }: Props) => {
   };
 
   const paymeLink = useMemo(() => {
-    const splittedName =
-      userData?.name.split(" ").length > 1
-        ? userData?.name.split(" ")[0]
-        : userData?.name;
-    const splittedSurename =
-      userData?.name.split(" ").length > 1 ? userData?.name.split(" ")[1] : "";
     const href =
       "https://payme.uz/fallback/merchant/?id=654b87cfcbc3052122211939" +
       "&" +
-      createQueryString("name", splittedName) +
+      createQueryString("name", userData.name) +
       "&" +
-      createQueryString("familiya", splittedSurename) +
+      createQueryString("familiya", userData.surname) +
       "&" +
       createQueryString("tarif", String(userData?.plan)) +
       "&" +
@@ -115,20 +114,21 @@ const PaymentSection = ({ userData }: Props) => {
         className={classNames(montserrat.className, styles.plan_section)}
       >
         <p>1. Payme yoki Uzum orqali to’lovni amalga oshiring</p>
-        <div className="grid grid-cols-2 gap-2">
+        <div className="grid grid-cols-1 gap-2">
           <a href={paymeLink} target="_blank" className={styles.payme_link}>
             <img className="w-16" src="/img/payme.png" alt="" />
             <span>To‘lovga o‘tish</span>
           </a>
-          <a href={paymeLink} target="_blank" className={styles.uzum_link}>
+          {/* <a href={paymeLink} target="_blank" className={styles.uzum_link}>
             <img className="w-16" src="/img/uzum.png" alt="" />
             <span>To‘lovga o‘tish</span>
-          </a>
+          </a> */}
           {/* <a href="#!" target="_blank" className={styles.payme_link}>
             <img src="/img/payme.png" alt="" />
             <span>To‘lovga o‘tish</span>
           </a> */}
         </div>
+        <CreditCard price={currentPlan?.price} price_dollar={currentPlan?.price_dollar} />
         <Controller
           name={"agree"}
           control={control}

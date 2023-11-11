@@ -12,7 +12,7 @@
   @apply max-w-[600px] w-full bg-[#FFF] flex flex-col sm:rounded-3xl rounded-none;
 }
 .logo {
-  @apply text-[#754CFE] text-2xl not-italic font-bold leading-[normal];
+  @apply text-[#754CFE] text-lg not-italic font-bold leading-[normal];
 }
 .middle_text {
   @apply text-black text-center text-lg not-italic font-medium leading-[normal];
