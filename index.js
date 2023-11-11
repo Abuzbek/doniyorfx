@@ -30,7 +30,7 @@ const adminJs = new AdminJS({
     component: add("components/dashboard.jsx", "Dashboard"),
     handler: dashboardHandler,
   },
-  rootPath: "/admin",
+  rootPath: "/",
 });
 app.use(cors({ origin: "*" }));
 app.use(adminJs.options.rootPath, expressAuthenticatedRouter(adminJs));
