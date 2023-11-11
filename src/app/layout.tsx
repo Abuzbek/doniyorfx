@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: "Videomontajni 0 dan o‘rganing",
   description:
     "Bu kurs video tahrirlash haqida. Trening davomida biz turli janrlar bilan ishlaymiz: reportaj, intervyu, shuningdek, treyler va reklama rolikini tahrirlaymiz. Materiallar bizdan, lekin agar sizda bo'lsa, ulardan foydalaning.",
+  
 };
 
 export default function RootLayout({
