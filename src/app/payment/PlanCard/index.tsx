@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../payment.module.css";
+import styles from "../payment.module.scss";
 export type PlanCardProps = {
   title: string;
   price: string;

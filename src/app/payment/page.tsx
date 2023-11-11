@@ -1,7 +1,7 @@
 "use client";
 import React, { useCallback, useEffect, useState } from "react";
 import { Space_Grotesk } from "next/font/google";
-import styles from "./payment.module.css";
+import styles from "./payment.module.scss";
 import classNames from "classnames";
 import MainCard from "./MainCard";
 import FormSection from "./FormSection";
@@ -10,7 +10,10 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import UserInfo from "./UserInfo";
 import PaymentSection from "./PaymentSection";
 import { usePathname, useSearchParams, useRouter } from "next/navigation";
-import AppContextProvider from "../context/AppContext";
+import AppContextProvider, { useAppContext } from "../context/AppContext";
+import TagManager from "react-gtm-module";
+import CongratulationSection from "./CongratulationSection";
+import ThemeToggleSwitcher from "./ToggleSwitcher";
 
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
 // const montserrat = Montserrat({ subsets: ["latin"] });
@@ -20,13 +23,16 @@ export interface IFormTypes {
   phone: string;
   plan: number;
 }
-
+const measurementId = "G-EGRC8JB9PG";
 const Payment = () => {
   const [step, setStep] = useState(1);
   const [userData, setUserData] = useState<IFormTypes>();
+  const [finish, setFinish] = useState(false);
   const searchParams = useSearchParams();
   const pathname = usePathname();
   const router = useRouter();
+  
+
   const createQueryString = useCallback(
     (name: string, value: string) => {
       const params = new URLSearchParams(searchParams);
@@ -36,6 +42,7 @@ const Payment = () => {
     },
     [searchParams]
   );
+
   const {
     handleSubmit,
     control,
@@ -49,16 +56,25 @@ const Payment = () => {
       pathname + "?" + createQueryString("user", JSON.stringify(data))
     );
   };
+
   useEffect(() => {
     if (searchParams.get("user")) {
       setStep(2);
       setUserData(JSON.parse(searchParams.get("user") || ""));
     }
+    setFinish(searchParams.has("finish"));
   }, [pathname, searchParams]);
+
+  useEffect(() => {
+    TagManager.initialize({ gtmId: measurementId });
+  }, []);
   return (
     <AppContextProvider>
       <div className={classNames(spaceGrotesk.className, styles.main)}>
-        <MainCard>
+        {/* <ThemeToggleSwitcher
+          invertedIconLogic
+        /> */}
+        <MainCard finish={finish}>
           <div className="flex flex-col gap-6">
             <div className="flex items-center justify-between gap-6">
               <a href="#" className={styles.logo}>
@@ -77,8 +93,10 @@ const Payment = () => {
                 isValid={isValid}
                 isDirty={isDirty}
               />
-            ) : userData ? (
+            ) : userData && !finish ? (
               <PaymentSection userData={userData} />
+            ) : userData && finish ? (
+              <CongratulationSection />
             ) : null}
           </div>
         </MainCard>

@@ -13,10 +13,10 @@ const UserInfo = ({ name, phone }: Props) => {
   return (
     <div className={classNames("flex items-center gap-2 text-right", spaceGrotesk)}>
       <div className="flex flex-col gap-0.5">
-        <p className="text-white text-base not-italic font-medium leading-[normal]">
+        <p className="text-black text-base not-italic font-medium leading-[normal] dark:text-white">
           {name}
         </p>
-        <p className="text-white text-sm not-italic font-normal leading-[normal]">
+        <p className="text-black text-sm not-italic font-normal leading-[normal] dark:text-white">
           {phone}
         </p>
       </div>

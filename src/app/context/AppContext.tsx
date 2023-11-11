@@ -18,15 +18,42 @@ function AppContextProvider({
   ...props
 }: PropsWithChildren<AppContextProviderProps>) {
   const [isOpenFilter, setOpenFilter] = useState(true);
-
-  const [theme, setTheme] = useLocalStorage("theme", "dark");
-
+  const checkTheme = () => {
+    if (typeof window === "undefined") return false;
+    const prefersDark =
+      typeof window !== "undefined"
+        ? localStorage.theme === "dark" ||
+          (!("theme" in localStorage) &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches)
+        : true;
+    if (prefersDark) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+    return prefersDark;
+  };
+  const [theme, setTheme] = useLocalStorage<string>(
+    "theme",
+    checkTheme() ? "dark" : "light"
+  );
   const handleTheme = () => {
     if (theme === "light") {
       setTheme("dark");
     } else {
       setTheme("light");
     }
+    setTimeout(() => {
+      if (
+        localStorage.theme === "dark" ||
+        (!("theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    }, 200);
   };
 
   return (

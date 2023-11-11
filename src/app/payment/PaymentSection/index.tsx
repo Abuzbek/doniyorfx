@@ -1,13 +1,13 @@
 import React, { ChangeEvent, useCallback, useMemo } from "react";
 import PaymentCard from "../PaymentCard";
-import PlanCard, { PlanCardProps } from "../PlanCard";
-import styles from "../payment.module.css";
+import PlanCard from "../PlanCard";
+import styles from "../payment.module.scss";
 import classNames from "classnames";
 import { Montserrat } from "next/font/google";
 import { Controller, SubmitHandler, useForm } from "react-hook-form";
 import TelegramQuestionCard from "../TelegramQuestionCard";
 import { PaymentService } from "@/app/service/payment.service";
-import { useSearchParams } from "next/navigation";
+import { useSearchParams, useRouter, usePathname } from "next/navigation";
 import CheckIcon from "./CheckIcon";
 import ErrorIcon from "./ErrorIcon";
 import FileIcon from "./FileIcon";
@@ -22,6 +22,9 @@ export interface IFormtypes {
 }
 const PaymentSection = ({ userData }: Props) => {
   const searchParams = useSearchParams();
+  const router = useRouter();
+  const pathname = usePathname();
+
   const createQueryString = useCallback(
     (name: string, value: string) => {
       const params = new URLSearchParams(searchParams);
@@ -62,16 +65,23 @@ const PaymentSection = ({ userData }: Props) => {
   const onSubmit: SubmitHandler<IFormtypes> = async (data) => {
     const formData = new FormData();
     // const userData = JSON.parse(searchParams.get("user") || "");
-    // console.log(userData);
     formData.append("file", data.file);
     formData.append("name", userData.name);
     formData.append("plan", String(userData.plan));
     formData.append("phone", userData.phone);
     formData.append("course", "1");
     const response = await PaymentService.createPayment(formData);
-    console.log(response);
+    if (response.status === 200) {
+      router.push(
+        pathname +
+          "?" +
+          createQueryString("user", JSON.stringify(userData)) +
+          "&finish=" +
+          String(true)
+      );
+    }
   };
-  
+
   const paymeLink = useMemo(() => {
     const splittedName =
       userData?.name.split(" ").length > 1
@@ -104,11 +114,7 @@ const PaymentSection = ({ userData }: Props) => {
       >
         <p>1. Payme yoki Uzum orqali to’lovni amalga oshiring</p>
         <div className="grid grid-cols-1 gap-2">
-          <a
-            href={paymeLink}
-            target="_blank"
-            className={styles.payme_link}
-          >
+          <a href={paymeLink} target="_blank" className={styles.payme_link}>
             <img src="/img/payme.png" alt="" />
             <span>To‘lovga o‘tish</span>
           </a>
@@ -136,7 +142,7 @@ const PaymentSection = ({ userData }: Props) => {
                       type="checkbox"
                       className="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-[#A388FF] checked:bg-[#A388FF] checked:before:bg-[#A388FF] hover:before:opacity-10"
                       id="checkbox"
-                      checked={value}
+                      defaultChecked={value}
                       {...field}
                     />
                     <div className="absolute text-white transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
@@ -230,8 +236,8 @@ const PaymentSection = ({ userData }: Props) => {
           }}
         />
         <button
-          className={styles.submit_button}
-          // disabled={!isDirty || !isValid}
+          className={classNames(styles.submit_button, !isDirty || !isValid ? 'opacity-50' : '')}
+          // disabled={}
         >
           To‘lovni yakunlash
         </button>

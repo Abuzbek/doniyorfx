@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
+import classNames from "classnames";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
@@ -16,8 +17,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="light">
-      <body suppressHydrationWarning={true} className={montserrat.className}>
+    <html lang="en">
+      <body
+        suppressHydrationWarning={true}
+        className={classNames(montserrat.className)}
+      >
         {children}
       </body>
     </html>

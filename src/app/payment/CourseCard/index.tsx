@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../payment.module.css";
+import styles from "../payment.module.scss";
 type Props = {};
 
 const CourseCard = (props: Props) => {

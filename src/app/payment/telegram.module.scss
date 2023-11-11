@@ -1,6 +1,6 @@
 .telegram_card {
   @apply flex flex-col items-center gap-4 self-stretch px-4 py-5 rounded-xl;
-  background: #DCEBFF;
+  background: #dcebff;
 }
 .telegram_card span {
   @apply text-black text-center text-base not-italic font-normal leading-[130%];
@@ -8,10 +8,15 @@
 .telegram_card a {
   @apply border flex justify-center items-center gap-2 self-stretch p-[18px] rounded-[43px] border-solid border-transparent w-full;
   @apply text-[#6950FF] text-sm not-italic font-medium leading-[normal];
-  background: linear-gradient(0deg, rgba(105, 80, 255, 0.30) 0%, rgba(105, 80, 255, 0.30) 100%), #FFF;
+  background: linear-gradient(
+      0deg,
+      rgba(105, 80, 255, 0.3) 0%,
+      rgba(105, 80, 255, 0.3) 100%
+    ),
+    #fff;
 }
 
-@media (prefers-color-scheme: dark) {
+html[class="dark"] {
   .telegram_card {
     background: #343434;
   }

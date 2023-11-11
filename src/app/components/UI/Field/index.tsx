@@ -1,5 +1,5 @@
 import React, { InputHTMLAttributes, forwardRef } from "react";
-import classes from "./field.module.css";
+import classes from "./field.module.scss";
 import classNames from "classnames";
 import PhoneInput from "react-phone-number-input";
 import "./phoneInput.css";

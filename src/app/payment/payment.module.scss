@@ -68,7 +68,7 @@
 }
 .upload_button {
   @apply text-center text-white sm:text-lg text-sm not-italic font-medium leading-[normal] p-5 rounded-[43px] mt-1 disabled:opacity-50 w-full cursor-pointer;
-  background: #a488ff;
+  background: #9233DD;
 }
 
 .plan_section {
@@ -91,17 +91,7 @@
   @apply text-[#A388FF] text-base not-italic font-medium leading-[normal] underline;
 }
 
-@media (prefers-color-scheme: dark) {
-  .main {
-    min-height: 100vh;
-    background: linear-gradient(
-      74deg,
-      #2f0855 -0.6%,
-      #530976 50.81%,
-      #640666 101.36%
-    );
-    @apply flex items-center justify-center sm:py-5 py-0;
-  }
+html[class="dark"] {
   .payment {
     @apply bg-[#1F1F1F];
   }

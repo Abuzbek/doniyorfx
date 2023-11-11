@@ -9,7 +9,7 @@ import {
 import Field from "@/app/components/UI/Field";
 import SelectBox, { ISelect } from "@/app/components/UI/SelectBox";
 import classNames from "classnames";
-import styles from "../payment.module.css";
+import styles from "../payment.module.scss";
 import { IFormTypes } from "../page";
 import { Montserrat } from "next/font/google";
 import PaymentCard from "../PaymentCard";

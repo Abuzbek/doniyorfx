@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./telegram.module.css";
+import styles from "./telegram.module.scss";
 import { useAppContext } from "../context/AppContext";
 type Props = {};
 
@@ -13,7 +13,7 @@ const TelegramQuestionCard = (props: Props) => {
         <br />
         Biz bilan telegramdan bog’laning
       </span>
-      <a href="#!">
+      <a href="https://t.me/doniyor_fx" target="_blank">
         {isDark ? (
           <img src="/img/telegram_dark.svg" alt="Telegram" />
         ) : (
