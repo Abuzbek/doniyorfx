@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useCallback, useMemo } from "react";
+import React, { ChangeEvent, useCallback, useMemo, useState } from "react";
 import PaymentCard from "../PaymentCard";
 import PlanCard from "../PlanCard";
 import styles from "../payment.module.scss";
@@ -22,6 +22,7 @@ export interface IFormtypes {
   file: any;
 }
 const PaymentSection = ({ userData }: Props) => {
+  const [isLoading, setLoading] = useState(false);
   const searchParams = useSearchParams();
   const router = useRouter();
   const pathname = usePathname();
@@ -39,19 +40,19 @@ const PaymentSection = ({ userData }: Props) => {
     {
       title: "Standart tarif",
       price: "2 797 000 so‘m",
-      price_dollar: '227$',
+      price_dollar: "227$",
       value: 1,
     },
     {
       title: "Premium tarif",
       price: "2 997 000 so‘m",
-      price_dollar: '243$',
+      price_dollar: "243$",
       value: 2,
     },
     {
       title: "VIP tarif",
       price: "5 997 000 so‘m",
-      price_dollar: '487$',
+      price_dollar: "487$",
       value: 3,
     },
   ];
@@ -68,6 +69,7 @@ const PaymentSection = ({ userData }: Props) => {
   } = useForm<IFormtypes>({ defaultValues: { agree: true } });
 
   const onSubmit: SubmitHandler<IFormtypes> = async (data) => {
+    setLoading(true);
     const formData = new FormData();
     // const userData = JSON.parse(searchParams.get("user") || "");
     formData.append("file", data.file);
@@ -78,6 +80,7 @@ const PaymentSection = ({ userData }: Props) => {
     formData.append("course", "1");
     const response = await PaymentService.createPayment(formData);
     if (response.status === 200) {
+      setLoading(false);
       router.push(
         pathname +
           "?" +
@@ -106,6 +109,30 @@ const PaymentSection = ({ userData }: Props) => {
 
   return (
     <div className="flex flex-col gap-6">
+      {isLoading && (
+        <div className="top-0 left-0 fixed w-full h-full z-50 bg-black opacity-50 flex items-center justify-center">
+          <svg
+            className="animate-spin -ml-1 mr-3 h-20 w-20 text-white"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+          >
+            <circle
+              className="opacity-25"
+              cx="12"
+              cy="12"
+              r="10"
+              stroke="currentColor"
+              strokeWidth="4"
+            ></circle>
+            <path
+              className="opacity-75"
+              fill="currentColor"
+              d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+            ></path>
+          </svg>
+        </div>
+      )}
       <PaymentCard>
         {!!currentPlan && <PlanCard {...currentPlan} />}
       </PaymentCard>
@@ -128,7 +155,10 @@ const PaymentSection = ({ userData }: Props) => {
             <span>To‘lovga o‘tish</span>
           </a> */}
         </div>
-        <CreditCard price={currentPlan?.price} price_dollar={currentPlan?.price_dollar} />
+        <CreditCard
+          price={currentPlan?.price}
+          price_dollar={currentPlan?.price_dollar}
+        />
         <Controller
           name={"agree"}
           control={control}
