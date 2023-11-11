@@ -113,7 +113,7 @@ const PaymentSection = ({ userData }: Props) => {
         onSubmit={handleSubmit(onSubmit)}
         className={classNames(montserrat.className, styles.plan_section)}
       >
-        <p>1. Payme yoki Uzum orqali to’lovni amalga oshiring</p>
+        <p>1. Payme orqali to’lovni amalga oshiring</p>
         <div className="grid grid-cols-1 gap-2">
           <a href={paymeLink} target="_blank" className={styles.payme_link}>
             <img className="w-16" src="/img/payme.png" alt="" />
