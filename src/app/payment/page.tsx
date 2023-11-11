@@ -73,9 +73,13 @@ const Payment = () => {
       <MainCard finish={finish}>
         <div className="flex flex-col gap-6">
           <div className="flex items-center justify-between gap-6">
-            <a href="#" className={styles.logo}>Professional <br/> Mobilografiya</a>
             {userData ? (
-              <UserInfo name={userData.name} phone={userData.phone} />
+              <>
+                <a href="#" className={styles.logo}>
+                  Professional <br /> Mobilografiya
+                </a>
+                <UserInfo name={userData.name} phone={userData.phone} />
+              </>
             ) : null}
           </div>
           {step === 1 ? (
