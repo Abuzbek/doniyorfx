@@ -4,6 +4,10 @@ export const paymentSchema = new Schema({
     type: String,
     required: true,
   },
+  surname: {
+    type: String,
+    required: true,
+  },
   phone: {
     type: String,
     required: true,
