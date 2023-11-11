@@ -61,7 +61,8 @@ const PaymentSection = ({ userData }: Props) => {
     control,
     formState: { errors, isDirty, isValid },
     getValues,
-  } = useForm<IFormtypes>();
+  } = useForm<IFormtypes>({ defaultValues: { agree: true } });
+
   const onSubmit: SubmitHandler<IFormtypes> = async (data) => {
     const formData = new FormData();
     // const userData = JSON.parse(searchParams.get("user") || "");
@@ -103,6 +104,7 @@ const PaymentSection = ({ userData }: Props) => {
       createQueryString("cource", "1");
     return href;
   }, [searchParams, userData]);
+
   return (
     <div className="flex flex-col gap-6">
       <PaymentCard>
@@ -113,9 +115,13 @@ const PaymentSection = ({ userData }: Props) => {
         className={classNames(montserrat.className, styles.plan_section)}
       >
         <p>1. Payme yoki Uzum orqali to’lovni amalga oshiring</p>
-        <div className="grid grid-cols-1 gap-2">
+        <div className="grid grid-cols-2 gap-2">
           <a href={paymeLink} target="_blank" className={styles.payme_link}>
-            <img src="/img/payme.png" alt="" />
+            <img className="w-16" src="/img/payme.png" alt="" />
+            <span>To‘lovga o‘tish</span>
+          </a>
+          <a href={paymeLink} target="_blank" className={styles.uzum_link}>
+            <img className="w-16" src="/img/uzum.png" alt="" />
             <span>To‘lovga o‘tish</span>
           </a>
           {/* <a href="#!" target="_blank" className={styles.payme_link}>
@@ -140,7 +146,7 @@ const PaymentSection = ({ userData }: Props) => {
                   >
                     <input
                       type="checkbox"
-                      className="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-[#A388FF] checked:bg-[#A388FF] checked:before:bg-[#A388FF] hover:before:opacity-10"
+                      className="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-[#6E4EFF] checked:bg-[#6E4EFF] checked:before:bg-[#6E4EFF] hover:before:opacity-10"
                       id="checkbox"
                       defaultChecked={value}
                       {...field}
@@ -163,7 +169,7 @@ const PaymentSection = ({ userData }: Props) => {
                     </div>
                   </label>
                   <label htmlFor="checkbox">
-                    <a href="#!" target="_blank">
+                    <a href="/img/oferta-online-edu.docx" target="_blank">
                       Shartnoma
                     </a>{" "}
                     shartlariga roziman
@@ -236,7 +242,10 @@ const PaymentSection = ({ userData }: Props) => {
           }}
         />
         <button
-          className={classNames(styles.submit_button, !isDirty || !isValid ? 'opacity-50' : '')}
+          className={classNames(
+            styles.submit_button,
+            !isDirty || !isValid ? "opacity-50" : ""
+          )}
           // disabled={}
         >
           To‘lovni yakunlash

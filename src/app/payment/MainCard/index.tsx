@@ -12,8 +12,8 @@ type Props = {
 };
 
 const MainCard = ({ children, finish }: Props) => {
-  const {theme} = useAppContext()
-  const isDark = theme === 'dark'
+  const { theme } = useAppContext();
+  const isDark = theme === "dark";
   return (
     <div className={classNames(styles.payment, finish ? "pb-36" : "")}>
       <div className={styles.payment_top}>{children}</div>
@@ -21,11 +21,13 @@ const MainCard = ({ children, finish }: Props) => {
         <div
           className={classNames(styles.payment_bottom, montserrat.className)}
         >
-          <a href="#!">Ommaviy oferta</a>
+          <a href="/img/oferta-online-edu.docx" target="_blank">
+            Ommaviy oferta
+          </a>
           <p>
-            OOO “ONLINE EDU” Toshkent shahri, Yunusobod tumani, Buyuk Turon MFY,
-            Ц-2, 24A uy. H/R 2020 8000 5055 5783 4001 “KDB BANK UZBEKISTAN” MFO:
-            01065 INN: 309769049
+            MChJ “ONLINE EDU” Meros MFY, Bog’ibo’ston ko’chasi, 186-188-uy. INN:
+            310890219 OKED: 85590 H/R 20208000005711026001 Bank: “IPAK YO’LI”
+            AIT BANKING MIROBOD FILIALI MFO: 01101
           </p>
         </div>
       )}

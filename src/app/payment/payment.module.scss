@@ -12,7 +12,7 @@
   @apply max-w-[600px] w-full bg-[#FFF] flex flex-col sm:rounded-3xl rounded-none;
 }
 .logo {
-  @apply text-[#A388FF] text-2xl not-italic font-bold leading-[normal];
+  @apply text-[#754CFE] text-2xl not-italic font-bold leading-[normal];
 }
 .middle_text {
   @apply text-black text-center text-lg not-italic font-medium leading-[normal];
@@ -81,6 +81,10 @@
   @apply flex flex-col justify-center items-center gap-1 flex-[1_0_0] text-white text-xs not-italic font-medium leading-[normal] p-5 rounded-xl;
   background: #6950ff;
 }
+.plan_section .uzum_link {
+  @apply flex flex-col justify-center items-center gap-1 flex-[1_0_0] text-white text-xs not-italic font-medium leading-[normal] p-5 rounded-xl;
+  background: #9B2BF3;
+}
 .plan_section .offerta {
   @apply flex flex-col gap-1;
 }
@@ -88,7 +92,7 @@
   @apply text-black text-base not-italic leading-[normal];
 }
 .plan_section .offerta a {
-  @apply text-[#A388FF] text-base not-italic font-medium leading-[normal] underline;
+  @apply text-[#6E4EFF] text-base not-italic font-medium leading-[normal] underline;
 }
 
 html[class="dark"] {
@@ -96,7 +100,7 @@ html[class="dark"] {
     @apply bg-[#1F1F1F];
   }
   .logo {
-    @apply text-[#A388FF];
+    @apply text-[#754CFE];
   }
   .middle_text {
     @apply text-white;
@@ -153,6 +157,6 @@ html[class="dark"] {
     @apply text-white;
   }
   .plan_section .offerta a {
-    @apply text-[#A388FF];
+    @apply text-[#6E4EFF];
   }
 }

@@ -35,8 +35,10 @@ function AppContextProvider({
   };
   const [theme, setTheme] = useLocalStorage<string>(
     "theme",
-    checkTheme() ? "dark" : "light"
+    "light"
   );
+  console.log(theme);
+  
   const handleTheme = () => {
     if (theme === "light") {
       setTheme("dark");

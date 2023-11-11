@@ -17,6 +17,7 @@ import CourseCard from "../CourseCard";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
+var regexPhone = /^\+(?:[0-9] ?){8,15}[0-9]$/;
 type Props = {
   handleSubmit: UseFormHandleSubmit<IFormTypes, undefined>;
   onSubmit: SubmitHandler<IFormTypes>;
@@ -76,11 +77,33 @@ const FormSection = ({
           }}
         />
         <Controller
+          name={"surname"}
+          control={control}
+          rules={{
+            required: "Familiya bo'sh bo'lmasligi shart",
+            minLength: { value: 3, message: "Familiyangizni to'liq yozing" },
+          }}
+          render={({ field: { value, ...field } }) => {
+            return (
+              <Field
+                {...field}
+                value={value || ""}
+                label="Familiya"
+                error={errors.surname}
+              />
+            );
+          }}
+        />
+        <Controller
           name={"phone"}
           control={control}
           rules={{
             required: "Telefon bo'sh bo'lmasligi shart",
-            minLength: { value: 10, message: "Raqamingizni to'liq yozing" },
+            // minLength: { value: 6, message: "Raqamingizni to'liq yozing" },
+            pattern: {
+              value: regexPhone,
+              message: "Raqamingizni to'g'ri yozing",
+            },
           }}
           render={({ field: { value, ...field } }) => {
             return (
@@ -108,13 +131,17 @@ const FormSection = ({
                 onChange={(val: ISelect) => onChange(val.value)}
                 label="Tarif"
                 error={errors.plan}
+                placeholder="Tarifni tanlang"
               />
             );
           }}
         />
         <button
-          className={classNames(styles.submit_button, montserrat.className)}
-          disabled={!isDirty || !isValid}
+          className={classNames(
+            styles.submit_button,
+            !isDirty || !isValid ? "opacity-50" : "",
+            montserrat.className
+          )}
         >
           To‘lovga o‘tish
         </button>

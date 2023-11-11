@@ -78,7 +78,7 @@ const SelectBox = forwardRef((props: any, ref) => {
     placeholder: (provided: any) => ({
       ...provided,
       margin: 0,
-      color: isDark ? "#f4f4f4" : "#111",
+      color: isDark ? "#f4f4f4" : "#B4B0AF",
     }),
     valueContainer: (provided: any) => ({
       ...provided,
@@ -135,7 +135,6 @@ const SelectBox = forwardRef((props: any, ref) => {
           ...theme,
           borderRadius: 0,
         })}
-        placeholder=""
       />
       {props.error && (
         <div className="text-[#EE404C] flex items-center gap-1 sm:text-sm text-xs font-medium mt-1">

@@ -10,16 +10,16 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import UserInfo from "./UserInfo";
 import PaymentSection from "./PaymentSection";
 import { usePathname, useSearchParams, useRouter } from "next/navigation";
-import AppContextProvider, { useAppContext } from "../context/AppContext";
+import AppContextProvider from "../context/AppContext";
 import TagManager from "react-gtm-module";
 import CongratulationSection from "./CongratulationSection";
-import ThemeToggleSwitcher from "./ToggleSwitcher";
 
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
 // const montserrat = Montserrat({ subsets: ["latin"] });
 
 export interface IFormTypes {
   name: string;
+  surname: string;
   phone: string;
   plan: number;
 }
@@ -31,7 +31,6 @@ const Payment = () => {
   const searchParams = useSearchParams();
   const pathname = usePathname();
   const router = useRouter();
-  
 
   const createQueryString = useCallback(
     (name: string, value: string) => {
@@ -69,39 +68,35 @@ const Payment = () => {
     TagManager.initialize({ gtmId: measurementId });
   }, []);
   return (
-    <AppContextProvider>
-      <div className={classNames(spaceGrotesk.className, styles.main)}>
-        {/* <ThemeToggleSwitcher
-          invertedIconLogic
-        /> */}
-        <MainCard finish={finish}>
-          <div className="flex flex-col gap-6">
-            <div className="flex items-center justify-between gap-6">
-              <a href="#" className={styles.logo}>
-                DoniyorFx
-              </a>
-              {userData ? (
-                <UserInfo name={userData.name} phone={userData.phone} />
-              ) : null}
-            </div>
-            {step === 1 ? (
-              <FormSection
-                handleSubmit={handleSubmit}
-                onSubmit={onSubmit}
-                errors={errors}
-                control={control}
-                isValid={isValid}
-                isDirty={isDirty}
-              />
-            ) : userData && !finish ? (
-              <PaymentSection userData={userData} />
-            ) : userData && finish ? (
-              <CongratulationSection />
+    // <AppContextProvider>
+    <div className={classNames(spaceGrotesk.className, styles.main)}>
+      <MainCard finish={finish}>
+        <div className="flex flex-col gap-6">
+          <div className="flex items-center justify-between gap-6">
+            <a href="#" className={styles.logo}>
+              DoniyorFx
+            </a>
+            {userData ? (
+              <UserInfo name={userData.name} phone={userData.phone} />
             ) : null}
           </div>
-        </MainCard>
-      </div>
-    </AppContextProvider>
+          {step === 1 ? (
+            <FormSection
+              handleSubmit={handleSubmit}
+              onSubmit={onSubmit}
+              errors={errors}
+              control={control}
+              isValid={isValid}
+              isDirty={isDirty}
+            />
+          ) : userData && !finish ? (
+            <PaymentSection userData={userData} />
+          ) : userData && finish ? (
+            <CongratulationSection />
+          ) : null}
+        </div>
+      </MainCard>
+    </div>
   );
 };
 
