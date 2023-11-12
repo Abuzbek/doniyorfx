@@ -43,7 +43,7 @@ export const CreateCsvService = async (data, res) => {
         },
         {
           label: "Telefon",
-          name: "phone",
+          value: "phone",
         },
         {
           label: "Tarif",
