@@ -2,6 +2,7 @@ import xlsx from "json-as-xlsx";
 
 export const CreateCsvService = async (data, res) => {
   console.log(data);
+  console.log(process.env.NODE_ENV);
   // const date = dayjs().format("DDMMYYYY-HHmmss_SSS");
   // const ws = fs.createWriteStream("./public/images/" + date + "-users.csv");
   const createLink = (link) => {

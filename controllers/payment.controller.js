@@ -34,6 +34,6 @@ export const PaymentUpdateController = async (req, res) => {
 };
 
 export const PaymentCSVDownloader = async (req, res) => {
-  const PaymentModel = await Payments.find({});
+  const PaymentModel = await Payments.find({}).sort({ date: "desc" });
   await CreateCsvService(PaymentModel, res);
 };
