@@ -9,7 +9,7 @@ import { __dirname, add, componentLoader } from "./componentLoader.js";
 import { UserResource } from "./resources/users.resource.js";
 import { PaymentResource } from "./resources/payment.resource.js";
 import paymentRouter from "./routers/payment.router.js";
-import bodyParser from "body-parser";
+import bodyParser from 'body-parser';
 import cors from "cors";
 import { pages } from "./customPage.js";
 AdminJS.registerAdapter({
