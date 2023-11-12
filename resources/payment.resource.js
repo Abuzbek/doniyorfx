@@ -10,8 +10,12 @@ export const PaymentResource = {
   resource: Payments,
   options: {
     navigation: paymentsNavigation,
+
     properties: {
       _id: {
+        isVisible: false,
+      },
+      updatedAt: {
         isVisible: false,
       },
       course: {
@@ -55,6 +59,9 @@ export const PaymentResource = {
       //     };
       //   },
       // },
+    },
+    branding: {
+      companyName: "Amazing c.o.",
     },
   },
 };

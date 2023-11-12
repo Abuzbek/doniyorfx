@@ -22,7 +22,7 @@ export const paymentSchema = new Schema({
   },
   file: {
     type: String,
-    required: true,
+    // required: true,
   }
 });
 paymentSchema.set('timestamps', true)
