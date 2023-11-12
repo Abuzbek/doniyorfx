@@ -13,20 +13,23 @@ import { usePathname, useSearchParams, useRouter } from "next/navigation";
 import AppContextProvider from "../context/AppContext";
 import TagManager from "react-gtm-module";
 import CongratulationSection from "./CongratulationSection";
+import { PaymentService } from "../service/payment.service";
 
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
 // const montserrat = Montserrat({ subsets: ["latin"] });
-
 export interface IFormTypes {
   name: string;
   surname: string;
   phone: string;
   plan: number;
 }
+export interface IFormTypesWithId extends IFormTypes {
+  _id: string;
+}
 const measurementId = "G-EGRC8JB9PG";
 const Payment = () => {
   const [step, setStep] = useState(1);
-  const [userData, setUserData] = useState<IFormTypes>();
+  const [userData, setUserData] = useState<IFormTypesWithId>();
   const [finish, setFinish] = useState(false);
   const searchParams = useSearchParams();
   const pathname = usePathname();
@@ -48,12 +51,15 @@ const Payment = () => {
     formState: { errors, isDirty, isValid },
   } = useForm<IFormTypes>();
 
-  const onSubmit: SubmitHandler<IFormTypes> = (data) => {
-    setUserData(data);
-    setStep(2);
-    router.push(
-      pathname + "?" + createQueryString("user", JSON.stringify(data))
-    );
+  const onSubmit: SubmitHandler<IFormTypes> = async (data) => {
+    const response = await PaymentService.createPayment(data);
+    if (response.status === 200) {
+      setUserData(response.data);
+      setStep(2);
+      router.push(
+        pathname + "?" + createQueryString("user", JSON.stringify(response.data))
+      );
+    }
   };
 
   useEffect(() => {
