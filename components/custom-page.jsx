@@ -31,6 +31,10 @@ export default function Excel() {
       name: "surname",
     },
     {
+      label: "Telefon",
+      name: "phone",
+    },
+    {
       label: "Tarif",
       name: "plan",
     },
