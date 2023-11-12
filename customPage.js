@@ -2,8 +2,8 @@ import { add } from "./componentLoader.js";
 import { Payments } from "./models/payments.model.js";
 
 export const pages = {
-  customPage: {
-    component: add("components/custom-page.jsx", "CustomPage"),
+  excel: {
+    component: add("components/custom-page.jsx", "Excel"),
     icon: "File",
     handler: async (request, response, context) => {
       const payments = await Payments.find({});

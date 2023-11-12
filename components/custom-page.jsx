@@ -12,10 +12,10 @@ import React, { useEffect } from "react";
 // import './customPage.css'
 const api = new ApiClient();
 
-export default function CustomPage() {
+export default function Excel() {
   const [data, setData] = React.useState([]);
   useEffect(() => {
-    api.getPage({ pageName: "customPage" }).then((res) => {
+    api.getPage({ pageName: "excel" }).then((res) => {
       console.log(res);
       setData(res.data.payments);
     });
@@ -50,12 +50,12 @@ export default function CustomPage() {
       return `http://localhost:8080${link}`;
     }
   };
-  
+
   const createCSVLink = () => {
     if (process.env.NODE_ENV !== "production") {
-       window.open(`http://localhost:8080/api/payment/csv`)
+      window.open(`http://localhost:8080/api/payment/csv`);
     } else {
-       window.open(`https://payment.doniyorfx.uz/api/payment/csv`)
+      window.open(`https://payment.doniyorfx.uz/api/payment/csv`);
     }
   };
   return (
