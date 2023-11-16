@@ -158,19 +158,19 @@ const PaymentSection = ({ userData }: Props) => {
         className={classNames(montserrat.className, styles.plan_section)}
       >
         <p>1. Payme orqali to’lovni amalga oshiring</p>
-        <div className="grid grid-cols-1 gap-2">
+        <div className="grid grid-cols-2 gap-2">
           <a href={paymeLink} target="_blank" className={styles.payme_link}>
             <img className="w-16" src="/img/payme.png" alt="" />
             <span>To‘lovga o‘tish</span>
           </a>
-          {/* <a href={paymeLink} target="_blank" className={styles.uzum_link}>
+          <a href={uzumLink} target="_blank" className={styles.uzum_link}>
             <img className="w-16" src="/img/uzum.png" alt="" />
             <span>To‘lovga o‘tish</span>
-          </a> */}
-          <a href={uzumLink} target="_blank" className={styles.payme_link}>
+          </a>
+          {/* <a href={uzumLink} target="_blank" className={styles.payme_link}>
             <img src="/img/payme.png" alt="" />
             <span>To‘lovga o‘tish</span>
-          </a>
+          </a> */}
         </div>
         <CreditCard
           price={currentPlan?.price}
