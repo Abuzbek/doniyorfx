@@ -1,0 +1,24 @@
+.navbar {
+  @apply max-w-[1180px] mx-auto px-6 pt-5 flex items-center justify-between absolute top-0 left-0 right-0 w-full;
+  &_menu {
+    @apply flex items-center gap-12;
+    &_list {
+      @apply flex items-center gap-6;
+      a {
+        @apply text-white text-base not-italic font-normal leading-[normal];
+      }
+    }
+  }
+  &_brand {
+    @apply text-white text-2xl not-italic font-bold leading-[normal];
+  }
+  &_call {
+    @apply flex items-center gap-6;
+    a {
+      @apply text-[#C7B6FF] text-lg not-italic font-medium leading-[normal];
+    }
+    button {
+      @apply flex items-start gap-2.5 border text-white text-base not-italic font-normal leading-[normal] px-6 py-4 rounded-xl border-solid border-white;
+    }
+  }
+}

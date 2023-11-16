@@ -1,0 +1,23 @@
+.what_we_learn {
+  @apply flex flex-col gap-8;
+  h3 {
+    @apply text-white text-[40px] not-italic font-bold leading-[normal] uppercase text-center;
+  }
+  .card {
+    @apply flex flex-col items-start pl-6 pr-5 pb-9 pt-16 rounded-2xl gap-3 relative overflow-hidden;
+    background: #6850ff;
+    span {
+      @apply text-white text-[84px] not-italic font-bold leading-[normal] text-opacity-20 absolute -top-9;
+    }
+    h5 {
+      @apply text-white text-[28px] not-italic font-bold leading-[120%];
+    }
+    p {
+      @apply text-white text-base not-italic font-normal leading-[130%];
+    }
+  }
+  a {
+    @apply flex items-start gap-2.5 shadow-[0px_15px_36px_0px_rgba(198,49,251,0.3)] text-white text-xl not-italic font-medium leading-[normal] tracking-[0.8px] px-16 py-[30px] rounded-[20px];
+    background: linear-gradient(84deg, #6950ff 0%, #c631fb 100%);
+  }
+}

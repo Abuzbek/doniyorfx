@@ -1,0 +1,17 @@
+.course_from_whom {
+  @apply flex flex-col gap-8 items-center;
+  h3 {
+    @apply text-white text-[40px] not-italic font-bold leading-[normal] uppercase;
+  }
+  &_card {
+    @apply flex flex-col items-center gap-6 border p-8 rounded-2xl border-solid border-[#4D4D4D];
+    background: #222;
+    &_icon {
+      @apply flex w-[130px] h-[120px] justify-center items-center rounded-[13.714px];
+      background: #6850ff;
+    }
+    p {
+      @apply text-white text-center text-xl not-italic font-medium leading-[130%];
+    }
+  }
+}

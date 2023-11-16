@@ -1,0 +1,50 @@
+.plan {
+  @apply py-[60px];
+  background: linear-gradient(
+    74deg,
+    #170f1f -0.6%,
+    #2d1a41 50.38%,
+    #170f1f 101.36%
+  );
+  .container {
+    @apply max-w-[1438px] mx-auto px-6 flex flex-col gap-[40px];
+  }
+  h3 {
+    @apply text-white text-[40px] not-italic font-bold leading-[normal] uppercase text-center;
+  }
+  h4 {
+    @apply text-white text-center text-[32px] not-italic font-bold leading-[normal] uppercase;
+  }
+  .card {
+    @apply flex flex-col items-center gap-10 flex-[1_0_0] border px-6 py-10 rounded-2xl border-solid border-[#6E6E6E];
+    background: #222;
+    .up {
+      @apply flex flex-col items-center gap-10 self-stretch;
+      .plan_type {
+        @apply flex justify-center items-center gap-2.5 text-white text-[40px] not-italic font-bold leading-[normal] uppercase px-[70px] py-[13px] rounded-[48px];
+      }
+      ul {
+        @apply flex flex-col items-start gap-6 self-stretch;
+        li {
+          @apply text-white text-xl not-italic font-normal leading-[normal] flex items-center gap-3;
+          &::before {
+            content: "";
+            @apply w-2 h-2 block bg-white;
+          }
+        }
+      }
+    }
+    .down {
+      @apply flex flex-col items-center gap-[33px] self-stretch;
+      p {
+        @apply text-5xl not-italic font-bold leading-[normal];
+        span {
+          @apply text-4xl not-italic font-bold leading-[normal];
+        }
+      }
+      a {
+        @apply flex justify-center items-center gap-2.5 self-stretch px-7 py-7 rounded-2xl text-2xl not-italic font-medium leading-[normal] text-white;
+      }
+    }
+  }
+}

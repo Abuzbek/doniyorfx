@@ -1,0 +1,23 @@
+.footer {
+  @apply py-8 bg-[#222];
+  .container {
+    @apply max-w-[1180px] mx-auto px-6 flex justify-between items-center gap-5 flex-wrap;
+    span {
+      color: #fff;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+    }
+    a {
+      color: #c7b6ff;
+      font-size: 28px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      text-decoration-line: underline;
+    }
+  }
+}

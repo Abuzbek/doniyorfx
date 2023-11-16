@@ -1,0 +1,21 @@
+.student_opinion {
+  @apply flex flex-col gap-10;
+  h3 {
+    @apply text-white text-[40px] not-italic font-bold leading-[normal] uppercase text-center;
+  }
+  .card {
+    @apply relative;
+    .card_body {
+      @apply absolute bottom-3 right-3 left-3 flex w-[340px] justify-center items-center gap-2.5 backdrop-blur-md text-white text-center text-2xl not-italic font-medium leading-[normal] p-4 rounded-[18px] z-10;
+      background: #6850ff;
+    }
+    .play_button {
+      width: 88px;
+      height: 88px;
+      @apply cursor-pointer absolute z-20 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2;
+    }
+  }
+  .swiper {
+    @apply w-full pb-11;
+  }
+}

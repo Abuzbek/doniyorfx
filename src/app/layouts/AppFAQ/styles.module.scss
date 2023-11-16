@@ -1,0 +1,53 @@
+.faq {
+  @apply py-[120px];
+  background: #131313;
+  .container {
+    @apply max-w-[1180px] mx-auto px-6 flex flex-col gap-[40px];
+  }
+  h3 {
+    @apply text-white text-[40px] not-italic font-bold leading-[normal] uppercase text-center;
+  }
+  .accordion {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    width: 100%;
+    &_card {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 16px;
+      width: 100%;
+    }
+    &_header {
+      display: flex;
+      padding: 24px;
+      justify-content: space-between;
+      align-items: center;
+      border-radius: 16px;
+      background: #222;
+      color: #fff;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      width: 100%;
+      cursor: pointer;
+    }
+    &_body {
+      display: flex;
+      padding: 24px;
+      justify-content: space-between;
+      align-items: center;
+      border-radius: 16px;
+      background: #222;
+      color: #fff;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      width: 100%;
+    }
+  }
+}

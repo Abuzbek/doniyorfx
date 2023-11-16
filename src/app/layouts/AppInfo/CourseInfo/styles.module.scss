@@ -1,0 +1,15 @@
+.course_info {
+  @apply grid grid-cols-4 gap-5;
+  &_card {
+    @apply flex items-center gap-3 shrink-0 border p-3 rounded-2xl border-solid border-[#4D4D4D];
+    background: #222;
+    .course_icon {
+      @apply flex w-[63px] h-[63px] flex-col justify-center items-center gap-2.5 shrink-0 rounded-2xl;
+      @apply text-white text-xl not-italic font-bold leading-[normal];
+      background: linear-gradient(0deg, #6950ff 0%, #6950ff 100%), #222;
+    }
+    .course_text {
+      @apply text-white text-lg not-italic font-medium leading-[120%];
+    }
+  }
+}

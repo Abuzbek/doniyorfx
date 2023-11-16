@@ -1,0 +1,23 @@
+.guest {
+  @apply flex flex-col gap-10;
+  h3 {
+    @apply text-white text-[40px] not-italic font-bold leading-[normal] uppercase text-center;
+  }
+  .card {
+    @apply flex flex-col items-center gap-5 flex-[1_0_0];
+    img {
+      width: 260px;
+      height: 260px;
+      object-fit: cover;
+    }
+    &_body {
+      @apply flex flex-col justify-center items-center gap-2 self-stretch;
+      h5 {
+        @apply text-white text-center text-2xl not-italic font-bold leading-[normal];
+      }
+      p {
+        @apply text-white text-center text-xl not-italic font-medium leading-[normal] opacity-80;
+      }
+    }
+  }
+}

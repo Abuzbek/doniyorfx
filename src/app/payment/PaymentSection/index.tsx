@@ -108,6 +108,22 @@ const PaymentSection = ({ userData }: Props) => {
     return href;
   }, [searchParams, userData]);
 
+  const uzumLink = useMemo(() => {
+    const href =
+      "https://www.apelsin.uz/open-service?serviceId=498612103" +
+      "&" +
+      createQueryString("name", userData.name) +
+      "&" +
+      createQueryString("familiya", userData.surname) +
+      "&" +
+      createQueryString("tarif", String(userData?.plan)) +
+      "&" +
+      createQueryString("phone", userData?.phone) +
+      "&" +
+      createQueryString("cource", "1");
+    return href;
+  }, [searchParams, userData]);
+
   return (
     <div className="flex flex-col gap-6">
       {isLoading && (
@@ -151,10 +167,10 @@ const PaymentSection = ({ userData }: Props) => {
             <img className="w-16" src="/img/uzum.png" alt="" />
             <span>To‘lovga o‘tish</span>
           </a> */}
-          {/* <a href="#!" target="_blank" className={styles.payme_link}>
+          <a href={uzumLink} target="_blank" className={styles.payme_link}>
             <img src="/img/payme.png" alt="" />
             <span>To‘lovga o‘tish</span>
-          </a> */}
+          </a>
         </div>
         <CreditCard
           price={currentPlan?.price}
