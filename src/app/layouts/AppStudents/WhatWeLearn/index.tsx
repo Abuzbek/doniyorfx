@@ -8,7 +8,7 @@ const WhatWeLearn = (props: Props) => {
   return (
     <div className={styles.what_we_learn}>
       <h3>Kursda nimalar o’rganasiz</h3>
-      <div className="grid grid-cols-3 gap-5">
+      <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-5">
         {data.map((data, i) => (
           <Card key={i} {...data} />
         ))}

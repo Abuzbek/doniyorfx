@@ -8,7 +8,7 @@ const GuestSpeaker = (props: Props) => {
   return (
     <div className={styles.guest}>
       <h3>Kursning Mehmon spikerlari</h3>
-      <div className="grid grid-cols-3 gap-5">
+      <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-5">
         {data.map((n, i) => (
           <Card key={i} {...n} />
         ))}

@@ -1,7 +1,7 @@
 .guest {
   @apply flex flex-col gap-10;
   h3 {
-    @apply text-white text-[40px] not-italic font-bold leading-[normal] uppercase text-center;
+    @apply text-white sm:text-[40px] text-[22px] text-center not-italic font-bold leading-[normal] uppercase text-center;
   }
   .card {
     @apply flex flex-col items-center gap-5 flex-[1_0_0];

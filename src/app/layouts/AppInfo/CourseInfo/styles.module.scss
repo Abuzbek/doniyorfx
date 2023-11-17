@@ -1,5 +1,5 @@
 .course_info {
-  @apply grid grid-cols-4 gap-5;
+  @apply grid lg:grid-cols-4 sm:grid-cols-2 gap-5;
   &_card {
     @apply flex items-center gap-3 shrink-0 border p-3 rounded-2xl border-solid border-[#4D4D4D];
     background: #222;

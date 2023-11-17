@@ -31,7 +31,10 @@ const AppHeader: FC<Props> = () => {
               sizda bo'lsa, ulardan foydalaning.
             </p>
           </div>
-          <a href="#!">Kursga yozilish</a>
+          <div className="relative">
+            <img src="/img/doniyor.png" alt="Doniyor Abduganiyev" className="lg:hidden block" />
+            <a href="#!">Kursga yozilish</a>
+          </div>
         </div>
       </div>
     </div>

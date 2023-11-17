@@ -1,7 +1,7 @@
 .course_module {
   @apply flex flex-col gap-10;
   h3 {
-    @apply text-white text-[40px] not-italic font-bold leading-[normal] uppercase text-center;
+    @apply text-white sm:text-[40px] text-[22px] text-center not-italic font-bold leading-[normal] uppercase text-center;
   }
   .card {
     @apply flex flex-col items-start border p-6 rounded-2xl border-solid border-[#4D4D4D];
@@ -11,7 +11,7 @@
       background: #c631fb;
     }
     h5 {
-      @apply text-white text-[32px] not-italic font-bold leading-[normal] mb-2;
+      @apply text-white sm:text-[32px] text-xl not-italic font-bold leading-[normal] mb-2;
     }
     p {
       @apply text-white text-2xl not-italic font-medium leading-[normal];

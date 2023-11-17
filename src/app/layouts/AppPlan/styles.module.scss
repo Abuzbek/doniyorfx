@@ -7,43 +7,43 @@
     #170f1f 101.36%
   );
   .container {
-    @apply max-w-[1438px] mx-auto px-6 flex flex-col gap-[40px];
+    @apply max-w-[1438px] mx-auto sm:px-6 px-4 flex flex-col gap-[40px];
   }
   h3 {
-    @apply text-white text-[40px] not-italic font-bold leading-[normal] uppercase text-center;
+    @apply text-white sm:text-[40px] text-[22px] text-center not-italic font-bold leading-[normal] uppercase text-center;
   }
   h4 {
-    @apply text-white text-center text-[32px] not-italic font-bold leading-[normal] uppercase;
+    @apply text-white text-center sm:text-[32px] text-xl not-italic font-bold leading-[normal] uppercase;
   }
   .card {
-    @apply flex flex-col items-center gap-10 flex-[1_0_0] border px-6 py-10 rounded-2xl border-solid border-[#6E6E6E];
+    @apply flex flex-col items-center justify-between sm:gap-10 gap-5 flex-[1_0_0] border sm:px-6 px-3 sm:py-10 py-5 rounded-2xl border-solid border-[#6E6E6E];
     background: #222;
     .up {
-      @apply flex flex-col items-center gap-10 self-stretch;
+      @apply flex flex-col items-center sm:gap-10 gap-5 self-stretch;
       .plan_type {
-        @apply flex justify-center items-center gap-2.5 text-white text-[40px] not-italic font-bold leading-[normal] uppercase px-[70px] py-[13px] rounded-[48px];
+        @apply flex justify-center items-center gap-2.5 text-white lg:sm:text-[40px] text-center md:text-3xl sm:text-[28px] text-xl not-italic font-bold leading-[normal] uppercase sm:px-[70px] px-[60px] sm:py-[13px] py-2.5 rounded-[48px];
       }
       ul {
         @apply flex flex-col items-start gap-6 self-stretch;
         li {
-          @apply text-white text-xl not-italic font-normal leading-[normal] flex items-center gap-3;
+          @apply text-white sm:text-xl text-lg not-italic font-normal leading-[normal] flex items-center gap-3;
           &::before {
             content: "";
-            @apply w-2 h-2 block bg-white;
+            @apply w-2 h-2 block bg-white rounded-full;
           }
         }
       }
     }
     .down {
-      @apply flex flex-col items-center gap-[33px] self-stretch;
+      @apply flex flex-col items-center sm:gap-[33px] gap-5 self-stretch;
       p {
-        @apply text-5xl not-italic font-bold leading-[normal];
+        @apply lg:text-5xl text-4xl not-italic font-bold leading-[normal];
         span {
-          @apply text-4xl not-italic font-bold leading-[normal];
+          @apply lg:text-4xl text-[28px] not-italic font-bold leading-[normal];
         }
       }
       a {
-        @apply flex justify-center items-center gap-2.5 self-stretch px-7 py-7 rounded-2xl text-2xl not-italic font-medium leading-[normal] text-white;
+        @apply flex justify-center items-center gap-2.5 self-stretch lg:px-7 px-5 lg:py-7 py-5 rounded-2xl lg:text-2xl text-lg not-italic font-medium leading-[normal] text-white;
       }
     }
   }

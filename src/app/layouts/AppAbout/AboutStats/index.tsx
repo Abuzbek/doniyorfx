@@ -7,6 +7,7 @@ import styles from "../style.module.scss";
 import { data_links } from "../about.data";
 import AboutLinks from "../AboutLinks";
 import Fancybox from "@/app/components/UI/Fancybox";
+import classNames from "classnames";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 type Props = {};
@@ -20,6 +21,25 @@ const AboutStats = (props: Props) => {
             <span className={montserrat.className}>Kurs muallifi</span>
             <h3>Doniyor Abduganiyev</h3>
           </div>
+          <Fancybox
+            className={classNames(styles.about_video, "lg:hidden flex")}
+          >
+            <a
+              data-fancybox="gallery"
+              href={videoPoster.src}
+              className="relative max-w-[480px] w-full overflow-hidden sm:h-[600px] h-auto rounded-3xl"
+            >
+              <Image
+                src={videoPoster}
+                alt="Doniyor Abduganiyev"
+                className="object-cover w-full h-full"
+              />
+              <div className={styles.video_overlay}></div>
+              <div className={styles.play_button}>
+                <Image src={play} alt="Play button" />
+              </div>
+            </a>
+          </Fancybox>
           <div className={styles.stats_info}>
             <div className="flex flex-col gap-1">
               <span className={montserrat.className}>8+</span>
@@ -39,11 +59,11 @@ const AboutStats = (props: Props) => {
             </div>
           </div>
         </div>
-        <Fancybox className={styles.about_video}>
+        <Fancybox className={classNames(styles.about_video, "lg:flex hidden")}>
           <a
             data-fancybox="gallery"
             href={videoPoster.src}
-            className="relative max-w-[480px] w-full overflow-hidden h-[600px] rounded-3xl"
+            className="relative max-w-[480px] w-full overflow-hidden sm:h-[600px] h-auto rounded-3xl"
           >
             <Image
               src={videoPoster}
@@ -57,7 +77,7 @@ const AboutStats = (props: Props) => {
           </a>
         </Fancybox>
       </div>
-      <div className="grid grid-cols-6 gap-5">
+      <div className="grid lg:grid-cols-6 md:grid-cols-3 grid-cols-2 gap-5">
         {data_links.map((n, i) => (
           <AboutLinks {...n} key={i} />
         ))}

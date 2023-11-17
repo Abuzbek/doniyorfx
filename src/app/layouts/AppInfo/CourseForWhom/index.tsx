@@ -10,7 +10,7 @@ const CourseForWhom = (props: Props) => {
   return (
     <div className={classNames(styles.course_from_whom, spaceGrotesk.className)}>
       <h3>Professional mobilografiya kursi kimlar uchun </h3>
-      <div className="grid grid-cols-3 gap-5">
+      <div className="grid lg:grid-cols-3 sm:grid-cols-2 gap-5">
         {data.map((n, i) => (
           <Card {...n} key={i} />
         ))}

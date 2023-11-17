@@ -1,9 +1,9 @@
 .navbar {
-  @apply max-w-[1180px] mx-auto px-6 pt-5 flex items-center justify-between absolute top-0 left-0 right-0 w-full;
+  @apply max-w-[1180px] mx-auto sm:px-6 px-4 pt-5 flex items-center justify-between absolute top-0 left-0 right-0 w-full z-30;
   &_menu {
     @apply flex items-center gap-12;
     &_list {
-      @apply flex items-center gap-6;
+      @apply hidden items-center gap-6;
       a {
         @apply text-white text-base not-italic font-normal leading-[normal];
       }
@@ -18,7 +18,17 @@
       @apply text-[#C7B6FF] text-lg not-italic font-medium leading-[normal];
     }
     button {
-      @apply flex items-start gap-2.5 border text-white text-base not-italic font-normal leading-[normal] px-6 py-4 rounded-xl border-solid border-white;
+      @apply sm:flex hidden items-start gap-2.5 border text-white text-base not-italic font-normal leading-[normal] px-6 py-4 rounded-xl border-solid border-white;
+    }
+  }
+}
+
+@media (min-width: 1100px) {
+  .navbar {
+    &_menu {
+      &_list {
+        @apply flex;
+      }
     }
   }
 }

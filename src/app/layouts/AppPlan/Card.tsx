@@ -4,7 +4,7 @@ type Props = {
   name: string;
   color: string;
   textColor: string;
-  advantages: string[];
+  advantages: { text: string; new: boolean }[];
   price: string;
 };
 
@@ -19,8 +19,10 @@ const Card = (props: Props) => {
           {props.name}
         </div>
         <ul>
-          {props.advantages.map((n) => (
-            <li key={n}><span>{n}</span></li>
+          {props.advantages.map((n, i) => (
+            <li key={i} className={n.new ? '' : 'opacity-60'}>
+              <span>{n.text}</span>
+            </li>
           ))}
         </ul>
       </div>

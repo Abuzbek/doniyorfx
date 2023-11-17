@@ -1,7 +1,7 @@
 .course_from_whom {
   @apply flex flex-col gap-8 items-center;
   h3 {
-    @apply text-white text-[40px] not-italic font-bold leading-[normal] uppercase;
+    @apply text-white sm:text-[40px] text-[22px] text-center not-italic font-bold leading-[normal] uppercase;
   }
   &_card {
     @apply flex flex-col items-center gap-6 border p-8 rounded-2xl border-solid border-[#4D4D4D];

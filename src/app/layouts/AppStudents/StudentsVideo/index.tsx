@@ -13,7 +13,7 @@ const StudentsVideo = (props: Props) => {
       <h3
         className={classNames(
           spaceGrotesk.className,
-          "text-white text-[40px] not-italic font-bold leading-[normal] uppercase"
+          "text-white sm:text-[40px] text-[22px] text-center not-italic font-bold leading-[normal] uppercase"
         )}
       >
         O’quvchilar bajargan ishlari
@@ -24,7 +24,7 @@ const StudentsVideo = (props: Props) => {
             infinite: false,
           },
         }}
-        className="grid grid-cols-4 grid-rows-2 gap-5"
+        className="grid lg:grid-cols-4 sm:grid-cols-2 sm:grid-rows-2 gap-5"
       >
         {about_video.map((video, i) => {
           if (i === 0) {
@@ -33,7 +33,7 @@ const StudentsVideo = (props: Props) => {
                 href={video.img.src}
                 data-fancybox="gallery"
                 key={i}
-                className="row-span-2 col-span-2 h-[400px] rounded-2xl"
+                className="sm:row-span-2 sm:col-span-2 sm:h-[400px] h-auto rounded-2xl overflow-hidden"
               >
                 <Image
                   src={video.img}
@@ -48,7 +48,7 @@ const StudentsVideo = (props: Props) => {
                 href={video.img.src}
                 data-fancybox="gallery"
                 key={i}
-                className="rounded-2xl"
+                className="rounded-2xl overflow-hidden"
               >
                 <Image
                   src={video.img}

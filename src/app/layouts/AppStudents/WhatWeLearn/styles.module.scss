@@ -1,7 +1,7 @@
 .what_we_learn {
   @apply flex flex-col gap-8;
   h3 {
-    @apply text-white text-[40px] not-italic font-bold leading-[normal] uppercase text-center;
+    @apply text-white sm:text-[40px] text-[22px] text-center not-italic font-bold leading-[normal] uppercase text-center;
   }
   .card {
     @apply flex flex-col items-start pl-6 pr-5 pb-9 pt-16 rounded-2xl gap-3 relative overflow-hidden;

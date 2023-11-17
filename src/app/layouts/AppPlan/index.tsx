@@ -9,7 +9,7 @@ const AppPlan = () => {
     <div className={styles.plan}>
       <div className={styles.container}>
         <h3>Kurs tafsilotlari</h3>
-        <div className="grid grid-cols-3 gap-5">
+        <div className="grid xl:grid-cols-3 sm:grid-cols-2 gap-5">
           {data.map((n, i) => (
             <Card key={i} {...n} />
           ))}

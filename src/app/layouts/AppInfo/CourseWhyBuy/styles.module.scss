@@ -1,13 +1,13 @@
 .course_why_buy {
   @apply flex flex-col gap-8 items-center;
   h3 {
-    @apply text-white text-[40px] not-italic font-bold leading-[normal] uppercase;
+    @apply text-white sm:text-[40px] text-[22px] text-center not-italic font-bold leading-[normal] uppercase;
   }
   .card {
-    @apply grid grid-cols-2 gap-3 flex-[1_0_0] border p-4 rounded-2xl border-solid border-[#4D4D4D];
+    @apply grid lg:grid-cols-2 gap-3 flex-[1_0_0] border p-4 rounded-2xl border-solid border-[#4D4D4D];
     background: #222;
     &_content {
-      @apply flex flex-col justify-center items-start gap-3 flex-[1_0_0] px-4 py-0 rounded-xl;
+      @apply flex flex-col justify-center items-start gap-3 flex-[1_0_0] px-4 lg:py-0 py-5 rounded-xl lg:text-left text-center;
       background: #6850ff;
       h5 {
         @apply text-white text-lg not-italic font-bold leading-[120%];
@@ -17,7 +17,10 @@
       }
     }
     &_image {
-      @apply h-[200px] overflow-hidden rounded-xl;
+      @apply h-[200px] overflow-hidden rounded-xl lg:block hidden;
+      &_hidden {
+        @apply h-[200px] overflow-hidden rounded-xl lg:hidden block;
+      }
     }
   }
   a {
