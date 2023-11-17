@@ -2,46 +2,22 @@ import img from "@/assets/img/student-opinion.png";
 export const data = [
   {
     img,
-    name: "Sardor Abdug’aniyev",
+    name: "Bobur",
+    video: "https://www.youtube.com/watch?v=jnXyH5sG14o",
   },
   {
     img,
-    name: "Sardor Abdug’aniyev",
+    name: "Mubina",
+    video: "https://www.youtube.com/watch?v=sahPL4YqlhI",
   },
   {
     img,
-    name: "Sardor Abdug’aniyev",
+    name: "Diyorbek",
+    video: "https://www.youtube.com/watch?v=8av51ZIvCpM",
   },
   {
     img,
-    name: "Sardor Abdug’aniyev",
-  },
-  {
-    img,
-    name: "Sardor Abdug’aniyev",
-  },
-  {
-    img,
-    name: "Sardor Abdug’aniyev",
-  },
-  {
-    img,
-    name: "Sardor Abdug’aniyev",
-  },
-  {
-    img,
-    name: "Sardor Abdug’aniyev",
-  },
-  {
-    img,
-    name: "Sardor Abdug’aniyev",
-  },
-  {
-    img,
-    name: "Sardor Abdug’aniyev",
-  },
-  {
-    img,
-    name: "Sardor Abdug’aniyev",
+    name: "Dilzoda",
+    video: "https://www.youtube.com/watch?v=DlfugNf17og",
   },
 ];

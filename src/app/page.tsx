@@ -15,12 +15,12 @@ const Home: FC<Props> = () => {
       <AppHeader />
       <div className="main">
         <AppInfo />
-        <AppAbout/>
+        <AppAbout />
         <AppStudents />
         <AppPlan />
-        <AppFAQ />
+        {/* <AppFAQ /> */}
       </div>
-      <AppFooter/>
+      <AppFooter />
     </div>
   );
 };

@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
-import './pagination.scss'
+import "./pagination.scss";
 import styles from "./styles.module.scss";
 import Card from "./Card";
 import { data } from "./opinion.data";
