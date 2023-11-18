@@ -18,8 +18,8 @@ const CourseWhyBuy = (props: Props) => {
           <Card {...n} key={i} />
         ))}
       </div>
-      <div className="flex items-center justify-center">
-      <Link href="/payment">Kursga yozilish</Link>
+      <div className="flex items-center justify-center w-full">
+        <Link href="/payment">Kursga yozilish</Link>
       </div>
     </div>
   );

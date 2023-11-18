@@ -14,7 +14,7 @@ const WhatWeLearn = (props: Props) => {
           <Card key={i} {...data} />
         ))}
       </div>
-      <div className="flex items-center justify-center">
+      <div className="flex items-center justify-center w-full">
         <Link href="/payment">Kursga yozilish</Link>
       </div>
     </div>

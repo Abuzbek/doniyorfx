@@ -6,6 +6,7 @@ import AppStudents from "./layouts/AppStudents";
 import AppPlan from "./layouts/AppPlan";
 import AppFAQ from "./layouts/AppFAQ";
 import AppFooter from "./layouts/AppFooter";
+import AppFreeCourse from "./layouts/AppFreeCourse";
 
 interface Props {}
 
@@ -19,6 +20,7 @@ const Home: FC<Props> = () => {
         <AppStudents />
         <AppPlan />
         {/* <AppFAQ /> */}
+        <AppFreeCourse />
       </div>
       <AppFooter />
     </div>

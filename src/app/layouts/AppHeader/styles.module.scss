@@ -21,7 +21,7 @@
       @apply flex justify-center items-center gap-2 text-white text-lg not-italic font-semibold leading-[normal] tracking-[0.54px] px-5 py-3 rounded-xl border-[1.5px] border-solid border-white;
     }
     a {
-      @apply flex items-center justify-center gap-2.5 shadow-[0px_15px_36px_0px_rgba(198,49,251,0.30)] text-white text-xl not-italic font-medium leading-[normal] tracking-[0.8px] px-16 py-[30px] rounded-[20px];
+      @apply flex items-center justify-center gap-2.5 shadow-[0px_15px_36px_0px_rgba(198,49,251,0.30)] text-white text-xl not-italic font-medium leading-[normal] tracking-[0.8px] px-16 py-[30px] rounded-[20px] sm:w-auto w-full;
       background: linear-gradient(84deg, #6950ff 0%, #c631fb 100%);
     }
   }

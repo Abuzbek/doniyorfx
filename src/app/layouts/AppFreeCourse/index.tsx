@@ -1,0 +1,29 @@
+import Image from "next/image";
+import React from "react";
+import smm from "@/assets/img/smm.png";
+import Link from "next/link";
+type Props = {};
+
+const AppFreeCourse = (props: Props) => {
+  return (
+    <div className="bg-[#0A0A0A] py-20 flex-col sm:hidden flex px-4">
+      <h3 className="text-white text-center text-[22px] not-italic font-bold leading-[normal] uppercase">
+        Sayt orqali ro’yhatdan otganlar uchun SMM mini kursi sovg’aga beriladi
+      </h3>
+      <div className="p-5">
+        <Image src={smm} alt="smm-free" className="w-full" />
+      </div>
+      <Link
+        href="/payment"
+        className="flex items-start justify-center gap-2.5 shadow-[0px_15px_36px_0px_rgba(198,49,251,0.3)] text-white text-xl not-italic font-medium leading-[normal] tracking-[0.8px] px-16 py-[30px] rounded-[20px] sm:w-auto w-full"
+        style={{
+          background: "linear-gradient(84deg, #6950ff 0%, #c631fb 100%)",
+        }}
+      >
+        Kursga yozilish
+      </Link>
+    </div>
+  );
+};
+
+export default AppFreeCourse;

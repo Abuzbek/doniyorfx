@@ -61,7 +61,7 @@ const StudentsVideo = (props: Props) => {
           }
         })}
       </Fancybox>
-      <div className="flex items-center justify-center">
+      <div className="flex items-center justify-center w-full">
       <Link href="/payment" className={styles.course_apply}>Kursga yozilish</Link>
       </div>
     </div>
