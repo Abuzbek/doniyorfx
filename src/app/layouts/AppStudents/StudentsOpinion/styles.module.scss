@@ -4,7 +4,7 @@
     @apply text-white sm:text-[40px] text-[22px] text-center not-italic font-bold leading-[normal] uppercase text-center;
   }
   .card {
-    @apply relative;
+    @apply relative h-full;
     img {
       @apply w-full;
     }
@@ -13,9 +13,7 @@
       background: #6850ff;
     }
     .play_button {
-      width: 88px;
-      height: 88px;
-      @apply cursor-pointer absolute z-20 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2;
+      @apply sm:w-[88px] w-[60px] sm:h-[88px] h-[60px] cursor-pointer absolute z-20 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2;
     }
   }
   .swiper {

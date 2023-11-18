@@ -2,6 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-html[class="dark"] {
-  
+* {
+    scroll-behavior: smooth;
 }

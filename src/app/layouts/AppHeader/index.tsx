@@ -21,15 +21,14 @@ const AppHeader: FC<Props> = () => {
           <div
             className={classNames(styles.starting_course, montserrat.className)}
           >
-            Start: 22-noyabr <span>|</span> Online
+            Start: 27-noyabr <span>|</span> Online
           </div>
           <div className="flex flex-col gap-4 mb-2">
             <h1>Professional Mobilografiya</h1>
             <p>
-              Bu kurs video tahrirlash haqida. Trening davomida biz turli
-              janrlar bilan ishlaymiz: reportaj, intervyu, shuningdek, treyler
-              va reklama rolikini tahrirlaymiz. Materiallar bizdan, lekin agar
-              sizda bo'lsa, ulardan foydalaning.
+              Bu kurs orqali qanday qilib birgina telefon orqali kreativ
+              videolar tayyorlashni o’rganasiz. Kurs so’ngida zamonaviy va
+              serdaromad kasb egasiga aylanasiz
             </p>
           </div>
           <div className="relative">

@@ -52,7 +52,6 @@ const FormSection = ({
   plan,
   setPlan,
 }: Props) => {
-  
   const onSelect = (val: ISelect, onChange: any) => {
     onChange(val.value);
     setPlan(val);
@@ -136,7 +135,7 @@ const FormSection = ({
                 {...fields}
                 options={plans}
                 value={plan}
-                onChange={(val: ISelect) => onSelect(val.value, onChange)}
+                onChange={(val: ISelect) => onChange(val.value)}
                 label="Tarif"
                 error={errors.plan}
                 placeholder="Tarifni tanlang"

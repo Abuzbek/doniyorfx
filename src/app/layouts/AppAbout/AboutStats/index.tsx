@@ -1,6 +1,7 @@
+"use client";
 import Image from "next/image";
 import React from "react";
-import videoPoster from "@/assets/img/image.png";
+import videoPoster from "@/assets/img/infoImage.png";
 import play from "@/assets/img/play.svg";
 import { Montserrat } from "next/font/google";
 import styles from "../style.module.scss";
@@ -8,6 +9,7 @@ import { data_links } from "../about.data";
 import AboutLinks from "../AboutLinks";
 import Fancybox from "@/app/components/UI/Fancybox";
 import classNames from "classnames";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 type Props = {};
@@ -54,15 +56,17 @@ const AboutStats = (props: Props) => {
               <p>Xursand shogirdlar</p>
             </div>
             <div className="flex flex-col gap-1">
-              <span className={montserrat.className}>8+</span>
-              <p>Yil Video Production tajriba</p>
+              <span className={classNames(montserrat.className, "!text-2xl")}>
+                DoniyorFX
+              </span>
+              <p>Online maktabi asoschisi</p>
             </div>
           </div>
         </div>
         <Fancybox className={classNames(styles.about_video, "lg:flex hidden")}>
           <a
-            data-fancybox="gallery"
-            href={videoPoster.src}
+            data-fancybox
+            href="https://www.youtube.com/watch?v=-WdWSajM_08"
             className="relative max-w-[480px] w-full overflow-hidden sm:h-[600px] h-auto rounded-3xl"
           >
             <Image
@@ -77,10 +81,28 @@ const AboutStats = (props: Props) => {
           </a>
         </Fancybox>
       </div>
-      <div className="grid lg:grid-cols-6 md:grid-cols-3 grid-cols-2 gap-5">
-        {data_links.map((n, i) => (
-          <AboutLinks {...n} key={i} />
-        ))}
+      <div className="">
+        <Swiper
+          slidesPerView={2.3}
+          spaceBetween={10}
+          breakpoints={{
+            640: {
+              slidesPerView: 4,
+              spaceBetween: 20,
+            },
+            1024: {
+              slidesPerView: 6,
+              spaceBetween: 20,
+            },
+          }}
+          className={styles.swiper}
+        >
+          {data_links.map((n, i) => (
+            <SwiperSlide key={i}>
+              <AboutLinks {...n} key={i} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
     </div>
   );

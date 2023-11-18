@@ -18,8 +18,14 @@
     }
     &_image {
       @apply h-[200px] overflow-hidden rounded-xl lg:block hidden;
+      img {
+        @apply w-full h-full object-cover;
+      }
       &_hidden {
         @apply h-[200px] overflow-hidden rounded-xl lg:hidden block;
+        img {
+          @apply w-full h-full object-cover;
+        }
       }
     }
   }

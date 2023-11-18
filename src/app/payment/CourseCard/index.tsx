@@ -7,7 +7,7 @@ const CourseCard = (props: Props) => {
     <div className={styles.course_card}>
       <h3>Professional Mobilografiya</h3>
       <p>Kurs davomiyligi: 2 oy</p>
-      <p>Start: 22-noyabr</p>
+      <p>Start: 27-noyabr</p>
     </div>
   );
 };

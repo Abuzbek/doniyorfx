@@ -11,15 +11,19 @@ type Props = {
 
 const Card = (props: Props) => {
   return (
-    <Fancybox className={styles.card}>
-      <Image src={props.img} alt={props.name} />
-      <a data-fancybox href={props.video} className={styles.play_button}>
-        <Image src={play} alt="Play button" />
+      <a data-fancybox href={props.video} className={styles.card}>
+        <Image
+          src={props.img}
+          alt={props.name}
+          className="w-full h-full object-cover rounded-3xl"
+        />
+        <div className={styles.play_button}>
+          <Image src={play} alt="Play button" />
+        </div>
+        <div className={styles.card_body}>
+          <span>{props.name}</span>
+        </div>
       </a>
-      <div className={styles.card_body}>
-        <span>{props.name}</span>
-      </div>
-    </Fancybox>
   );
 };
 

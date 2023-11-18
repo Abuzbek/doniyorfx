@@ -26,7 +26,7 @@
     .stats_info {
       @apply grid grid-cols-2 sm:gap-x-14 gap-3 py-8;
       span {
-        @apply text-5xl not-italic font-bold leading-[normal] uppercase bg-clip-text;
+        @apply sm:text-5xl text-4xl not-italic font-bold leading-[normal] bg-clip-text;
         background: linear-gradient(84deg, #b0a3fe 0%, #e088ff 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -47,13 +47,17 @@
       @apply cursor-pointer absolute w-full h-full z-10 top-0 left-0;
     }
     .play_button {
-      width: 88px;
-      height: 88px;
-      @apply cursor-pointer absolute z-20 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2;
+      @apply sm:w-[88px] w-[60px] sm:h-[88px] h-[60px] cursor-pointer absolute z-20 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2;
     }
   }
   &_links {
-    @apply flex justify-center items-center border px-5 py-[19px] rounded-lg border-solid border-[rgba(255,255,255,0.28)];
+    @apply flex justify-center items-center border h-[110px] px-5 py-4 rounded-lg border-solid border-[rgba(255,255,255,0.28)];
+    img {
+      @apply object-contain h-full;
+    }
     background: #2d1a41;
+  }
+  .swiper {
+    @apply w-full;
   }
 }

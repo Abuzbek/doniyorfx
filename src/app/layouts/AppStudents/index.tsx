@@ -18,9 +18,9 @@ const AppStudents = () => {
       <div className={styles.container}>
         <WhatWeLearn />
         <StudentsOpinion />
-        <StudentsFeedback />
-        <StudentsVideo/>
-        <GuestSpeaker/>
+        {/* <StudentsFeedback /> */}
+        {/* <StudentsVideo /> */}
+        <GuestSpeaker />
         <CourseModule />
       </div>
     </div>
