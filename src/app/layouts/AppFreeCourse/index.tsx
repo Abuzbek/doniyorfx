@@ -27,7 +27,7 @@ const AppFreeCourse = (props: Props) => {
           Kursga yozilish
         </Link>
       </div>
-      <div className={classNames('bg-[#0A0A0A] py-20 md:block', spaceGrotesk.className)}>
+      <div className={classNames('bg-[#0A0A0A] py-20 md:block hidden', spaceGrotesk.className)}>
         <div className="max-w-[1180px] grid grid-cols-2 gap-8 mx-auto">
           <div className="flex flex-col gap-10 justify-center">
             <h3 className="text-white text-[40px] not-italic font-bold leading-[normal] uppercase">

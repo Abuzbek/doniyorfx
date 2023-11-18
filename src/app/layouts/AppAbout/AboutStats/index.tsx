@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import videoPoster from "@/assets/img/image.png";
-import play from "@/assets/img/play.png";
+import play from "@/assets/img/play.svg";
 import { Montserrat } from "next/font/google";
 import styles from "../style.module.scss";
 import { data_links } from "../about.data";
@@ -25,8 +25,8 @@ const AboutStats = (props: Props) => {
             className={classNames(styles.about_video, "lg:hidden flex")}
           >
             <a
-              data-fancybox="gallery"
-              href={videoPoster.src}
+              data-fancybox
+              href="https://www.youtube.com/watch?v=-WdWSajM_08"
               className="relative max-w-[480px] w-full overflow-hidden sm:h-[600px] h-auto rounded-3xl"
             >
               <Image

@@ -14,7 +14,7 @@
       @apply text-white sm:text-[32px] text-xl not-italic font-bold leading-[normal] mb-2;
     }
     p {
-      @apply text-white text-2xl not-italic font-medium leading-[normal] opacity-90;
+      @apply text-white sm:text-2xl not-italic font-medium leading-[normal] opacity-90;
     }
   }
 }

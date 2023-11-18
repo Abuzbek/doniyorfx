@@ -1,5 +1,5 @@
 import Image, { StaticImageData } from "next/image";
-import play from "@/assets/img/play.png";
+import play from "@/assets/img/play.svg";
 import React from "react";
 import styles from "./styles.module.scss";
 import Fancybox from "@/app/components/UI/Fancybox";
