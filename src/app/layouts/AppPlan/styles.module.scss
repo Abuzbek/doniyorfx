@@ -10,7 +10,7 @@
     @apply max-w-[1438px] mx-auto sm:px-6 px-4 flex flex-col gap-[40px];
   }
   h3 {
-    @apply text-white sm:text-[40px] text-[22px] text-center not-italic font-bold leading-[normal] uppercase text-center;
+    @apply text-white sm:text-[40px] text-[22px] text-center not-italic font-bold leading-[normal] uppercase;
   }
   h4 {
     @apply text-white text-center sm:text-[32px] text-xl not-italic font-bold leading-[normal] uppercase;
@@ -21,10 +21,10 @@
     .up {
       @apply flex flex-col items-center sm:gap-10 gap-5 self-stretch;
       .plan_type {
-        @apply flex justify-center items-center gap-2.5 text-white lg:sm:text-[40px] text-center md:text-3xl sm:text-[28px] text-xl not-italic font-bold leading-[normal] uppercase sm:px-[70px] px-[60px] sm:py-[13px] py-2.5 rounded-[48px];
+        @apply flex justify-center items-center sm:w-[300px] w-[220px] gap-2.5 text-white lg:sm:text-[40px] text-center md:text-3xl sm:text-[28px] text-xl not-italic font-bold leading-[normal] uppercase sm:px-[70px] px-[60px] sm:py-[13px] py-2.5 rounded-[48px] ;
       }
       ul {
-        @apply flex flex-col items-start gap-6 self-stretch;
+        @apply flex flex-col items-start gap-5 self-stretch;
         li {
           @apply text-white sm:text-xl text-lg not-italic font-normal leading-[normal] flex items-center gap-3;
           &::before {

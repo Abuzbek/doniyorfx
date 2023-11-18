@@ -1,6 +1,6 @@
-import img1 from "@/assets/img/java.png";
-import img2 from "@/assets/img/abdulla.png";
-import img3 from "@/assets/img/kamron.png";
+import img1 from "@/assets/img/guest1.png";
+import img2 from "@/assets/img/guest2.png";
+import img3 from "@/assets/img/guest3.png";
 export const data = [
   {
     img: img1,

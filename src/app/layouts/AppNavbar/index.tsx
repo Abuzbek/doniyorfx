@@ -22,7 +22,7 @@ const AppNavbar: FC<Props> = (props) => {
         </ul>
       </div>
       <div className={styles.navbar_call}>
-        <a href="tel:+998909905555">+998 90 990 55 55</a>
+        <a href="tel:+998781137044">+998 78 113 70 44</a>
         <button>Qayta qo‘ng’iroq</button>
       </div>
     </div>

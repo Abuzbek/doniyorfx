@@ -10,7 +10,7 @@ const Card = (props: Props) => {
   return (
     <div className={styles.card}>
       <div className="flex items-center mb-3">
-        <span>Module {props.order}</span>
+        <span>Modul {props.order}</span>
       </div>
       <h5>{props.name}</h5>
       <p>{props.result}</p>

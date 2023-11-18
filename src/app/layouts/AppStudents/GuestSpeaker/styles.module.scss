@@ -9,6 +9,7 @@
       width: 260px;
       height: 260px;
       object-fit: cover;
+      @apply rounded-full;
     }
     &_body {
       @apply flex flex-col justify-center items-center gap-2 self-stretch;
