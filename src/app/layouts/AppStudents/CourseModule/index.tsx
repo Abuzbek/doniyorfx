@@ -6,7 +6,7 @@ type Props = {};
 
 const CourseModule = (props: Props) => {
   return (
-    <div className={styles.course_module}>
+    <div id="modules" className={styles.course_module}>
       <h3>Kurs modullari</h3>
       <div className="grid sm:grid-cols-2 gap-5">
         {data.map((n, i) => (

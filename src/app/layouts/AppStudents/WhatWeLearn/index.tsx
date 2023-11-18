@@ -7,7 +7,7 @@ type Props = {};
 
 const WhatWeLearn = (props: Props) => {
   return (
-    <div className={styles.what_we_learn}>
+    <div id="what-we-learn" className={styles.what_we_learn}>
       <h3>Kursda nimalar o’rganasiz</h3>
       <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-5">
         {data.map((data, i) => (
@@ -15,7 +15,7 @@ const WhatWeLearn = (props: Props) => {
         ))}
       </div>
       <div className="flex items-center justify-center w-full">
-        <Link href="/payment">Kursga yozilish</Link>
+        <Link href="/#plans">Kursga yozilish</Link>
       </div>
     </div>
   );

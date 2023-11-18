@@ -10,7 +10,7 @@ const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
 
 const AppAbout = (props: Props) => {
   return (
-    <div className={classNames(styles.about, spaceGrotesk.className)}>
+    <div className={classNames(styles.about, spaceGrotesk.className)} id="author">
       <div className={styles.container}>
         <AboutStats />
         <AboutVideo /> 

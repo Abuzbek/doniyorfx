@@ -9,7 +9,7 @@ type Props = {};
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
 const AppPlan = () => {
   return (
-    <div className={classNames(styles.plan, spaceGrotesk.className)}>
+    <div id="plans" className={classNames(styles.plan, spaceGrotesk.className)}>
       <div className={styles.container}>
         <h3>Kurs tafsilotlari</h3>
         <div className="grid xl:grid-cols-3 sm:grid-cols-2 gap-5">

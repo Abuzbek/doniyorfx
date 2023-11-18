@@ -37,7 +37,7 @@ const AppHeader: FC<Props> = () => {
               alt="Doniyor Abduganiyev"
               className="lg:hidden block"
             />
-            <Link href="/payment">Kursga yozilish</Link>
+            <Link href="/#plans">Kursga yozilish</Link>
           </div>
         </div>
       </div>

@@ -1,22 +1,22 @@
 export const links = [
   {
     text: "Kurs muallifi",
-    href: "",
+    href: "/#author",
   },
   {
     text: "Nimalar o‘rganasiz",
-    href: "",
+    href: "/#what-we-learn",
   },
   {
     text: "Fidbeklar",
-    href: "",
+    href: "/#feedbacks",
   },
   {
     text: "Modullar",
-    href: "",
+    href: "/#modules",
   },
   {
     text: "Tariflar",
-    href: "",
+    href: "/#plans",
   },
 ];

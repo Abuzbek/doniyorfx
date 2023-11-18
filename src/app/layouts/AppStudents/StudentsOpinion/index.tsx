@@ -13,7 +13,7 @@ type Props = {};
 
 const StudentsOpinion = (props: Props) => {
   return (
-    <div className={styles.student_opinion}>
+    <div id="feedbacks" className={styles.student_opinion}>
       <h3>O’quvchilar fikrlari</h3>
       <Fancybox className={"h-full"}>
         <Swiper

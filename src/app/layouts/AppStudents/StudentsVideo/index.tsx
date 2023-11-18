@@ -10,7 +10,7 @@ type Props = {};
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
 const StudentsVideo = (props: Props) => {
   return (
-    <div className="flex flex-col gap-10">
+    <div id="feedbacks" className="flex flex-col gap-10">
       <h3
         className={classNames(
           spaceGrotesk.className,
@@ -62,7 +62,7 @@ const StudentsVideo = (props: Props) => {
         })}
       </Fancybox>
       <div className="flex items-center justify-center w-full">
-      <Link href="/payment" className={styles.course_apply}>Kursga yozilish</Link>
+      <Link href="/#plans" className={styles.course_apply}>Kursga yozilish</Link>
       </div>
     </div>
   );

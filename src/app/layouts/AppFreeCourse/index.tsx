@@ -18,7 +18,7 @@ const AppFreeCourse = (props: Props) => {
           <Image src={smm} alt="smm-free" className="w-full" />
         </div>
         <Link
-          href="/payment"
+          href="/#plans"
           className="flex items-start justify-center gap-2.5 shadow-[0px_15px_36px_0px_rgba(198,49,251,0.3)] text-white text-xl not-italic font-medium leading-[normal] tracking-[0.8px] px-16 py-[30px] rounded-[20px] sm:w-auto w-full"
           style={{
             background: "linear-gradient(84deg, #6950ff 0%, #c631fb 100%)",
@@ -36,7 +36,7 @@ const AppFreeCourse = (props: Props) => {
             </h3>
             <div className="flex items-center justify-start">
               <Link
-                href="/payment"
+                href="/#plans"
                 className="flex items-start justify-center gap-2.5 shadow-[0px_15px_36px_0px_rgba(198,49,251,0.3)] text-white text-xl not-italic font-medium leading-[normal] tracking-[0.8px] px-16 py-[30px] rounded-[20px] sm:w-auto w-full"
                 style={{
                   background:

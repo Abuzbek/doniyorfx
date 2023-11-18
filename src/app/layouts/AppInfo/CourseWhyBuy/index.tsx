@@ -19,7 +19,7 @@ const CourseWhyBuy = (props: Props) => {
         ))}
       </div>
       <div className="flex items-center justify-center w-full">
-        <Link href="/payment">Kursga yozilish</Link>
+        <Link href="/#plans">Kursga yozilish</Link>
       </div>
     </div>
   );
