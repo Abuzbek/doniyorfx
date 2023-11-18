@@ -96,7 +96,11 @@ const AboutStats = (props: Props) => {
             },
           }}
           className={styles.swiper}
-          loop
+          loop={true}
+          autoplay={{
+            delay: 2500,
+            disableOnInteraction: false,
+          }}
         >
           {data_links.map((n, i) => (
             <SwiperSlide key={i}>

@@ -28,6 +28,24 @@ export const data_links = [
   {
     img: img6,
   },
+  {
+    img: img1,
+  },
+  {
+    img: img2,
+  },
+  {
+    img: img3,
+  },
+  {
+    img: img4,
+  },
+  {
+    img: img5,
+  },
+  {
+    img: img6,
+  },
 ];
 
 export const about_video = [
