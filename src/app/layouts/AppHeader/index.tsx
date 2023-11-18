@@ -12,7 +12,7 @@ const AppHeader: FC<Props> = () => {
     <div className={styles.header}>
       <AppNavbar />
       <div className={styles.image_container}>
-        <img src="/img/doniyor.png" alt="Doniyor Abduganiyev" />
+        <img src="/img/doniyor.webp" alt="Doniyor Abduganiyev" />
       </div>
       <div className={styles.container}>
         <div
@@ -34,7 +34,7 @@ const AppHeader: FC<Props> = () => {
           </div>
           <div className="relative">
             <img
-              src="/img/doniyor.png"
+              src="/img/doniyor.webp"
               alt="Doniyor Abduganiyev"
               className="lg:hidden block"
             />
