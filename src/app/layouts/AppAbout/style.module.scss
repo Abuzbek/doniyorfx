@@ -24,7 +24,7 @@
       -webkit-text-fill-color: transparent;
     }
     .stats_info {
-      @apply grid grid-cols-2 gap-x-14 py-8;
+      @apply grid grid-cols-2 sm:gap-x-14 gap-3 py-8;
       span {
         @apply text-5xl not-italic font-bold leading-[normal] uppercase bg-clip-text;
         background: linear-gradient(84deg, #b0a3fe 0%, #e088ff 100%);

@@ -1,11 +1,13 @@
 import React from "react";
 import styles from "./styles.module.scss";
+import Link from "next/link";
 type Props = {
   name: string;
   color: string;
   textColor: string;
   advantages: { text: string; new: boolean }[];
   price: string;
+  href: string;
 };
 
 const Card = (props: Props) => {
@@ -20,7 +22,7 @@ const Card = (props: Props) => {
         </div>
         <ul>
           {props.advantages.map((n, i) => (
-            <li key={i} className={n.new ? '' : 'opacity-60'}>
+            <li key={i} className={n.new ? "" : "opacity-60"}>
               <span>{n.text}</span>
             </li>
           ))}
@@ -30,9 +32,12 @@ const Card = (props: Props) => {
         <p style={{ color: props.textColor }}>
           {props.price} <span>so‘m</span>
         </p>
-        <a href="#!" style={{ backgroundColor: props.color }}>
+        <Link
+          href={`/payment?plan=${props.href}`}
+          style={{ backgroundColor: props.color }}
+        >
           {props.name} tarifga yozilish
-        </a>
+        </Link>
       </div>
     </div>
   );

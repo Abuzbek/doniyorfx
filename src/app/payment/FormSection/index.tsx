@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, useEffect, useState } from "react";
 import {
   Control,
   Controller,
@@ -25,8 +25,23 @@ type Props = {
   control: Control<IFormTypes, any>;
   isValid: boolean;
   isDirty: boolean;
+  setPlan: React.Dispatch<React.SetStateAction<ISelect | undefined>>;
+  plan: ISelect | undefined;
 };
-
+export const plans = [
+  {
+    label: "Standart 2.797.000",
+    value: 1,
+  },
+  {
+    label: "Premium 2.997.000",
+    value: 2,
+  },
+  {
+    label: "VIP 5.997.000",
+    value: 3,
+  },
+];
 const FormSection = ({
   handleSubmit,
   onSubmit,
@@ -34,21 +49,14 @@ const FormSection = ({
   control,
   isValid,
   isDirty,
+  plan,
+  setPlan,
 }: Props) => {
-  const plans = [
-    {
-      label: "Standart 2.797.000",
-      value: 1,
-    },
-    {
-      label: "Premium 2.997.000",
-      value: 2,
-    },
-    {
-      label: "VIP 5.997.000",
-      value: 3,
-    },
-  ];
+  
+  const onSelect = (val: ISelect, onChange: any) => {
+    onChange(val.value);
+    setPlan(val);
+  };
   return (
     <div className="flex flex-col gap-6">
       <PaymentCard>
@@ -127,8 +135,8 @@ const FormSection = ({
               <SelectBox
                 {...fields}
                 options={plans}
-                value={plans.find((c) => c.value === value)}
-                onChange={(val: ISelect) => onChange(val.value)}
+                value={plan}
+                onChange={(val: ISelect) => onSelect(val.value, onChange)}
                 label="Tarif"
                 error={errors.plan}
                 placeholder="Tarifni tanlang"

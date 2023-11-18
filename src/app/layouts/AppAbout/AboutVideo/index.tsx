@@ -13,7 +13,7 @@ const AboutVideo = (props: Props) => {
       <h3
         className={classNames(
           montserrat.className,
-          "text-white text-center text-[28px] not-italic font-bold leading-[normal]"
+          "text-white text-center sm:text-[28px] text-xl not-italic font-bold leading-[normal]"
         )}
       >
         Mijozlar uchun tayyorlangan videolardan namunalar

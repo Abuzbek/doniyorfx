@@ -3,6 +3,7 @@ import AppNavbar from "../AppNavbar";
 import styles from "./styles.module.scss";
 import { Montserrat, Space_Grotesk } from "next/font/google";
 import classNames from "classnames";
+import Link from "next/link";
 interface Props {}
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
 const montserrat = Montserrat({ subsets: ["latin"] });
@@ -32,8 +33,12 @@ const AppHeader: FC<Props> = () => {
             </p>
           </div>
           <div className="relative">
-            <img src="/img/doniyor.png" alt="Doniyor Abduganiyev" className="lg:hidden block" />
-            <a href="#!">Kursga yozilish</a>
+            <img
+              src="/img/doniyor.png"
+              alt="Doniyor Abduganiyev"
+              className="lg:hidden block"
+            />
+            <Link href="/payment">Kursga yozilish</Link>
           </div>
         </div>
       </div>

@@ -1,15 +1,15 @@
 .course_info {
-  @apply grid lg:grid-cols-4 sm:grid-cols-2 gap-5;
+  @apply grid lg:grid-cols-4 grid-cols-2 gap-5;
   &_card {
-    @apply flex items-center gap-3 shrink-0 border p-3 rounded-2xl border-solid border-[#4D4D4D];
+    @apply flex items-center gap-3 shrink-0 border sm:p-3 p-2 sm:rounded-2xl rounded-lg border-solid border-[#4D4D4D];
     background: #222;
     .course_icon {
-      @apply flex w-[63px] h-[63px] flex-col justify-center items-center gap-2.5 shrink-0 rounded-2xl;
-      @apply text-white text-xl not-italic font-bold leading-[normal];
+      @apply flex sm:w-[63px] sm:h-[63px] w-10 h-10 flex-col justify-center items-center gap-2.5 shrink-0 sm:rounded-2xl rounded-lg;
+      @apply text-white sm:text-xl text-sm not-italic font-bold leading-[normal];
       background: linear-gradient(0deg, #6950ff 0%, #6950ff 100%), #222;
     }
     .course_text {
-      @apply text-white text-lg not-italic font-medium leading-[120%];
+      @apply text-white sm:text-lg text-[13px] not-italic font-medium leading-[120%];
     }
   }
 }

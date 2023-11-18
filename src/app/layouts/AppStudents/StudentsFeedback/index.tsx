@@ -14,7 +14,7 @@ const StudentsFeedback = (props: Props) => {
     <div className={styles.student_feedback}>
       <h3>O’quvchilar fikrlari</h3>
       <Swiper
-        slidesPerView={1}
+        slidesPerView={1.3}
         spaceBetween={10}
         pagination={{
           clickable: true,

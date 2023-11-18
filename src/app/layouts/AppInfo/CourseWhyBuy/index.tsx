@@ -4,6 +4,7 @@ import styles from "./styles.module.scss";
 import { Space_Grotesk } from "next/font/google";
 import { data } from "./course-why-buy.data";
 import Card from "./Card";
+import Link from "next/link";
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
 
 type Props = {};
@@ -18,7 +19,7 @@ const CourseWhyBuy = (props: Props) => {
         ))}
       </div>
       <div className="flex items-center justify-center">
-        <a href="#!">Kursga yozilish</a>
+      <Link href="/payment">Kursga yozilish</Link>
       </div>
     </div>
   );

@@ -4,7 +4,7 @@ import { Space_Grotesk } from "next/font/google";
 import styles from "./payment.module.scss";
 import classNames from "classnames";
 import MainCard from "./MainCard";
-import FormSection from "./FormSection";
+import FormSection, { plans } from "./FormSection";
 
 import { SubmitHandler, useForm } from "react-hook-form";
 import UserInfo from "./UserInfo";
@@ -14,6 +14,7 @@ import AppContextProvider from "../context/AppContext";
 import TagManager from "react-gtm-module";
 import CongratulationSection from "./CongratulationSection";
 import { PaymentService } from "../service/payment.service";
+import { ISelect } from "../components/UI/SelectBox";
 
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
 // const montserrat = Montserrat({ subsets: ["latin"] });
@@ -21,13 +22,15 @@ export interface IFormTypes {
   name: string;
   surname: string;
   phone: string;
-  plan: number;
+  plan: number | string;
 }
 export interface IFormTypesWithId extends IFormTypes {
   _id: string;
 }
 const measurementId = "G-EGRC8JB9PG";
 const Payment = () => {
+  const [plan, setPlan] = useState<ISelect>();
+
   const [step, setStep] = useState(1);
   const [userData, setUserData] = useState<IFormTypesWithId>();
   const [finish, setFinish] = useState(false);
@@ -49,6 +52,7 @@ const Payment = () => {
     handleSubmit,
     control,
     formState: { errors, isDirty, isValid },
+    setValue,
   } = useForm<IFormTypes>();
 
   const onSubmit: SubmitHandler<IFormTypes> = async (data) => {
@@ -57,7 +61,9 @@ const Payment = () => {
       setUserData(response.data);
       setStep(2);
       router.push(
-        pathname + "?" + createQueryString("user", JSON.stringify(response.data))
+        pathname +
+          "?" +
+          createQueryString("user", JSON.stringify(response.data))
       );
     }
   };
@@ -66,6 +72,14 @@ const Payment = () => {
     if (searchParams.get("user")) {
       setStep(2);
       setUserData(JSON.parse(searchParams.get("user") || ""));
+    }
+    if (searchParams.get("plan")) {
+      setValue("plan", searchParams.get("plan") || "");
+      setPlan(
+        plans.find((n) => n.value === Number(searchParams.get("plan"))) ||
+          undefined
+      );
+      console.log(plans.find((n) => n.value === Number(searchParams.get("plan"))));
     }
     setFinish(searchParams.has("finish"));
   }, [pathname, searchParams]);
@@ -96,6 +110,8 @@ const Payment = () => {
               control={control}
               isValid={isValid}
               isDirty={isDirty}
+              plan={plan}
+              setPlan={setPlan}
             />
           ) : userData && !finish ? (
             <PaymentSection userData={userData} />

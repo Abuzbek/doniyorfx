@@ -12,6 +12,7 @@ export const data = [
       },
     ],
     price: "2 797 000",
+    href: '1'
   },
   {
     name: "Premium",
@@ -30,6 +31,7 @@ export const data = [
       { text: "Kurs foyda bermasa 30 kunda pulni qaytarib berish", new: true },
     ],
     price: "2 997 000",
+    href: '2'
   },
   {
     name: "Vip",
@@ -53,5 +55,6 @@ export const data = [
       },
     ],
     price: "5 997 000",
+    href: '3'
   },
 ];

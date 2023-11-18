@@ -1,5 +1,5 @@
 .navbar {
-  @apply max-w-[1180px] mx-auto sm:px-6 px-4 pt-5 flex items-center justify-between absolute top-0 left-0 right-0 w-full z-30;
+  @apply max-w-[1180px] mx-auto sm:px-6 px-4 sm:pt-5 pt-6 sm:pb-0 pb-6 flex items-center justify-between absolute top-0 left-0 right-0 w-full z-30;
   &_menu {
     @apply flex items-center gap-12;
     &_list {
@@ -10,7 +10,7 @@
     }
   }
   &_brand {
-    @apply text-white text-2xl not-italic font-bold leading-[normal];
+    @apply text-white sm:text-2xl text-lg not-italic font-bold leading-[normal];
   }
   &_call {
     @apply flex items-center gap-6;

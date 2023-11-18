@@ -5,6 +5,7 @@ import classNames from "classnames";
 import Fancybox from "@/app/components/UI/Fancybox";
 import { about_video } from "./video.data";
 import styles from "../styles.module.scss";
+import Link from "next/link";
 type Props = {};
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
 const StudentsVideo = (props: Props) => {
@@ -61,9 +62,7 @@ const StudentsVideo = (props: Props) => {
         })}
       </Fancybox>
       <div className="flex items-center justify-center">
-        <a href="#!" className={styles.course_apply}>
-          Kursga yozilish
-        </a>
+      <Link href="/payment" className={styles.course_apply}>Kursga yozilish</Link>
       </div>
     </div>
   );

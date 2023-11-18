@@ -4,14 +4,17 @@
     @apply text-white sm:text-[40px] text-[22px] text-center not-italic font-bold leading-[normal] uppercase;
   }
   &_card {
-    @apply flex flex-col items-center gap-6 border p-8 rounded-2xl border-solid border-[#4D4D4D];
+    @apply flex flex-col items-center gap-6 border sm:p-8 px-2 py-4 rounded-2xl border-solid border-[#4D4D4D];
     background: #222;
     &_icon {
-      @apply flex w-[130px] h-[120px] justify-center items-center rounded-[13.714px];
+      @apply flex sm:w-[130px] w-[76px] sm:h-[120px] h-[70px] justify-center items-center rounded-[13.714px];
       background: #6850ff;
+      svg {
+        @apply sm:w-[60px] sm:h-[60px] w-9 h-9
+      }
     }
     p {
-      @apply text-white text-center text-xl not-italic font-medium leading-[130%];
+      @apply text-white text-center sm:text-xl text-sm not-italic font-medium leading-[130%];
     }
   }
 }

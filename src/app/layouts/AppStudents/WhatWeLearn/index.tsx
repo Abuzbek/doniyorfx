@@ -2,6 +2,7 @@ import React from "react";
 import { data } from "./data";
 import Card from "./Card";
 import styles from "./styles.module.scss";
+import Link from "next/link";
 type Props = {};
 
 const WhatWeLearn = (props: Props) => {
@@ -14,7 +15,7 @@ const WhatWeLearn = (props: Props) => {
         ))}
       </div>
       <div className="flex items-center justify-center">
-        <a href="#!">Kursga yozilish</a>
+        <Link href="/payment">Kursga yozilish</Link>
       </div>
     </div>
   );
