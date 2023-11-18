@@ -96,6 +96,7 @@ const AboutStats = (props: Props) => {
             },
           }}
           className={styles.swiper}
+          loop
         >
           {data_links.map((n, i) => (
             <SwiperSlide key={i}>
