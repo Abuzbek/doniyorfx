@@ -9,9 +9,11 @@ import { __dirname, add, componentLoader } from "./componentLoader.js";
 import { UserResource } from "./resources/users.resource.js";
 import { PaymentResource } from "./resources/payment.resource.js";
 import paymentRouter from "./routers/payment.router.js";
-import bodyParser from 'body-parser';
+import registeredRouter from "./routers/registered.router.js";
+import bodyParser from "body-parser";
 import cors from "cors";
 import { pages } from "./customPage.js";
+import { RegisteredResource } from "./resources/registered.resource.js";
 AdminJS.registerAdapter({
   Database: AdminJSMongoose.Database,
   Resource: AdminJSMongoose.Resource,
@@ -26,7 +28,7 @@ const dashboardHandler = async () => {
 };
 
 const adminJs = new AdminJS({
-  resources: [UserResource, PaymentResource],
+  resources: [UserResource, PaymentResource, RegisteredResource],
   componentLoader,
   pages,
   dashboard: {
@@ -44,7 +46,8 @@ app.use(cors({ origin: "*" }));
 app.use(adminJs.options.rootPath, expressAuthenticatedRouter(adminJs));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use("/api", paymentRouter);
+app.use("/api/payment", paymentRouter);
+app.use("/api/registered", registeredRouter);
 app.use(express.static(path.join(__dirname, "public")));
 // Run the server.
 const run = async () => {

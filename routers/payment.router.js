@@ -8,8 +8,8 @@ import {
 import upload from "../utils/file.js";
 const router = Router();
 
-router.get("/payment", PaymentFetchController);
-router.get("/payment/csv", PaymentCSVDownloader);
-router.post("/payment", PaymentCreateController);
-router.patch("/payment/:id", upload.single("file"), PaymentUpdateController);
+router.get("/", PaymentFetchController);
+router.get("/csv", PaymentCSVDownloader);
+router.post("/", PaymentCreateController);
+router.patch("/:id", upload.single("file"), PaymentUpdateController);
 export default router;

@@ -73,7 +73,7 @@ export const CreateCsvService = async (data, res) => {
     writeOptions: {
       type: "buffer",
       compression: false,
-      bookType: 'xlsx'
+      bookType: "xlsx",
     },
   };
   const buffer = xlsx(sheet, settings);
@@ -81,6 +81,50 @@ export const CreateCsvService = async (data, res) => {
   res.writeHead(200, {
     "Content-Type": "application/octet-stream",
     "Content-disposition": "attachment; filename=MySheet.xlsx",
-  })
+  });
+  res.end(buffer);
+};
+export const CreateCsvRegisteredService = async (data, res) => {
+  const sheet = [
+    {
+      sheet: "Users",
+      columns: [
+        {
+          label: "Ism",
+          value: "name",
+        },
+        {
+          label: "Telefon",
+          value: "phone",
+        },
+        {
+          label: "Ro'yxatdan o'tgan sanasi",
+          value: (row) =>
+            new Date(row.createdAt).toLocaleDateString("ru-Ru", {
+              day: "numeric",
+              month: "numeric",
+              year: "numeric",
+              hour: "numeric",
+              second: "numeric",
+              minute: "numeric",
+            }),
+        },
+      ],
+      content: data,
+    },
+  ];
+  let settings = {
+    writeOptions: {
+      type: "buffer",
+      compression: false,
+      bookType: "xlsx",
+    },
+  };
+  const buffer = xlsx(sheet, settings);
+
+  res.writeHead(200, {
+    "Content-Type": "application/octet-stream",
+    "Content-disposition": "attachment; filename=MySheet.xlsx",
+  });
   res.end(buffer);
 };
