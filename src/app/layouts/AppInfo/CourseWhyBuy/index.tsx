@@ -1,15 +1,18 @@
 import classNames from "classnames";
-import React from "react";
+import React, { MutableRefObject } from "react";
 import styles from "./styles.module.scss";
 import { Space_Grotesk } from "next/font/google";
 import { data } from "./course-why-buy.data";
 import Card from "./Card";
 import Link from "next/link";
+import { IModalMethods } from "@/app/components/UI/Modal";
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
 
-type Props = {};
+type Props = {
+  modalRef: MutableRefObject<IModalMethods | undefined>;
+};
 
-const CourseWhyBuy = (props: Props) => {
+const CourseWhyBuy = ({ modalRef }: Props) => {
   return (
     <div className={classNames(styles.course_why_buy, spaceGrotesk.className)}>
       <h3>Nega aynan bu kursni sotib olishingiz kerak </h3>
@@ -19,7 +22,11 @@ const CourseWhyBuy = (props: Props) => {
         ))}
       </div>
       <div className="flex items-center justify-center w-full">
-        <Link href="/#plans">Kursga yozilish</Link>
+        <button
+          onClick={() => modalRef.current?.openModal()}
+        >
+          Kursga ro’yxatdan o’tish
+        </button>
       </div>
     </div>
   );

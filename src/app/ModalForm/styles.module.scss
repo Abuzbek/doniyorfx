@@ -1,0 +1,11 @@
+.submit_button {
+    border-radius: 20px;
+    background: linear-gradient(84deg, #6950ff 0%, #6950ff 0.01%, #c631fb 100%);
+    box-shadow: 0px 15px 36px 0px rgba(198, 49, 251, 0.3);
+    color: #fff;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    @apply px-[40px] py-5 md:w-auto w-full text-center;
+  }

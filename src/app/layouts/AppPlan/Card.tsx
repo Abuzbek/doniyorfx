@@ -29,9 +29,9 @@ const Card = (props: Props) => {
         </ul>
       </div>
       <div className={styles.down}>
-        <p style={{ color: props.textColor }}>
+        {/* <p style={{ color: props.textColor }}>
           {props.price} <span>so‘m</span>
-        </p>
+        </p> */}
         <Link
           href={`/payment?plan=${props.href}`}
           style={{ backgroundColor: props.color }}

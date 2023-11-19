@@ -1,13 +1,16 @@
-import React, { FC } from "react";
+import React, { FC, MutableRefObject } from "react";
 import AppNavbar from "../AppNavbar";
 import styles from "./styles.module.scss";
 import { Montserrat, Space_Grotesk } from "next/font/google";
 import classNames from "classnames";
-import Link from "next/link";
-interface Props {}
+// import Link from "next/link";
+import { IModalMethods } from "@/app/components/UI/Modal";
+interface Props {
+  modalRef: MutableRefObject<IModalMethods | undefined>;
+}
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
 const montserrat = Montserrat({ subsets: ["latin"] });
-const AppHeader: FC<Props> = () => {
+const AppHeader: FC<Props> = ({ modalRef }) => {
   return (
     <div className={styles.header}>
       <AppNavbar />
@@ -37,7 +40,9 @@ const AppHeader: FC<Props> = () => {
               alt="Doniyor Abduganiyev"
               className="lg:hidden block"
             />
-            <Link href="/#plans">Kursga yozilish</Link>
+            <button onClick={() => modalRef.current?.openModal()}>
+              Kursga ro’yxatdan o’tish
+            </button>
           </div>
         </div>
       </div>

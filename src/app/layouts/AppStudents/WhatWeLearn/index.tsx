@@ -1,11 +1,13 @@
-import React from "react";
+import React, { MutableRefObject } from "react";
 import { data } from "./data";
 import Card from "./Card";
 import styles from "./styles.module.scss";
-import Link from "next/link";
-type Props = {};
+import { IModalMethods } from "@/app/components/UI/Modal";
+type Props = {
+  modalRef: MutableRefObject<IModalMethods | undefined>;
+};
 
-const WhatWeLearn = (props: Props) => {
+const WhatWeLearn = ({ modalRef }: Props) => {
   return (
     <div id="what-we-learn" className={styles.what_we_learn}>
       <h3>Kursda nimalar o’rganasiz</h3>
@@ -15,7 +17,9 @@ const WhatWeLearn = (props: Props) => {
         ))}
       </div>
       <div className="flex items-center justify-center w-full">
-        <Link href="/#plans">Kursga yozilish</Link>
+        <button onClick={() => modalRef.current?.openModal()}>
+          Kursga ro’yxatdan o’tish
+        </button>
       </div>
     </div>
   );

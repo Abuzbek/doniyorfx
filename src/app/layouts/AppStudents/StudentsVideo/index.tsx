@@ -1,4 +1,4 @@
-import React from "react";
+import React, { MutableRefObject } from "react";
 import Image from "next/image";
 import { Montserrat, Space_Grotesk } from "next/font/google";
 import classNames from "classnames";
@@ -6,9 +6,12 @@ import Fancybox from "@/app/components/UI/Fancybox";
 import { about_video } from "./video.data";
 import styles from "../styles.module.scss";
 import Link from "next/link";
-type Props = {};
+import { IModalMethods } from "@/app/components/UI/Modal";
+type Props = {
+  modalRef: MutableRefObject<IModalMethods | undefined>;
+};
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
-const StudentsVideo = (props: Props) => {
+const StudentsVideo = ({ modalRef }: Props) => {
   return (
     <div id="feedbacks" className="flex flex-col gap-10">
       <h3
@@ -62,7 +65,12 @@ const StudentsVideo = (props: Props) => {
         })}
       </Fancybox>
       <div className="flex items-center justify-center w-full">
-      <Link href="/#plans" className={styles.course_apply}>Kursga yozilish</Link>
+        <button
+          onClick={() => modalRef.current?.openModal()}
+          className={styles.course_apply}
+        >
+          Kursga ro’yxatdan o’tish
+        </button>
       </div>
     </div>
   );

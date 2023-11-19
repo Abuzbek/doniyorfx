@@ -1,28 +1,33 @@
-import React, { FC } from "react";
+"use client";
+import React, { FC, useRef } from "react";
 import AppHeader from "./layouts/AppHeader";
 import AppInfo from "./layouts/AppInfo";
 import AppAbout from "./layouts/AppAbout";
 import AppStudents from "./layouts/AppStudents";
 import AppPlan from "./layouts/AppPlan";
-import AppFAQ from "./layouts/AppFAQ";
+// import AppFAQ from "./layouts/AppFAQ";
 import AppFooter from "./layouts/AppFooter";
 import AppFreeCourse from "./layouts/AppFreeCourse";
+import ModalForm from "./ModalForm";
+import { IModalMethods } from "./components/UI/Modal";
 
 interface Props {}
 
 const Home: FC<Props> = () => {
+  const modalRef = useRef<IModalMethods>();
   return (
     <div>
-      <AppHeader />
+      <AppHeader modalRef={modalRef} />
       <div className="main">
-        <AppInfo />
+        <AppInfo modalRef={modalRef} />
         <AppAbout />
-        <AppStudents />
+        <AppStudents modalRef={modalRef} />
         <AppPlan />
-        {/* <AppFAQ /> */}
-        <AppFreeCourse />
+        <AppFreeCourse modalRef={modalRef} />
       </div>
       <AppFooter />
+
+      <ModalForm ref={modalRef} />
     </div>
   );
 };

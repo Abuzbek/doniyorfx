@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC, MutableRefObject } from "react";
 import styles from "./styles.module.scss";
 import WhatWeLearn from "./WhatWeLearn";
 import { Space_Grotesk } from "next/font/google";
@@ -8,15 +8,18 @@ import StudentsFeedback from "./StudentsFeedback";
 import StudentsVideo from "./StudentsVideo";
 import GuestSpeaker from "./GuestSpeaker";
 import CourseModule from "./CourseModule";
+import { IModalMethods } from "@/app/components/UI/Modal";
 
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
-interface Props {}
+interface Props {
+  modalRef: MutableRefObject<IModalMethods | undefined>;
+}
 
-const AppStudents = () => {
+const AppStudents: FC<Props> = ({ modalRef }) => {
   return (
     <div className={classNames(styles.student, spaceGrotesk.className)}>
       <div className={styles.container}>
-        <WhatWeLearn />
+        <WhatWeLearn modalRef={modalRef} />
         <StudentsOpinion />
         {/* <StudentsFeedback /> */}
         {/* <StudentsVideo /> */}
