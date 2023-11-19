@@ -49,7 +49,7 @@ export default function Excel() {
   ];
   const createLink = (link) => {
     if (process.env.NODE_ENV === "production") {
-      return `https://payment.doniyorfx.uz${link}`;
+      return `https://doniyorfx.uz${link}`;
     } else {
       return `http://localhost:8080${link}`;
     }
@@ -59,7 +59,7 @@ export default function Excel() {
     if (process.env.NODE_ENV !== "production") {
       window.open(`http://localhost:8080/api/payment/csv`);
     } else {
-      window.open(`https://payment.doniyorfx.uz/api/payment/csv`);
+      window.open(`https://doniyorfx.uz/api/payment/csv`);
     }
   };
   return (

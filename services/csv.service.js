@@ -7,7 +7,7 @@ export const CreateCsvService = async (data, res) => {
   // const ws = fs.createWriteStream("./public/images/" + date + "-users.csv");
   const createLink = (link) => {
     if (process.env.NODE_ENV === "production") {
-      return `https://payment.doniyorfx.uz${link}`;
+      return `https://doniyorfx.uz${link}`;
     } else {
       return `http://localhost:8080${link}`;
     }
