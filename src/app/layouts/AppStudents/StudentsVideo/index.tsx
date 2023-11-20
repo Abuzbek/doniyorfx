@@ -69,7 +69,7 @@ const StudentsVideo = ({ modalRef }: Props) => {
           onClick={() => modalRef.current?.openModal()}
           className={styles.course_apply}
         >
-          Kursga ro’yxatdan o’tish
+          Batafsil ma'lumot olish
         </button>
       </div>
     </div>

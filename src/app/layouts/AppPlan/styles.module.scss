@@ -42,7 +42,7 @@
           @apply lg:text-4xl text-[28px] not-italic font-bold leading-[normal];
         }
       }
-      a {
+      button {
         @apply flex justify-center items-center gap-2.5 self-stretch lg:px-7 px-5 lg:py-7 py-5 rounded-2xl lg:text-2xl text-lg not-italic font-medium leading-[normal] text-white;
       }
     }

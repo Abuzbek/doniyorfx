@@ -18,7 +18,7 @@ const WhatWeLearn = ({ modalRef }: Props) => {
       </div>
       <div className="flex items-center justify-center w-full">
         <button onClick={() => modalRef.current?.openModal()}>
-          Kursga ro’yxatdan o’tish
+          Batafsil ma'lumot olish
         </button>
       </div>
     </div>

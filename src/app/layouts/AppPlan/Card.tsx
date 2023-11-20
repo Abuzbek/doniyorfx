@@ -1,6 +1,7 @@
-import React from "react";
+import React, { MutableRefObject } from "react";
 import styles from "./styles.module.scss";
 import Link from "next/link";
+import { IModalMethods } from "@/app/components/UI/Modal";
 type Props = {
   name: string;
   color: string;
@@ -8,6 +9,7 @@ type Props = {
   advantages: { text: string; new: boolean }[];
   price: string;
   href: string;
+  modalRef: MutableRefObject<IModalMethods | undefined>;
 };
 
 const Card = (props: Props) => {
@@ -29,15 +31,9 @@ const Card = (props: Props) => {
         </ul>
       </div>
       <div className={styles.down}>
-        {/* <p style={{ color: props.textColor }}>
-          {props.price} <span>so‘m</span>
-        </p> */}
-        <Link
-          href={`/payment?plan=${props.href}`}
-          style={{ backgroundColor: props.color }}
-        >
-          {props.name} tarifga yozilish
-        </Link>
+        <button onClick={()=>props.modalRef.current?.openModal()} style={{ backgroundColor: props.color }}>
+          Batafsil ma'lumot olish
+        </button>
       </div>
     </div>
   );

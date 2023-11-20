@@ -32,7 +32,7 @@ const AppFreeCourse = ({ modalRef }: Props) => {
           }}
           onClick={() => modalRef.current?.openModal()}
         >
-          Kursga ro’yxatdan o’tish
+          Batafsil ma'lumot olish
         </button>
       </div>
       <div
@@ -56,7 +56,7 @@ const AppFreeCourse = ({ modalRef }: Props) => {
                 }}
                 onClick={() => modalRef.current?.openModal()}
               >
-                Kursga ro’yxatdan o’tish
+                Batafsil ma'lumot olish
               </button>
             </div>
           </div>

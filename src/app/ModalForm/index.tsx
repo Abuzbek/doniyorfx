@@ -67,11 +67,11 @@ const ModalForm = forwardRef((props: Props, ref) => {
 
   return (
     <>
-      <Modal ref={modalRef} title="Bepul darslarga ro‘xatdan o‘tish">
+      <Modal ref={modalRef} title="Ro‘xatdan o‘tish">
         <form onSubmit={onSubmit} className="flex flex-col gap-5">
           <div className="title flex items-center justify-between">
             <h3 className="text-[#222] md:text-[32px] text-xl font-bold leading-[130%]">
-              Bepul darslarga ro‘xatdan o‘tish
+              Ro‘xatdan o‘tish
             </h3>
             <button
               className="text-3xl"
@@ -81,7 +81,7 @@ const ModalForm = forwardRef((props: Props, ref) => {
             </button>
           </div>
           <p className="text-[#222] md:text-lg font-medium leading-[130%]">
-            Davom etish uchun quyidagi formani to'ldiring
+            Batafsil ma'lumotga ega bo'lish uchun ma'lumotlaringizni kiriting. Tez orada opereatorlarimiz siz bilan bog'lanadi
           </p>
           <div className="form_group grid md:grid-cols-2 gap-4">
             <div className="form_control">

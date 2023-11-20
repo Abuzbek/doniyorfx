@@ -22,7 +22,7 @@ const Home: FC<Props> = () => {
         <AppInfo modalRef={modalRef} />
         <AppAbout />
         <AppStudents modalRef={modalRef} />
-        <AppPlan />
+        <AppPlan modalRef={modalRef} />
         <AppFreeCourse modalRef={modalRef} />
       </div>
       <AppFooter />

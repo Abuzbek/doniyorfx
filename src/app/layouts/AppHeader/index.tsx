@@ -41,7 +41,7 @@ const AppHeader: FC<Props> = ({ modalRef }) => {
               className="lg:hidden block"
             />
             <button onClick={() => modalRef.current?.openModal()}>
-              Kursga ro’yxatdan o’tish
+              Batafsil ma'lumot olish
             </button>
           </div>
         </div>

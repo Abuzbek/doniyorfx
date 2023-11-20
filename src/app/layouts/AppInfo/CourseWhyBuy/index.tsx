@@ -25,7 +25,7 @@ const CourseWhyBuy = ({ modalRef }: Props) => {
         <button
           onClick={() => modalRef.current?.openModal()}
         >
-          Kursga ro’yxatdan o’tish
+          Batafsil ma'lumot olish
         </button>
       </div>
     </div>
