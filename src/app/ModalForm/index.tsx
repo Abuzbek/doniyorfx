@@ -71,7 +71,7 @@ const ModalForm = forwardRef((props: Props, ref) => {
         <form onSubmit={onSubmit} className="flex flex-col gap-5">
           <div className="title flex items-center justify-between">
             <h3 className="text-[#222] md:text-[32px] text-xl font-bold leading-[130%]">
-              Ro‘xatdan o‘tish
+              Batafsil ma'lumotga ega bo'lish uchun ma'lumotlaringizni kiriting.
             </h3>
             <button
               className="text-3xl"
@@ -81,7 +81,7 @@ const ModalForm = forwardRef((props: Props, ref) => {
             </button>
           </div>
           <p className="text-[#222] md:text-lg font-medium leading-[130%]">
-            Batafsil ma'lumotga ega bo'lish uchun ma'lumotlaringizni kiriting. Tez orada opereatorlarimiz siz bilan bog'lanadi
+            Tez orada opereatorlarimiz siz bilan bog'lanadi
           </p>
           <div className="form_group grid md:grid-cols-2 gap-4">
             <div className="form_control">
@@ -115,7 +115,7 @@ const ModalForm = forwardRef((props: Props, ref) => {
               role="button"
               type="submit"
             >
-              Davom etish
+              Yuborish
             </button>
           </div>
         </form>
