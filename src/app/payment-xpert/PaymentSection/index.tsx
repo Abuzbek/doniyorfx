@@ -69,14 +69,8 @@ const PaymentSection = ({ userData }: Props) => {
   const onSubmit: SubmitHandler<IFormtypes> = async (data) => {
     setLoading(true);
     const formData = new FormData();
-    // const userData = JSON.parse(searchParams.get("user") || "");
     formData.append("file", data.file);
-    // formData.append("name", userData.name);
-    // formData.append("surname", userData.surname);
-    // formData.append("plan", String(userData.plan));
-    // formData.append("phone", userData.phone);
-    // formData.append("course", "1");
-    const response = await PaymentService.updatePayment(userData._id, formData);
+    const response = await PaymentService.updateXpertPayment(userData._id, formData);
     if (response.status === 200) {
       setLoading(false);
       router.push(
@@ -88,38 +82,6 @@ const PaymentSection = ({ userData }: Props) => {
       );
     }
   };
-
-  const paymeLink = useMemo(() => {
-    const href =
-      "https://payme.uz/fallback/merchant/?id=654b87cfcbc3052122211939" +
-      "&" +
-      createQueryString("name", userData.name) +
-      "&" +
-      createQueryString("familiya", userData.surname) +
-      "&" +
-      createQueryString("tarif", String(userData?.plan)) +
-      "&" +
-      createQueryString("phone", userData?.phone) +
-      "&" +
-      createQueryString("cource", "1");
-    return href;
-  }, [searchParams, userData]);
-
-  const uzumLink = useMemo(() => {
-    const href =
-      "https://www.apelsin.uz/open-service?serviceId=498612103" +
-      "&" +
-      createQueryString("name", userData.name) +
-      "&" +
-      createQueryString("familiya", userData.surname) +
-      "&" +
-      createQueryString("tarif", String(userData?.plan)) +
-      "&" +
-      createQueryString("phone", userData?.phone) +
-      "&" +
-      createQueryString("cource", "1");
-    return href;
-  }, [searchParams, userData]);
 
   return (
     <div className="flex flex-col gap-6">

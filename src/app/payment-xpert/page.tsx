@@ -56,7 +56,7 @@ const Payment = () => {
   } = useForm<IFormTypes>();
 
   const onSubmit: SubmitHandler<IFormTypes> = async (data) => {
-    const response = await PaymentService.createPayment(data);
+    const response = await PaymentService.createXpertPayment(data);
     if (response.status === 200) {
       setUserData(response.data);
       setStep(2);
@@ -96,7 +96,7 @@ const Payment = () => {
             {userData ? (
               <>
                 <a href="#" className={styles.logo}>
-                  MediaXpert zamonaviy kasblar kursi
+                  MediaXpert
                 </a>
                 <UserInfo name={userData.name} phone={userData.phone} />
               </>

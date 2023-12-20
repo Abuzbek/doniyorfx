@@ -8,4 +8,10 @@ export class PaymentService {
   static async updatePayment(id:string, data: FormData) {
     return await http.patch("payment/"+id, data);
   }
+  static async createXpertPayment(data: IFormTypes) {
+    return await http.post("payment-xpert", data);
+  }
+  static async updateXpertPayment(id:string, data: FormData) {
+    return await http.patch("payment-xpert/"+id, data);
+  }
 }
