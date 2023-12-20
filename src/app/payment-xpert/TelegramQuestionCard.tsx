@@ -13,7 +13,7 @@ const TelegramQuestionCard = (props: Props) => {
         <br />
         Biz bilan telegramdan bog’laning
       </span>
-      <a href="https://t.me/doniyor_fx" target="_blank">
+      <a href="https://t.me/Halida_admin" target="_blank">
         {isDark ? (
           <img src="/img/telegram_dark.svg" alt="Telegram" />
         ) : (
