@@ -20,7 +20,7 @@
 }
 
 .button_group {
-  @apply grid md:grid-cols-2 grid-cols-1 gap-2 w-full;
+  @apply grid grid-cols-1 gap-2 w-full;
 }
 .button_group .home_link {
   border-radius: 43px;

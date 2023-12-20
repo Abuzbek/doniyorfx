@@ -22,9 +22,6 @@ const CongratulationSection = (props: Props) => {
         <p>Siz bilan 48 soat ichida bog‘lanamiz va batafsil ma’lumot beramiz</p>
       </div>
       <div className={styles.button_group}>
-        <a href="/" className={styles.home_link}>
-          Asosiyga qaytish
-        </a>
         <a
           href="https://instagram.com/halida_me"
           className={styles.instagram_link}
