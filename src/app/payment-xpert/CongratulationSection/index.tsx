@@ -21,7 +21,7 @@ const CongratulationSection = (props: Props) => {
         <h2>So’rovingiz muvaffaqiyatli qabul qilindi</h2>
         <p>Siz bilan 48 soat ichida bog‘lanamiz va batafsil ma’lumot beramiz</p>
       </div>
-      <div className={styles.button_group}>
+      {/* <div className={styles.button_group}>
         <a href="/" className={styles.home_link}>
           Asosiyga qaytish
         </a>
@@ -33,7 +33,7 @@ const CongratulationSection = (props: Props) => {
           <img src="/img/instagram.svg" alt="" />
           @DoniyorFx
         </a>
-      </div>
+      </div> */}
     </div>
   );
 };

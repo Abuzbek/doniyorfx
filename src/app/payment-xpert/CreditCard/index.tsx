@@ -23,7 +23,7 @@ const CreditCard = ({ price }: Props) => {
         <div className={styles.bottom}>
           <div className={styles.card_number}>
             <span>8600 1404 1371 4511</span>
-            <p>Abduganiyev Doniyor</p>
+            <p>Xolidaxon Abdurahmonova</p>
           </div>
           <div className={styles.copy}>
             <div>
