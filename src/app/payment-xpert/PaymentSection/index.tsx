@@ -44,7 +44,7 @@ const PaymentSection = ({ userData }: Props) => {
       value: 1,
     },
     {
-      title: "Premium tarif",
+      title: "Pro tarif",
       price: "3 997 000 so‘m",
       value: 2,
     },

@@ -17,7 +17,7 @@ const MainCard = ({ children, finish }: Props) => {
   return (
     <div className={classNames(styles.payment, finish ? "pb-36" : "")}>
       <div className={styles.payment_top}>{children}</div>
-      {!finish && (
+      {/* {!finish && (
         <div
           className={classNames(styles.payment_bottom, montserrat.className)}
         >
@@ -30,7 +30,7 @@ const MainCard = ({ children, finish }: Props) => {
             AIT BANKING MIROBOD FILIALI MFO: 01101
           </p>
         </div>
-      )}
+      )} */}
     </div>
   );
 };
