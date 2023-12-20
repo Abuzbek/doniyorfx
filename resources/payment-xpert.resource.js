@@ -1,16 +1,16 @@
-import { Payments } from "../models/payments.model.js"
+import mongoose from "mongoose";
+import { PaymentXperts } from "../models/payment-xpert.model.js";
 import { add } from "../componentLoader.js";
 
 const paymentsNavigation = {
-  name: "Tolovlar",
+  name: "Tolovlar MediaXpert",
   icon: "DollarSign",
 };
 
-export const PaymentResource = {
-  resource: Payments,
+export const PaymentXpertResource = {
+  resource: PaymentXperts,
   options: {
     navigation: paymentsNavigation,
-
     properties: {
       _id: {
         isVisible: false,
@@ -26,8 +26,8 @@ export const PaymentResource = {
       },
       plan: {
         components: {
-          list: add("components/plan.jsx", "Plan"),
-          show: add("components/plan-show.jsx", "PlanShow"),
+          list: add("components/plan-xpert.jsx", "PlanXpert"),
+          show: add("components/plan-xpert-show.jsx", "PlanShowXpert"),
         },
       },
       file: {
