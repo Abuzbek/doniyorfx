@@ -6,7 +6,7 @@ import classNames from "classnames";
 const montserrat = Montserrat({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Professional mobilografiya kursi",
+  title: "",
 };
 
 export default function RootLayout({
