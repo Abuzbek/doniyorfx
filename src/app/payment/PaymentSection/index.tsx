@@ -40,20 +40,20 @@ const PaymentSection = ({ userData }: Props) => {
   const plans = [
     {
       title: "Standart tarif",
-      price: "2 797 000 so‘m",
-      price_dollar: "227$",
+      price: "3 297 000 so‘m",
+      // price_dollar: "227$",
       value: 1,
     },
     {
       title: "Premium tarif",
-      price: "2 997 000 so‘m",
-      price_dollar: "243$",
+      price: "3 497 000 so‘m",
+      // price_dollar: "243$",
       value: 2,
     },
     {
       title: "VIP tarif",
-      price: "5 997 000 so‘m",
-      price_dollar: "487$",
+      price: "6 997 000 so‘m",
+      // price_dollar: "487$",
       value: 3,
     },
   ];
@@ -124,6 +124,22 @@ const PaymentSection = ({ userData }: Props) => {
     return href;
   }, [searchParams, userData]);
 
+  const clickLink = useMemo(() => {
+    const href =
+      "https://my.click.uz/services/pay?service_id=30466&merchant_id=22925" +
+      "&" +
+      createQueryString("name", userData.name) +
+      "&" +
+      createQueryString("familiya", userData.surname) +
+      "&" +
+      createQueryString("tarif", String(userData?.plan)) +
+      "&" +
+      createQueryString("phone", userData?.phone) +
+      "&" +
+      createQueryString("cource", "1");
+    return href;
+  }, [searchParams, userData]);
+
   return (
     <div className="flex flex-col gap-6">
       {isLoading && (
@@ -157,21 +173,27 @@ const PaymentSection = ({ userData }: Props) => {
         onSubmit={handleSubmit(onSubmit)}
         className={classNames(montserrat.className, styles.plan_section)}
       >
-        <p>1. Payme orqali to’lovni amalga oshiring</p>
-        <div className="grid sm:grid-cols-1 gap-2">
+        <p>1. To'lov tizimlari orqali to’lovni amalga oshiring</p>
+        <div className="grid sm:grid-cols-2 gap-2">
           <a href={paymeLink} target="_blank" className={styles.payme_link}>
             <img className="w-16" src="/img/payme.png" alt="" />
             <span>To‘lovga o‘tish</span>
           </a>
-          {/* <a href={uzumLink} target="_blank" className={styles.uzum_link}>
+          <a href={uzumLink} target="_blank" className={styles.uzum_link}>
             <img className="w-16" src="/img/uzum.png" alt="" />
             <span>To‘lovga o‘tish</span>
-          </a> */}
+          </a>
+          <a href={clickLink} target="_blank" className={classNames(styles.uzum_link, 'col-span-2')} style={{
+            background: '#00a6ff'
+          }}>
+            <img className="w-16" src="/img/click.png" alt="" />
+            <span>To‘lovga o‘tish</span>
+          </a>
         </div>
-        <CreditCard
+        {/* <CreditCard
           price={currentPlan?.price}
           price_dollar={currentPlan?.price_dollar}
-        />
+        /> */}
         <Controller
           name={"agree"}
           control={control}

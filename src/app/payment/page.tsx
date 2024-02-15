@@ -96,7 +96,7 @@ const Payment = () => {
             {userData ? (
               <>
                 <a href="#" className={styles.logo}>
-                  Professional <br /> Mobilografiya
+                  Professional <br /> Mobilografiya 2.0
                 </a>
                 <UserInfo name={userData.name} phone={userData.phone} />
               </>

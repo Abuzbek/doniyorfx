@@ -40,7 +40,7 @@
   @apply flex flex-col text-center gap-2 py-5;
 }
 .course_card h3 {
-  @apply text-white sm:text-[32px] text-2xl not-italic font-bold leading-[normal] uppercase;
+  @apply text-white sm:text-[30px] text-2xl not-italic font-bold leading-[normal] uppercase;
 }
 .course_card p {
   @apply text-white sm:text-xl text-base not-italic font-medium leading-[normal] tracking-[0.6px];
