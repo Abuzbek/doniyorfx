@@ -10,7 +10,6 @@ export const PaymentResource = {
   resource: Payments,
   options: {
     navigation: paymentsNavigation,
-
     properties: {
       _id: {
         isVisible: false,

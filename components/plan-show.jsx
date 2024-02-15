@@ -5,17 +5,17 @@ const PlanShow = (props) => {
   const plans = [
     {
       title: "Standart tarif",
-      price: "2 797 000 so‘m",
+      price: "3.297.000 so‘m",
       value: 1,
     },
     {
       title: "Premium tarif",
-      price: "2 997 000 so‘m",
+      price: "3.497.000 so‘m",
       value: 2,
     },
     {
       title: "VIP tarif",
-      price: "5 997 000 so‘m",
+      price: "6.997.000 so‘m",
       value: 3,
     },
   ];
