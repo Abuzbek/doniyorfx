@@ -23,14 +23,14 @@ const AppFreeCourse = ({ modalRef }: Props) => {
           Kontent marketing mini kursi
         </h3>
         <div className="p-5">
-          <Image src={smm} alt="smm-free" className="w-full" />
+          <img src={smm.src} alt="smm-free" className="w-full" />
         </div>
         <button
           className="flex items-start justify-center gap-2.5 shadow-[0px_15px_36px_0px_rgba(198,49,251,0.3)] text-white text-xl not-italic font-medium leading-[normal] tracking-[0.8px] px-16 py-[30px] rounded-[20px] sm:w-auto w-full"
           style={{
             background: "linear-gradient(84deg, #6950ff 0%, #c631fb 100%)",
           }}
-          onClick={() => modalRef.current?.openModal()}
+          onClick={() => window.location.href = 'https://payment.doniyorfx.uz/'}
         >
           Batafsil ma'lumot olish
         </button>
@@ -53,14 +53,14 @@ const AppFreeCourse = ({ modalRef }: Props) => {
                   background:
                     "linear-gradient(84deg, #6950ff 0%, #c631fb 100%)",
                 }}
-                onClick={() => modalRef.current?.openModal()}
+                onClick={() => window.location.href = 'https://payment.doniyorfx.uz/'}
               >
                 Batafsil ma'lumot olish
               </button>
             </div>
           </div>
           <div className="p-5">
-            <Image src={smm} alt="smm-free" className="w-full" />
+            <img src={smm.src} alt="smm-free" className="w-full" />
           </div>
         </div>
       </div>

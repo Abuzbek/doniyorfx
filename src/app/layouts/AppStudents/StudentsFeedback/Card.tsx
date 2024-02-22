@@ -15,7 +15,7 @@ const Card = (props: Props) => {
     <div className={classNames(styles.card, montserrat.className)}>
       <p>{props.comment}</p>
       <div className="flex items-center gap-4">
-        <Image src={props.img} alt={props.name} />
+        <img src={props.img.src} alt={props.name} />
         <span>{props.name}</span>
       </div>
     </div>

@@ -31,7 +31,9 @@ const Card = (props: Props) => {
         </ul>
       </div>
       <div className={styles.down}>
-        <button onClick={()=>props.modalRef.current?.openModal()} style={{ backgroundColor: props.color }}>
+        <button 
+          onClick={() => window.location.href = 'https://payment.doniyorfx.uz/'} 
+          style={{ backgroundColor: props.color }}>
           Batafsil ma'lumot olish
         </button>
       </div>

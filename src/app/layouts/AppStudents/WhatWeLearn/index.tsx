@@ -17,7 +17,7 @@ const WhatWeLearn = ({ modalRef }: Props) => {
         ))}
       </div>
       <div className="flex items-center justify-center w-full">
-        <button onClick={() => modalRef.current?.openModal()}>
+        <button onClick={() => window.location.href = 'https://payment.doniyorfx.uz/'}>
           Batafsil ma'lumot olish
         </button>
       </div>

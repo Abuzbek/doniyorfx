@@ -12,13 +12,13 @@ type Props = {
 const Card = (props: Props) => {
   return (
       <a data-fancybox href={props.video} className={styles.card}>
-        <Image
-          src={props.img}
+        <img
+          src={props.img.src}
           alt={props.name}
           className="w-full h-full object-cover rounded-3xl"
         />
         <div className={styles.play_button}>
-          <Image src={play} alt="Play button" />
+          <img src={play.src} alt="Play button" />
         </div>
         <div className={styles.card_body}>
           <span>{props.name}</span>

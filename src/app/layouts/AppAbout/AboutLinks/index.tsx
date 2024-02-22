@@ -9,7 +9,7 @@ type Props = {
 const AboutLinks = (props: Props) => {
   return (
     <div className={styles.about_links}>
-      <Image src={props.img} alt="image" />
+      <img src={props.img.src} alt="image" />
     </div>
   );
 };

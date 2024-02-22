@@ -31,14 +31,14 @@ const AboutStats = (props: Props) => {
               href="https://www.youtube.com/watch?v=-WdWSajM_08"
               className="relative max-w-[480px] w-full overflow-hidden sm:h-[600px] h-auto rounded-3xl"
             >
-              <Image
-                src={videoPoster}
+              <img
+                src={videoPoster.src}
                 alt="Doniyor Abduganiyev"
                 className="object-cover w-full h-full"
               />
               <div className={styles.video_overlay}></div>
               <div className={styles.play_button}>
-                <Image src={play} alt="Play button" />
+                <img src={play.src} alt="Play button" />
               </div>
             </a>
           </Fancybox>
@@ -69,14 +69,14 @@ const AboutStats = (props: Props) => {
             href="https://www.youtube.com/watch?v=-WdWSajM_08"
             className="relative max-w-[480px] w-full overflow-hidden sm:h-[600px] h-auto rounded-3xl"
           >
-            <Image
-              src={videoPoster}
+            <img
+              src={videoPoster.src}
               alt="Doniyor Abduganiyev"
               className="object-cover w-full h-full"
             />
             <div className={styles.video_overlay}></div>
             <div className={styles.play_button}>
-              <Image src={play} alt="Play button" />
+              <img src={play.src} alt="Play button" />
             </div>
           </a>
         </Fancybox>

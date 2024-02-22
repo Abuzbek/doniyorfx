@@ -10,7 +10,7 @@ type Props = {
 const Card = (props: Props) => {
   return (
     <div className={styles.card}>
-      <Image src={props.img} alt={props.name} />
+      <img src={props.img.src} alt={props.name} />
       <div className={styles.card_body}>
         <h5>{props.name}</h5>
         <p>{props.description}</p>

@@ -39,8 +39,8 @@ const StudentsVideo = ({ modalRef }: Props) => {
                 key={i}
                 className="sm:row-span-2 sm:col-span-2 sm:h-[400px] h-auto rounded-2xl overflow-hidden"
               >
-                <Image
-                  src={video.img}
+                <img
+                  src={video.img.src}
                   alt={"video" + i}
                   className="w-full h-full object-cover"
                 />
@@ -54,8 +54,8 @@ const StudentsVideo = ({ modalRef }: Props) => {
                 key={i}
                 className="rounded-2xl overflow-hidden"
               >
-                <Image
-                  src={video.img}
+                <img
+                  src={video.img.src}
                   alt={"video" + i}
                   className="w-full h-full object-cover"
                 />
@@ -66,7 +66,7 @@ const StudentsVideo = ({ modalRef }: Props) => {
       </Fancybox>
       <div className="flex items-center justify-center w-full">
         <button
-          onClick={() => modalRef.current?.openModal()}
+          onClick={() => window.location.href = 'https://payment.doniyorfx.uz/'}
           className={styles.course_apply}
         >
           Batafsil ma'lumot olish

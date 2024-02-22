@@ -40,7 +40,7 @@ const AppHeader: FC<Props> = ({ modalRef }) => {
               alt="Doniyor Abduganiyev"
               className="lg:hidden block"
             />
-            <button onClick={() => modalRef.current?.openModal()}>
+            <button onClick={() => window.location.href = 'https://payment.doniyorfx.uz/'}>
               Batafsil ma'lumot olish
             </button>
           </div>

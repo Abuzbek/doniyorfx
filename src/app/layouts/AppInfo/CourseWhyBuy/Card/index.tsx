@@ -12,14 +12,14 @@ const Card = ({ image, title, text }: Props) => {
   return (
     <div className={styles.card}>
       <div className={styles.card_image_hidden}>
-        <Image src={image} alt={title} />
+        <img src={image.src} alt={title} />
       </div>
       <div className={styles.card_content}>
         <h5>{title}</h5>
         <p>{text}</p>
       </div>
       <div className={styles.card_image}>
-        <Image src={image} alt={title} />
+        <img src={image.src} alt={title} />
       </div>
     </div>
   );

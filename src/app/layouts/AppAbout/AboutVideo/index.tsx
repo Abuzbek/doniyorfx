@@ -35,13 +35,13 @@ const AboutVideo = (props: Props) => {
                 key={i}
                 className="sm:row-span-2 col-span-2 sm:h-[400px] h-auto rounded-2xl overflow-hidden relative"
               >
-                <Image
-                  src={video.img}
+                <img
+                  src={video.img.src}
                   alt={"video" + i}
                   className="w-full h-full object-cover"
                 />
                 <div className="sm:w-[88px] w-[60px] sm:h-[88px] h-[60px] cursor-pointer absolute z-20 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                  <Image src={play} alt="Play button" />
+                  <img src={play.src} alt="Play button" />
                 </div>
               </a>
             );
@@ -53,13 +53,13 @@ const AboutVideo = (props: Props) => {
                 key={i}
                 className="rounded-2xl overflow-hidden relative"
               >
-                <Image
-                  src={video.img}
+                <img
+                  src={video.img.src}
                   alt={"video" + i}
                   className="w-full h-full object-cover"
                 />
                 <div className="sm:w-[88px] w-[60px] sm:h-[88px] h-[60px] cursor-pointer absolute z-20 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                  <Image src={play} alt="Play button" />
+                  <img src={play.src} alt="Play button" />
                 </div>
               </a>
             );
