@@ -4,15 +4,15 @@ export const data = [
     text: "Kurs davomiyligi",
   },
   {
-    icon_text: "3 ta",
-    text: "Dars haftasiga",
+    icon_text: "6+",
+    text: "Yillik tajribaga ega kuratorlar",
   },
   {
-    icon_text: "8 ta",
+    icon_text: "10 ta",
     text: "Brend bilan ishlash",
   },
   {
-    icon_text: "20 ta",
+    icon_text: "30 ta",
     text: "Portfolio uchun videolar",
   },
 ];

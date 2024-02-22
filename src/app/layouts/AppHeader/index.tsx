@@ -24,10 +24,10 @@ const AppHeader: FC<Props> = ({ modalRef }) => {
           <div
             className={classNames(styles.starting_course, montserrat.className)}
           >
-            Start: 27-noyabr <span>|</span> Online
+            Start: 4-mart <span>|</span> Online
           </div>
           <div className="flex flex-col gap-4 mb-2">
-            <h1>Professional Mobilografiya</h1>
+            <h1>Professional Mobilografiya 2.0</h1>
             <p>
               Bu kurs orqali qanday qilib birgina telefon orqali kreativ
               videolar tayyorlashni o’rganasiz. Kurs so’ngida zamonaviy va

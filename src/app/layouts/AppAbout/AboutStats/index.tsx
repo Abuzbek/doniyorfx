@@ -52,7 +52,7 @@ const AboutStats = (props: Props) => {
               <p>Yakunlangan yirik loyihalar</p>
             </div>
             <div className="flex flex-col gap-1">
-              <span className={montserrat.className}>150+ </span>
+              <span className={montserrat.className}>400+ </span>
               <p>Xursand shogirdlar</p>
             </div>
             <div className="flex flex-col gap-1">

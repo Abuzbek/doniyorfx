@@ -1,5 +1,5 @@
 import img1 from "@/assets/img/guest1.png";
-import img2 from "@/assets/img/guest2.png";
+import img2 from "@/assets/img/guest2.webp";
 import img3 from "@/assets/img/guest3.png";
 export const data = [
   {

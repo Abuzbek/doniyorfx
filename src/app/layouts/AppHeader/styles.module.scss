@@ -12,7 +12,7 @@
   .text_content {
     @apply lg:col-span-7 flex flex-col lg:items-start items-center lg:text-left text-center sm:pt-40 pt-20 gap-8;
     h1 {
-      @apply text-white md:text-[73px] text-[36px] not-italic font-bold leading-[110%] tracking-[2.92px] uppercase;
+      @apply text-white md:text-[64px] text-[36px] not-italic font-bold leading-[110%] tracking-[2.92px] uppercase;
     }
     p {
       @apply text-white md:text-xl not-italic font-normal leading-[140%];

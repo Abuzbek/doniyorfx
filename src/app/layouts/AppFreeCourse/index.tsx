@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React, { MutableRefObject } from "react";
-import smm from "@/assets/img/smm.png";
+import smm from "@/assets/img/bonus.png";
 import Link from "next/link";
 import { Space_Grotesk } from "next/font/google";
 import classNames from "classnames";
@@ -20,7 +20,7 @@ const AppFreeCourse = ({ modalRef }: Props) => {
         )}
       >
         <h3 className="text-white text-center text-[22px] not-italic font-bold leading-[normal] uppercase">
-          Sayt orqali ro’yhatdan otganlar uchun SMM mini kursi sovg’aga beriladi
+          Kontent marketing mini kursi
         </h3>
         <div className="p-5">
           <Image src={smm} alt="smm-free" className="w-full" />
@@ -43,9 +43,8 @@ const AppFreeCourse = ({ modalRef }: Props) => {
       >
         <div className="max-w-[1180px] grid grid-cols-2 gap-8 mx-auto">
           <div className="flex flex-col gap-10 justify-center">
-            <h3 className="text-white text-[40px] not-italic font-bold leading-[normal] uppercase">
-              Sayt orqali ro’yhatdan otganlar uchun SMM mini kursi sovg’aga
-              beriladi
+            <h3 className="text-white text-[48px] not-italic font-bold leading-[normal] uppercase">
+              Kontent marketing mini kursi
             </h3>
             <div className="flex items-center justify-start">
               <button
