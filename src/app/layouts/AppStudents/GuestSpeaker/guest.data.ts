@@ -9,7 +9,7 @@ export const data = [
   },
   {
     img: img2,
-    name: "Abdulla Shayx",
+    name: "Anvar Bahtiyorov",
     description: "Shaxsiy brend qurish bo’yicha mutaxassis",
   },
   {

@@ -7,13 +7,13 @@ import image6 from "@/assets/img/whywebuy/img-6.webp";
 export const data = [
   {
     image: image1,
-    title: "Jami 8 ta qimmat brend bilan ishlash imkoniyati",
+    title: "Jami 10 ta qimmat brend bilan ishlash imkoniyati",
     text: "Portfolioingizni 20 ta video bilan boyitasiz",
   },
   {
     image: image2,
     title: "Portfolioingizni 20 ta video bilan boyitasiz",
-    text: "Jami 8 ta qimmat brend bilan ishlash imkoniyati",
+    text: "Jami 10 ta qimmat brend bilan ishlash imkoniyati",
   },
   {
     image: image3,
