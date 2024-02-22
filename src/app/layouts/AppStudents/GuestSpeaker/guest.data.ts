@@ -10,7 +10,7 @@ export const data = [
   {
     img: img2,
     name: "Anvar Bahtiyorov",
-    description: "Shaxsiy brend qurish bo’yicha mutaxassis",
+    description: "Marketing asoslari",
   },
   {
     img: img3,
