@@ -4,6 +4,17 @@ import img3 from "@/assets/img/logo3.png";
 import img4 from "@/assets/img/logo4.png";
 import img5 from "@/assets/img/logo5.png";
 import img6 from "@/assets/img/logo6.png";
+import img7 from "@/assets/img/img7.png";
+import img8 from "@/assets/img/img8.png";
+import img9 from "@/assets/img/img9.png";
+import img10 from "@/assets/img/img10.png";
+import img11 from "@/assets/img/img11.png";
+import img12 from "@/assets/img/img12.png";
+import img13 from "@/assets/img/img13.png";
+import img14 from "@/assets/img/img14.png";
+import img15 from "@/assets/img/img15.png";
+import img16 from "@/assets/img/img16.png";
+import img17 from "@/assets/img/img17.png";
 import video1 from "@/assets/img/portfolio-1.webp";
 import video2 from "@/assets/img/portfolio-2.webp";
 import video3 from "@/assets/img/portfolio-3.webp";
@@ -29,22 +40,37 @@ export const data_links = [
     img: img6,
   },
   {
-    img: img1,
+    img: img7,
   },
   {
-    img: img2,
+    img: img8,
   },
   {
-    img: img3,
+    img: img9,
   },
   {
-    img: img4,
+    img: img10,
   },
   {
-    img: img5,
+    img: img11,
   },
   {
-    img: img6,
+    img: img12,
+  },
+  {
+    img: img13,
+  },
+  {
+    img: img14,
+  },
+  {
+    img: img15,
+  },
+  {
+    img: img16,
+  },
+  {
+    img: img17,
   },
 ];
 
