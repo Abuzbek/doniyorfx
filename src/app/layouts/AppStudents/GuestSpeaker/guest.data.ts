@@ -10,11 +10,11 @@ export const data = [
   {
     img: img2,
     name: "Anvar Bahtiyorov",
-    description: "Marketing asoslari",
+    description: "Mijoz topish va birinchi 1000$ daromadga chiqish",
   },
   {
     img: img3,
     name: "Komron Yo’ldoshev",
-    description: "Sotuvlar va marketing bo’yicha mutaxassis",
+    description: "Shaxsiy brend qurish va kontent marketing",
   },
 ];

@@ -29,9 +29,7 @@ const AppHeader: FC<Props> = ({ modalRef }) => {
           <div className="flex flex-col gap-4 mb-2">
             <h1>Professional Mobilografiya 2.0</h1>
             <p>
-              Bu kurs orqali qanday qilib birgina telefon orqali kreativ
-              videolar tayyorlashni o’rganasiz. Kurs so’ngida zamonaviy va
-              serdaromad kasb egasiga aylanasiz
+              Bu shunchaki online kurs emas, bu online maktab. Zamonaviy va serdaromad kasbni men bilna o'rganing
             </p>
           </div>
           <div className="relative">
@@ -40,7 +38,7 @@ const AppHeader: FC<Props> = ({ modalRef }) => {
               alt="Doniyor Abduganiyev"
               className="lg:hidden block"
             />
-            <button onClick={() => window.location.href = 'https://payment.doniyorfx.uz/'}>
+            <button onClick={() => modalRef.current?.openModal()}>
               Batafsil ma'lumot olish
             </button>
           </div>

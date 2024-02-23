@@ -1,7 +1,5 @@
-import Image from "next/image";
 import React, { MutableRefObject } from "react";
-import smm from "@/assets/img/bonus.png";
-import Link from "next/link";
+import smm from "@/assets/img/red-gift-box-3d-png.webp";
 import { Space_Grotesk } from "next/font/google";
 import classNames from "classnames";
 import { IModalMethods } from "@/app/components/UI/Modal";
@@ -30,7 +28,7 @@ const AppFreeCourse = ({ modalRef }: Props) => {
           style={{
             background: "linear-gradient(84deg, #6950ff 0%, #c631fb 100%)",
           }}
-          onClick={() => window.location.href = 'https://payment.doniyorfx.uz/'}
+          onClick={() => modalRef.current?.openModal()}
         >
           Batafsil ma'lumot olish
         </button>
@@ -53,7 +51,7 @@ const AppFreeCourse = ({ modalRef }: Props) => {
                   background:
                     "linear-gradient(84deg, #6950ff 0%, #c631fb 100%)",
                 }}
-                onClick={() => window.location.href = 'https://payment.doniyorfx.uz/'}
+                onClick={() => modalRef.current?.openModal()}
               >
                 Batafsil ma'lumot olish
               </button>

@@ -66,7 +66,7 @@ const StudentsVideo = ({ modalRef }: Props) => {
       </Fancybox>
       <div className="flex items-center justify-center w-full">
         <button
-          onClick={() => window.location.href = 'https://payment.doniyorfx.uz/'}
+          onClick={() => modalRef.current?.openModal()}
           className={styles.course_apply}
         >
           Batafsil ma'lumot olish

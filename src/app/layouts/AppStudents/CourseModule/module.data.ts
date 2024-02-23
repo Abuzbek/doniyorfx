@@ -1,80 +1,68 @@
 export const data = [
   {
     order: "1",
-    name: "Mobilografiyaga kirish",
-    result: "Natija: Videolar tayyorlashda umumiy tushunchalar",
+    name: "Mobilografiya asoslari",
+    result: "Mustaqil funtamental videolar tayyorlashni boshlaysiz va portfoliosiga birinchi 2 ta video qo'shasiz",
   },
   {
     order: "2",
-    name: "Musiqa orqali videolar sifatini bir necha barobarga oshirish",
+    name: "Reklama roliklarini montaj qilish",
     result:
-      "Natija: Videolarga mos musiqa tanlash va musiqa bilan ishlashdagi muammolarni yengish",
+      "Videolarga istalgan tekslar yoza olasiz, tekst dizayni va grafikalar qo'sha olasiz. Videolarni ko'zga yoqimli va tushunarli montaj qilishni o'rganasiz. Daromad keltiradigan videolarni o'rganishni boshlay oladi.",
   },
   {
     order: "3",
-    name: "Videolarni qimmat qiladigan perexodlar bilan ishlash",
+    name: "Videolarni kreativ grafikalar bilan boyitish",
     result:
-      "Natija: Videolardagi zerikarli kadrlarni bir biriga chiroyli ulashni o’rganamiz",
+      "Televideniya uchun takrorlanmas, ko'zga yoqimli roliklar qila oladi. Yashil fon orqali videolar orqasiga istalgan fonlar qo'sha oladi. Tekstlar dizaynini o'rganadi, Videoga tekstlarni to'g'ri joylashtirishni o'rganadi.",
   },
   {
     order: "4",
-    name: "Tekstlar dizayni va ularga harakatlar qo’shish",
+    name: "Shaxsiy brend uchun kreativ montajlar qilish",
     result:
-      "Natija: Videolarga mos tekst yozishni va yozilgan tekstlarni animatsiya orqali boyita olishni o’rganamiz",
+      "Shaxsiy brend uchun kreativ videolar tayyorlay olasiz. Istalgan turdagi shaxsiy brend videosini eng so'ngi texnologiyada tayyorlab bera olasiz. Videolarga maxsus effektlar qo'sha olasiz va tasavvuringizdagi istalgan ideyani amalga oshira olasiz",
   },
   {
     order: "5",
-    name: "Instagram uchun trenddagi reels videolar tayyorlash",
+    name: "Telefonda professional tasvirga olish",
     result:
-      "Natija: Instagramdagi ko’plab videolarni takrorlay olish ko’nikmasiga ega bo’lasiz",
+      `Professioanl va kreativ syomka qilishni o'rganiladi. Tasvirga olishdagi barcha qo'rquvlar yengiladi. Istalgan turdagi videolarni tasvirga olishni o'rgatilinadi. Tasvirga olishdagi barcha kerakli nazariy va amaliy bilimlarga ega bo'linadi. Rakurs va fon tanlashdagi ikkilanishlar yo'qoladi.`,
   },
   {
     order: "6",
-    name: "Videolarni ko’zga yoqimli qilish",
-    result: "Natija: Qaltiragan videolarni montajda to’g’irlashni o’rganamiz",
+    name: "Professional montaj",
+    result: "Istalgan turdagi reklama videolarni professional montaj qilish. Montaj va musiqa qo'rquvlaridan butunlay ozod bo'lish. Musiqani videoga to'laqonli bo'y sundirish. Istalgan musiqadan xohlagan usulida professional bajara olish",
   },
   {
     order: "7",
-    name: "Yashil fon bilan to’g’ri ishlash",
-    result: "Natija: Videolani qiziqarli fonlar, grafikalar bilan boyitish",
+    name: "Avtomobil syomka va montaji",
+    result: "Avtomobilni trendga moslab perexodlar bilan montaj qilish. Avtomobilni obzor videosi uchun sekinroq syomka qilish",
   },
   {
     order: "8",
-    name: "Tochkalar bilan ishlash",
+    name: "Zamonaviy effektlardan oson foydalanishi",
     result:
-      "Natija: Videolarga tochkalar qo’yish yordamida ularni qiziqarli qilish",
+      "Instagram va tiktokdagi trenddagi effektli videolarni maxsus dastur orqali oson o'rganiladi",
   },
   {
     order: "9",
-    name: "O’zbekcha subtitrni sun’iy intellekt yordamida yozish",
-    result: "Subtitrlarni tez va oson qo’yishni o’rganamiz",
+    name: "Mijoz topish",
+    result: "Mijoz topishdagi barcha muammolarni hal qilishingiz mumkin. daromad qilishni boshlashingiz uchun barcha kerakli bilimlar beriladi",
   },
   {
     order: "10",
-    name: "Maskalar bilan ishlash",
-    result: "Natija: Kreativ idealaringizni maskalar orqali tayyorlash",
+    name: "Ayollar uchun maxsus",
+    result: "Ayollar ishlaydigan joylarda ishlash imkoniyati. Kreativ videolar orqali mijozlar topish va daromad qilish",
   },
   {
     order: "11",
-    name: "Ranglar bilan ishlash",
-    result: "Natija: Videolarga to’g’ri rang berish",
+    name: "fiverr.com platformasi",
+    result: "Xalqaro loyihalar bilan ishlash imkoniyati, buyurtmalarni online olish. Kuchli portfolioga ega bo'lish imkoniyati.",
   },
   {
     order: "12",
-    name: "“Udalit fon” effekti orqali professional video tayyorlash",
+    name: "Portfolio tayyorlash",
     result:
-      "Natija: Odam orqasiga har xil dizaynlar, animatsiyalar, grafikalar bilan boyitish",
-  },
-  {
-    order: "13",
-    name: "Videolarga turli xil trenddagi effektlar qo’llash",
-    result:
-      "Natija: Videolarni kreativ effektlar orqali ajralib turadigan qilish",
-  },
-  {
-    order: "14",
-    name: "Telefonda professional kameraga tenglasha oladigan videolar olish",
-    result:
-      "Natija: Telefonda syomka qilishdagi barcha muammolar yechiladi, svetlar bilan ishlashni o’rganamiz",
+      "Atiga 1 daqiqalik showreel tayyorlash va shu video orqali buyurtma olish. Qilingan ishlarni eng yaxshilarini tanlab olish va ko'zga yoqimli qilib montaj qilish",
   },
 ];

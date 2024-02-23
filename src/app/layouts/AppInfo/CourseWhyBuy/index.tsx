@@ -23,7 +23,7 @@ const CourseWhyBuy = ({ modalRef }: Props) => {
       </div>
       <div className="flex items-center justify-center w-full">
         <button
-          onClick={() => window.location.href = 'https://payment.doniyorfx.uz/'}
+          onClick={() => modalRef.current?.openModal()}
         >
           Batafsil ma'lumot olish
         </button>

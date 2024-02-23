@@ -8,11 +8,11 @@ export const data = [
   {
     image: image1,
     title: "Jami 10 ta qimmat brend bilan ishlash imkoniyati",
-    text: "Portfolioingizni 20 ta video bilan boyitasiz",
+    text: "Portfolioingizni 30 ta video bilan boyitasiz",
   },
   {
     image: image2,
-    title: "Portfolioingizni 20 ta video bilan boyitasiz",
+    title: "Portfolioingizni 30 ta video bilan boyitasiz",
     text: "Jami 10 ta qimmat brend bilan ishlash imkoniyati",
   },
   {
