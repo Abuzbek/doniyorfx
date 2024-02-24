@@ -10,6 +10,7 @@ import AboutLinks from "../AboutLinks";
 import Fancybox from "@/app/components/UI/Fancybox";
 import classNames from "classnames";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper/modules";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 type Props = {};
@@ -101,6 +102,7 @@ const AboutStats = (props: Props) => {
             delay: 2500,
             disableOnInteraction: false,
           }}
+          modules={[Autoplay]}
         >
           {data_links.map((n, i) => (
             <SwiperSlide key={i}>
