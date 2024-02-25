@@ -1,6 +1,6 @@
 import image1 from "@/assets/img/whywebuy/img-1.webp";
 import image2 from "@/assets/img/whywebuy/img-2.webp";
-import image3 from "@/assets/img/whywebuy/img-3.webp";
+import image3 from "@/assets/img/whywebuy/3chi rasm.png";
 import image4 from "@/assets/img/whywebuy/img-4.webp";
 import image5 from "@/assets/img/whywebuy/img-5.webp";
 import image6 from "@/assets/img/whywebuy/img-6.webp";
