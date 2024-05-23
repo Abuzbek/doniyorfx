@@ -126,7 +126,7 @@ const PaymentSection = ({ userData }: Props) => {
 
   const clickLink = useMemo(() => {
     const href =
-      "https://my.click.uz/services/pay?service_id=30466&merchant_id=22925" +
+      "https://my.click.uz/services/pay?service_id=30467&merchant_id=22925" +
       "&" +
       createQueryString("name", userData.name) +
       "&" +
