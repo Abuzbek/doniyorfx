@@ -2,7 +2,6 @@ import { Registered } from "../models/registered.model.js";
 import { CreateCsvRegisteredService } from "../services/csv.service.js";
 
 export const RegisteredCreateController = async (req, res) => {
-  console.log(req.body);
   const registered = new Registered({
     ...req.body,
   });
