@@ -3,6 +3,7 @@ import styles from "../payment.module.scss";
 import classNames from "classnames";
 import { Montserrat } from "next/font/google";
 import { useAppContext } from "@/app/context/AppContext";
+import Link from "next/link";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
@@ -21,13 +22,11 @@ const MainCard = ({ children, finish }: Props) => {
         <div
           className={classNames(styles.payment_bottom, montserrat.className)}
         >
-          <a href="/img/oferta-online-edu.docx" target="_blank">
-            Ommaviy oferta
-          </a>
+          <Link href="/">
+            DoniyorFX
+          </Link>
           <p>
-            MChJ “ONLINE EDU” Meros MFY, Bog’ibo’ston ko’chasi, 186-188-uy. INN:
-            310890219 OKED: 85590 H/R 20208000005711026001 Bank: “IPAK YO’LI”
-            AIT BANKING MIROBOD FILIALI MFO: 01101
+            {new Date().getFullYear().toString()}
           </p>
         </div>
       )}

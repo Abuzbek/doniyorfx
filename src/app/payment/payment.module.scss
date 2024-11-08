@@ -22,10 +22,10 @@
 }
 .payment_bottom {
   border-top: 1px solid #505050;
-  @apply py-6 px-14 text-center text-white flex flex-col gap-4 bg-[#1F1F1F] sm:rounded-b-3xl rounded-none;
+  @apply py-7 px-[30px] text-white flex items-center justify-between gap-4 bg-[#1F1F1F] sm:rounded-b-3xl rounded-none;
 }
 .payment_bottom a {
-  @apply underline font-medium;
+  @apply text-sm font-medium;
 }
 .payment_bottom p {
   @apply text-sm font-medium;
