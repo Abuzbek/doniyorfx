@@ -40,12 +40,12 @@ const Payment = () => {
 
   const createQueryString = useCallback(
     (name: string, value: string) => {
-      const params = new URLSearchParams(searchParams);
+      const params = new URLSearchParams(searchParams.toString());
       params.set(name, value);
 
       return params.toString();
     },
-    [searchParams]
+    [searchParams.toString()]
   );
 
   const {
@@ -72,6 +72,8 @@ const Payment = () => {
     if (searchParams.get("user")) {
       setStep(2);
       setUserData(JSON.parse(searchParams.get("user") || ""));
+    } else {
+      setStep(1);
     }
     if (searchParams.get("plan")) {
       setValue("plan", searchParams.get("plan") || "");
@@ -82,7 +84,7 @@ const Payment = () => {
       console.log(plans.find((n) => n.value === Number(searchParams.get("plan"))));
     }
     setFinish(searchParams.has("finish"));
-  }, [pathname, searchParams]);
+  }, [pathname, searchParams.toString()]);
 
   useEffect(() => {
     TagManager.initialize({ gtmId: measurementId });
@@ -96,7 +98,7 @@ const Payment = () => {
             {userData ? (
               <>
                 <a href="#" className={styles.logo}>
-                  Professional <br /> Mobilografiya 3.0
+                  Professional <br /> Mobilografiya 4.0
                 </a>
                 <UserInfo name={userData.name} phone={userData.phone} />
               </>

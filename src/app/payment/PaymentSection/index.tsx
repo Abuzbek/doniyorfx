@@ -30,7 +30,7 @@ const PaymentSection = ({ userData }: Props) => {
 
   const createQueryString = useCallback(
     (name: string, value: string) => {
-      const params = new URLSearchParams(searchParams);
+      const params = new URLSearchParams(searchParams.toString());
       params.set(name, value);
 
       return params.toString();
@@ -41,19 +41,19 @@ const PaymentSection = ({ userData }: Props) => {
     {
       title: "Standart tarif",
       price: "3 297 000 so‘m",
-      // price_dollar: "227$",
+      price_dollar: "227$",
       value: 1,
     },
     {
       title: "Premium tarif",
       price: "3 497 000 so‘m",
-      // price_dollar: "243$",
+      price_dollar: "243$",
       value: 2,
     },
     {
       title: "VIP tarif",
       price: "6 997 000 so‘m",
-      // price_dollar: "487$",
+      price_dollar: "487$",
       value: 3,
     },
   ];
@@ -174,7 +174,7 @@ const PaymentSection = ({ userData }: Props) => {
         className={classNames(montserrat.className, styles.plan_section)}
       >
         <p>1. To'lov tizimlari orqali to’lovni amalga oshiring</p>
-        <div className="grid sm:grid-cols-2 gap-2">
+        {/* <div className="grid sm:grid-cols-2 gap-2">
           <a href={paymeLink} target="_blank" className={styles.payme_link}>
             <img className="w-16" src="/img/payme.png" alt="" />
             <span>To‘lovga o‘tish</span>
@@ -189,11 +189,11 @@ const PaymentSection = ({ userData }: Props) => {
             <img className="w-16" src="/img/click.png" alt="" />
             <span>To‘lovga o‘tish</span>
           </a>
-        </div>
-        {/* <CreditCard
+        </div> */}
+        <CreditCard
           price={currentPlan?.price}
           price_dollar={currentPlan?.price_dollar}
-        /> */}
+        />
         <Controller
           name={"agree"}
           control={control}
