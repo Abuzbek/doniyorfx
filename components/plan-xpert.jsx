@@ -18,7 +18,7 @@ const PlanXpert = (props) => {
       value: 3,
     },
     {
-      title: "VIP tarif",
+      title: "Shogirtlik",
       price: "19 339 000 so‘m",
       value: 4,
     },
