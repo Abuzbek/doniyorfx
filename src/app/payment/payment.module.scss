@@ -24,7 +24,7 @@
   border-top: 1px solid #505050;
   @apply py-7 px-[30px] text-white flex items-center justify-between gap-4 bg-[#1F1F1F] sm:rounded-b-3xl rounded-none;
 }
-.payment_bottom a {
+.payment_bottom span {
   @apply text-sm font-medium;
 }
 .payment_bottom p {

@@ -20,7 +20,7 @@ const AppPlan:FC<Props> = ({modalRef}) => {
             <Card modalRef={modalRef} key={i} {...n} />
           ))}
         </div>
-        <h4>*Narxlar 2 oy to’liq kurs uchun ko’rsatilgan</h4>
+        <h4>*Narxlar 2,5 oy to’liq kurs uchun ko’rsatilgan</h4>
       </div>
     </div>
   );

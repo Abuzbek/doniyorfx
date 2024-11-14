@@ -40,21 +40,27 @@ const PaymentSection = ({ userData }: Props) => {
   const plans = [
     {
       title: "Standart tarif",
-      price: "3 297 000 so‘m",
-      price_dollar: "227$",
+      price: "3 797 000 so‘m",
+      price_dollar: "294.5$",
       value: 1,
     },
     {
       title: "Premium tarif",
-      price: "3 497 000 so‘m",
-      price_dollar: "243$",
+      price: "3 997 000 so‘m",
+      price_dollar: "310$",
       value: 2,
     },
     {
       title: "VIP tarif",
-      price: "6 997 000 so‘m",
-      price_dollar: "487$",
+      price: "7 997 000 so‘m",
+      price_dollar: "620$",
       value: 3,
+    },
+    {
+      title: "VIP tarif",
+      price: "19 339 000 so‘m",
+      price_dollar: "1500$",
+      value: 4,
     },
   ];
   const currentPlan = useMemo(
@@ -194,7 +200,7 @@ const PaymentSection = ({ userData }: Props) => {
           price={currentPlan?.price}
           price_dollar={currentPlan?.price_dollar}
         />
-        <Controller
+        {/* <Controller
           name={"agree"}
           control={control}
           rules={{
@@ -249,7 +255,7 @@ const PaymentSection = ({ userData }: Props) => {
               </div>
             );
           }}
-        />
+        /> */}
         <p>
           2. To‘lovingiz muvaffaqiyatli amalga oshganini tasdiqlovchi rasmni
           saqlab oling (screenshot)

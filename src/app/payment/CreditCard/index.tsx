@@ -35,7 +35,7 @@ const CreditCard = ({ price, price_dollar }: Props) => {
       </div>
       <div
         className={styles.credit_card}
-        onClick={() => copy("4023060241293579")}
+        onClick={() => copy("4023060235364220")}
       >
         <div className={styles.top}>
           <span>VISA</span>
@@ -44,8 +44,8 @@ const CreditCard = ({ price, price_dollar }: Props) => {
         <div className={styles.hr} />
         <div className={styles.bottom}>
           <div className={styles.card_number}>
-            <span>4023 0602 4129 3579</span>
-            <p>Abduganiyev Doniyor</p>
+            <span>4023 0602 3536 4220</span>
+            <p>SARDOR ABDUGANIYEV</p>
           </div>
           <div className={styles.copy}>
             <div>

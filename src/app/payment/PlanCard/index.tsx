@@ -13,7 +13,7 @@ const PlanCard = (props: PlanCardProps) => {
         <h3>{props.title}</h3>
         <h4>{props.price}</h4>
       </div>
-      <p>Kurs davomiyligi: 2 oy</p>
+      <p>Kurs davomiyligi: 2,5 oy</p>
     </div>
   );
 };

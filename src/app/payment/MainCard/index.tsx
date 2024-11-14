@@ -3,7 +3,6 @@ import styles from "../payment.module.scss";
 import classNames from "classnames";
 import { Montserrat } from "next/font/google";
 import { useAppContext } from "@/app/context/AppContext";
-import Link from "next/link";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
@@ -22,9 +21,9 @@ const MainCard = ({ children, finish }: Props) => {
         <div
           className={classNames(styles.payment_bottom, montserrat.className)}
         >
-          <Link href="/">
+          <span>
             DoniyorFX
-          </Link>
+          </span>
           <p>
             {new Date().getFullYear().toString()}
           </p>

@@ -1,6 +1,6 @@
 export const data = [
   {
-    icon_text: "2 oy",
+    icon_text: "2,5 oy",
     text: "Kurs davomiyligi",
   },
   {
