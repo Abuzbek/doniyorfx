@@ -57,7 +57,7 @@ const PaymentSection = ({ userData }: Props) => {
       value: 3,
     },
     {
-      title: "VIP tarif",
+      title: "Shogirdlik",
       price: "19 339 000 so‘m",
       price_dollar: "1500$",
       value: 4,

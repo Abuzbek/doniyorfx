@@ -30,16 +30,20 @@ type Props = {
 };
 export const plans = [
   {
-    label: "Standart 3.297.000",
+    label: "Standart 3.797.000",
     value: 1,
   },
   {
-    label: "Premium 3.497.000",
+    label: "Premium 3.997.000",
     value: 2,
   },
   {
-    label: "VIP 6.997.000",
+    label: "VIP 7.997.000",
     value: 3,
+  },
+  {
+    label: "Shogirdlik 1500$",
+    value: 4,
   },
 ];
 const FormSection = ({
