@@ -4,7 +4,7 @@ const PlanXpert = (props) => {
   const plans = [
     {
       title: "Standart tarif",
-      price: "2 397 000 so‘m",
+      price: "3 797 000 so‘m",
       value: 1,
     },
     {
@@ -14,8 +14,13 @@ const PlanXpert = (props) => {
     },
     {
       title: "VIP tarif",
-      price: "6 997 000 so‘m",
+      price: "7 997 000 so‘m",
       value: 3,
+    },
+    {
+      title: "VIP tarif",
+      price: "19 339 000 so‘m",
+      value: 4,
     },
   ];
   if (plans.find((n) => n.value === value)) {

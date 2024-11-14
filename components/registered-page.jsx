@@ -40,7 +40,7 @@ export default function RegisteredExcel() {
     if (process.env.NODE_ENV !== "production") {
       window.open(`http://localhost:8080/api/registered/csv`);
     } else {
-      window.open(`https://admin.doniyorfx.uz/api/registered/csv`);
+      window.open(`https://doniyorfx.uz/api/registered/csv`);
     }
   };
   return (
