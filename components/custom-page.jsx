@@ -57,9 +57,9 @@ export default function Excel() {
 
   const createCSVLink = () => {
     if (process.env.NODE_ENV !== "production") {
-      window.open(`http://localhost:8080/api/payment/csv`);
+      window.open(`http://localhost:8080/api/v2/payment/csv`);
     } else {
-      window.open(`https://doniyorfx.uz/api/payment/csv`);
+      window.open(`https://doniyorfx.uz/api/v2/payment/csv`);
     }
   };
   return (
