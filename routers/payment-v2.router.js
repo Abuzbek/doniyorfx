@@ -4,7 +4,7 @@ import {
   PaymentCreateController,
   PaymentFetchController,
   PaymentUpdateController,
-} from "../controllers/payment-xpert.controller.js";
+} from "../controllers/payment-V2.controller.js";
 import upload from "../utils/file.js";
 const router = Router();
 

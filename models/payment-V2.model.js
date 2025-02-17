@@ -26,4 +26,4 @@ export const paymentSchema = new Schema({
   }
 });
 paymentSchema.set('timestamps', true)
-export const PaymentXperts = mongoose.model("PaymentXpert", paymentSchema);
+export const PaymentV2s = mongoose.model("PaymentV2", paymentSchema);

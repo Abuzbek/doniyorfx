@@ -1,5 +1,5 @@
-import { PaymentXperts } from "../models/payment-xpert.model.js";
-import { CreateCsvService } from "../services/csv-xpert.service.js";
+import { PaymentV2s } from "../models/payment-V2.model.js";
+import { CreateCsvService } from "../services/csv-V2.service.js";
 
 export const PaymentCreateController = async (req, res) => {
   //   console.log(res);
@@ -7,7 +7,7 @@ export const PaymentCreateController = async (req, res) => {
   // console.log(res);
   console.log(req.body);
   // const file = req.file;
-  const payment = new PaymentXperts({
+  const payment = new PaymentV2s({
     ...req.body,
     course: "2",
     // file: file ? "/images/" + file.filename : "",
@@ -16,7 +16,7 @@ export const PaymentCreateController = async (req, res) => {
   res.json(currentPayment);
 };
 export const PaymentFetchController = async (req, res) => {
-  const PaymentModel = await PaymentXperts.find({});
+  const PaymentModel = await PaymentV2s.find({});
   res.json(PaymentModel);
 };
 export const PaymentUpdateController = async (req, res) => {
@@ -24,7 +24,7 @@ export const PaymentUpdateController = async (req, res) => {
   const data = {
     file: file ? "/images/" + file.filename : "",
   };
-  PaymentXperts.updateOne({ _id: req.params.id }, { $set: data })
+  PaymentV2s.updateOne({ _id: req.params.id }, { $set: data })
     .then((_data) => {
       res.json(_data);
     })
@@ -34,6 +34,6 @@ export const PaymentUpdateController = async (req, res) => {
 };
 
 export const PaymentCSVDownloader = async (req, res) => {
-  const PaymentModel = await PaymentXperts.find({}).sort({ createdAt: "desc" });
+  const PaymentModel = await PaymentV2s.find({}).sort({ createdAt: "desc" });
   await CreateCsvService(PaymentModel, res);
 };

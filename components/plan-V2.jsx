@@ -1,4 +1,4 @@
-const PlanXpert = (props) => {
+const PlanV2 = (props) => {
   const { record, property } = props;
   const value = record.params[property.name];
   const plans = [
@@ -30,4 +30,4 @@ const PlanXpert = (props) => {
   }
 };
 
-export default PlanXpert;
+export default PlanV2;

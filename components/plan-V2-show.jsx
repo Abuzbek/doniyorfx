@@ -1,5 +1,5 @@
 import { Box, Label } from "@adminjs/design-system";
-const PlanShowXpert = (props) => {
+const PlanShowV2 = (props) => {
   const { record, property } = props;
   const value = record.params[property.name];
   const plans = [
@@ -41,4 +41,4 @@ const PlanShowXpert = (props) => {
   }
 };
 
-export default PlanShowXpert;
+export default PlanShowV2;
