@@ -56,12 +56,6 @@ const PaymentSection = ({ userData }: Props) => {
       price_dollar: "620$",
       value: 3,
     },
-    {
-      title: "Shogirdlik",
-      price: "19 339 000 so‘m",
-      price_dollar: "1500$",
-      value: 4,
-    },
   ];
   const currentPlan = useMemo(
     () => plans.find((n) => n.value === userData?.plan),
@@ -78,13 +72,7 @@ const PaymentSection = ({ userData }: Props) => {
   const onSubmit: SubmitHandler<IFormtypes> = async (data) => {
     setLoading(true);
     const formData = new FormData();
-    // const userData = JSON.parse(searchParams.get("user") || "");
     formData.append("file", data.file);
-    // formData.append("name", userData.name);
-    // formData.append("surname", userData.surname);
-    // formData.append("plan", String(userData.plan));
-    // formData.append("phone", userData.phone);
-    // formData.append("course", "1");
     const response = await PaymentService.updatePayment(userData._id, formData);
     if (response.status === 200) {
       setLoading(false);

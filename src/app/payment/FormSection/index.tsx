@@ -41,10 +41,6 @@ export const plans = [
     label: "VIP 7.997.000",
     value: 3,
   },
-  {
-    label: "Shogirdlik 1500$",
-    value: 4,
-  },
 ];
 const FormSection = ({
   handleSubmit,
