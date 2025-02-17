@@ -5,7 +5,7 @@ type Props = {};
 const CourseCard = (props: Props) => {
   return (
     <div className={styles.course_card}>
-      <h3>Mobilografiya 5.0</h3>
+      <h3>Mobilografiya va Instagram 5.0</h3>
       <p>Kurs davomiyligi: 2,5 oy</p>
     </div>
   );

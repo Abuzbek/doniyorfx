@@ -98,7 +98,7 @@ const Payment = () => {
             {userData ? (
               <>
                 <a href="#" className={styles.logo}>
-                  Mobilografiya va <br /> Instagram 4.0
+                  Mobilografiya va <br /> Instagram 5.0
                 </a>
                 <UserInfo name={userData.name} phone={userData.phone} />
               </>

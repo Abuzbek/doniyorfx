@@ -23,11 +23,11 @@ const CreditCard = ({ price, price_dollar }: Props) => {
         <div className={styles.hr} />
         <div className={styles.bottom}>
           <div className={styles.card_number}>
-            <span>8600 5704 7243 5444</span>
+            <span>5614 6816 0301 7256</span>
             <p>Abduganiyev Doniyor</p>
           </div>
           <div className={styles.copy}>
-            <CopyButton textToCopy="8600570472435444" />
+            <CopyButton textToCopy="5614681603017256" />
           </div>
         </div>
       </div>
