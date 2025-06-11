@@ -38,7 +38,7 @@ export const plans = [
     value: 2,
   },
   {
-    label: "VIP 8.997.000",
+    label: "VIP 9.997.000",
     value: 3,
   },
 ];

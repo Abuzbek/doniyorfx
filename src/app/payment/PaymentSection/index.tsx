@@ -35,7 +35,7 @@ const PaymentSection = ({ userData }: Props) => {
 
       return params.toString();
     },
-    [searchParams]
+    [searchParams],
   );
   const plans = [
     {
@@ -52,14 +52,14 @@ const PaymentSection = ({ userData }: Props) => {
     },
     {
       title: "VIP tarif",
-      price: "7 997 000 so‘m",
+      price: "9 997 000 so‘m",
       price_dollar: "620$",
       value: 3,
     },
   ];
   const currentPlan = useMemo(
     () => plans.find((n) => n.value === userData?.plan),
-    [userData?.plan]
+    [userData?.plan],
   );
 
   const {
@@ -81,7 +81,7 @@ const PaymentSection = ({ userData }: Props) => {
           "?" +
           createQueryString("user", JSON.stringify(userData)) +
           "&finish=" +
-          String(true)
+          String(true),
       );
     }
   };
@@ -303,7 +303,7 @@ const PaymentSection = ({ userData }: Props) => {
         <button
           className={classNames(
             styles.submit_button,
-            !isDirty || !isValid ? "opacity-50" : ""
+            !isDirty || !isValid ? "opacity-50" : "",
           )}
           // disabled={}
         >
