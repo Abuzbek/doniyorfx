@@ -10,11 +10,13 @@ import AppFooter from "./layouts/AppFooter";
 import AppFreeCourse from "./layouts/AppFreeCourse";
 import ModalForm from "./ModalForm";
 import { IModalMethods } from "./components/UI/Modal";
+import { redirect } from "next/navigation";
 
 interface Props {}
 
 const Home: FC<Props> = () => {
   const modalRef = useRef<IModalMethods>();
+  redirect("/payment");
   return (
     <div>
       <AppHeader modalRef={modalRef} />

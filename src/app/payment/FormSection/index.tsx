@@ -38,7 +38,7 @@ export const plans = [
     value: 2,
   },
   {
-    label: "VIP 7.997.000",
+    label: "VIP 8.997.000",
     value: 3,
   },
 ];
@@ -147,7 +147,7 @@ const FormSection = ({
           className={classNames(
             styles.submit_button,
             !isDirty || !isValid ? "opacity-50" : "",
-            montserrat.className
+            montserrat.className,
           )}
         >
           To‘lovga o‘tish
