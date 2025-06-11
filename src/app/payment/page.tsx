@@ -45,7 +45,7 @@ const Payment = () => {
 
       return params.toString();
     },
-    [searchParams.toString()]
+    [searchParams.toString()],
   );
 
   const {
@@ -63,7 +63,7 @@ const Payment = () => {
       router.push(
         pathname +
           "?" +
-          createQueryString("user", JSON.stringify(response.data))
+          createQueryString("user", JSON.stringify(response.data)),
       );
     }
   };
@@ -79,9 +79,11 @@ const Payment = () => {
       setValue("plan", searchParams.get("plan") || "");
       setPlan(
         plans.find((n) => n.value === Number(searchParams.get("plan"))) ||
-          undefined
+          undefined,
       );
-      console.log(plans.find((n) => n.value === Number(searchParams.get("plan"))));
+      console.log(
+        plans.find((n) => n.value === Number(searchParams.get("plan"))),
+      );
     }
     setFinish(searchParams.has("finish"));
   }, [pathname, searchParams.toString()]);
@@ -98,7 +100,7 @@ const Payment = () => {
             {userData ? (
               <>
                 <a href="#" className={styles.logo}>
-                  Mobilografiya va <br /> Instagram 5.0
+                  Mobilografiya 6.0
                 </a>
                 <UserInfo name={userData.name} phone={userData.phone} />
               </>
